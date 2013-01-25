@@ -1,6 +1,6 @@
 
 // ==UserScript==
-// @name   		12306.CN 订票助手 For Firefox&Chrome
+// @name 			12306.CN 订票助手 For Firefox&Chrome
 // @namespace		http://www.u-tide.com/fish/
 // @author			iFish@FishLee.net <ifish@fishlee.net> http://www.fishlle.net/
 // @developer		iFish
@@ -12,7 +12,7 @@
 // @require			http://lib.sinaapp.com/js/jquery/1.8.3/jquery.min.js
 // @icon			http://www.12306.cn/mormhweb/images/favicon.ico
 // @run-at			document-idle
-// @version 		4.2.5
+// @version 		4.2.6
 // @updateURL		http://www.fishlee.net/Service/Download.ashx/44/47/12306_ticket_helper.user.js
 // @supportURL		http://www.fishlee.net/soft/44/
 // @homepage		http://www.fishlee.net/soft/44/
@@ -22,10 +22,9 @@
 
 //=======START=======
 
-var version = "4.2.5";
+var version = "4.2.6";
 var updates = [
-	"移除自动提交 (验证码不可提前输入)",
-	"修正加载联系人"
+	"更新了什么？你懂的"
 ];
 
 var faqUrl = "http://www.fishlee.net/soft/44/faq.html";
@@ -140,7 +139,7 @@ function injectDom() {
 	html.push('<p style="color: red;"> <strong style="font-size:16px;">啊嘞……看这里！本助手完全免费啊诸位大人！</strong>任何在第三方网站上出售的软件全他喵的是侵权出售啊！！看到的时候请亲务必记得退款退货打差评向青天大老爷举报啊！！</p>');
 	html.push('<p style="color:purple;"> 回家是一个单纯而简单的心愿，希望我们不会变得太复杂……</p>');
 	html.push('<p> 有很多朋友资助作者，正在木有暖气的南方饱受煎熬的作者感激涕零 ≥ω≤。<a href="http://www.fishlee.net/soft/44/donate.html" target="_blank">戳这里了解捐助详情</a>。 </p>');
-	html.push('<p style="color: blue;"> <strong style="font-size:16px;">那个，诸位票贩子们，放过本助手吧！！不要害作者啊！！！你们都去用什么自动识别验证码的好啦！离贫道远点！！</strong>  ╮(╯▽╰)╭  </p>');
+	html.push('<p style="color: blue;"> <strong style="font-size:16px;">那个，诸位票贩子们，放过本助手吧！！你们都去用什么自动识别验证码的好啦！还有铁道部的爷爷们，拜托你们改进下蛋疼的用户体验吧！你们的订票足够好用的话虽还来用这么难看而复杂的脚本啊！！！！</strong></p>');
 	html.push('<p style="font-weight:bold;">当前版本更新内容</p>');
 	html.push('<ol>');
 	$.each(utility.getPref("updates").split('\t'), function (i, n) {
@@ -496,10 +495,10 @@ var utility = {
 	},
 	getAudioUrl: function () {
 		/// <summary>获得音乐地址</summary>
-		return window.localStorage["audioUrl"] || (navigator.userAgent.indexOf("Firefox") != -1 ? "http://www.w3school.com.cn/i/song.ogg" : "http://www.w3school.com.cn/i/song.ogg");
+		return window.localStorage["audioUrl"] || (navigator.userAgent.indexOf("Firefox") != -1 ? "http://static.fishlee.net/resources/audio/song.ogg" : "http://static.fishlee.net/resources/audio/song.ogg");
 	},
 	getFailAudioUrl: function () {
-		return (utility.isWebKit() ? "http://resbak.fishlee.net/res/" : "http://resbak.fishlee.net/res/") + "music3.ogg";
+		return (utility.isWebKit() ? "http://static.fishlee.net/resources/audio/" : "http://static.fishlee.net/resources/audio/") + "music3.ogg";
 	},
 	playFailAudio: function () {
 		if (!window.Audio) return;
@@ -788,8 +787,12 @@ var utility = {
 	},
 	allPassengers: null,
 	getAllPassengers: function (callback) {
+		if (!utility.allPassengers && window.localStorage["pas"]) {
+			utility.allPassengers = eval("(" + window.localStorage["pas"] + ")");
+		}
 		if (utility.allPassengers) {
 			callback(utility.allPassengers);
+			return;
 		}
 
 		//开始加载所有乘客
@@ -1117,6 +1120,11 @@ function entryPoint() {
 			unsafeInvoke(utility.enableLoginIE);
 		}
 	}
+	if (path == "/otsweb/passengerAction.do") {
+		if (location.search.indexOf("?method=initUsualPassenger") != -1) {
+			unsafeInvoke(storePasToLocal);
+		}
+	}
 	if (path == "/otsweb/main.jsp" || path == "/otsweb/") {
 		//主框架
 		console.log("正在注入主框架脚本。");
@@ -1134,6 +1142,23 @@ function entryPoint() {
 
 		unsafeInvoke(injectMainPageFunction);
 	}
+}
+
+//#endregion
+
+//#region 保存联系人
+
+function storePasToLocal() {
+	var isNew = !window.localStorage["pas"];
+
+	utility.getAllPassengers(function (list) {
+		window.localStorage.setItem("pas", $.toJSON(list));
+
+		if (isNew) {
+			alert("恭喜，联系人已经缓存到本地，现在可以去查票咯！");
+			self.location = "/otsweb/order/querySingleAction.do?method=init";
+		}
+	});
 }
 
 //#endregion
@@ -1770,6 +1795,14 @@ function autoCommitOrderInSandbox() {
 //#region -----------------自动刷新----------------------
 
 function initTicketQuery() {
+	//初始化
+	if (!window.localStorage["pas"]) {
+		alert("亲，请访问一次常用联系人以加载列表~");
+		self.location = "/otsweb/passengerAction.do?method=initUsualPassenger";
+		return;
+	}
+
+
 	//启用日志
 	utility.enableLog();
 
@@ -1906,7 +1939,7 @@ function initTicketQuery() {
 
 	extrahtml.push("</td></tr><tr class='fish_sep'><td colspan='4'><input type='button' value='添加自定义车票时间段' id='btnDefineTimeRange' />\
 <input type='button' value='清除自定义车票时间段' id='btnClearDefineTimeRange' /></td></tr>\
-<tr class='fish_sep'><td style='text-align:center;' colspan='4'><a href='http://www.fishlee.net/soft/44/' target='_blank' style='color:purple;'>12306.CN 订票助手</a> | <a href='http://t.qq.com/ccfish/' target='_blank' style='color:blue;'>腾讯微博</a> | <a href='http://www.fishlee.net/soft/44/announcement.html' style='color:blue;' target='_blank'>免责声明</a> | <a href='"+ utility.getUpdateUrl() + "' target='_blank' style='color:purple;'>下载新版</a> | <a style='font-weight:bold;color:red;' href='http://www.fishlee.net/soft/44/donate.html' target='_blank'>捐助作者</a> | 版本 v" + window.helperVersion + "，许可于 <strong>" + utility.regInfo.name + "，类型 - " + utility.regInfo.typeDesc + "</strong> 【<a href='javascript:;' class='reSignHelper'>重新注册</a>】</td></tr>\
+<tr class='fish_sep'><td style='text-align:center;' colspan='4'><a href='http://www.fishlee.net/soft/44/' target='_blank' style='color:purple;'>12306.CN 订票助手</a> | <a href='http://www.fishlee.net/soft/44/announcement.html' style='color:blue;' target='_blank'>免责声明</a> | <a href='"+ utility.getUpdateUrl() + "' target='_blank' style='color:purple;'>下载新版</a> | <a style='font-weight:bold;color:red;' href='http://www.fishlee.net/soft/44/donate.html' target='_blank'>捐助作者</a> | 版本 v" + window.helperVersion + "，许可于 <strong>" + utility.regInfo.name + "，类型 - " + utility.regInfo.typeDesc + "</strong> 【<a href='javascript:;' class='reSignHelper'>重新注册</a>】</td></tr>\
 		</table></div></div>");
 
 	$("body").append(extrahtml.join(""));
@@ -3416,7 +3449,7 @@ function initLogin() {
 		"<li class='fish_clock' id='countEle' style='font-weight:bold;'>等待操作</li>" +
 		"<li style='color:green;'><strong>操作信息</strong>：<span>休息中</span></li>" +
 		"<li style='color:green;'><strong>最后操作时间</strong>：<span>--</span></li>" +
-		"<li> <a href='javascript:;' class='configLink' tab='tabLogin'>登录设置</a> | <a href='http://t.qq.com/ccfish/' target='_blank' style='color:blue;'>腾讯微博</a> | <a href='http://www.fishlee.net/soft/44/' style='color:blue;' target='_blank'>助手主页</a></li><li><a href='http://www.fishlee.net/soft/44/announcement.html' style='color:blue;' target='_blank'>免责声明</a> | <a href='" + utility.getUpdateUrl() + "' target='_blank' style='style='color:purple;''>下载新版</a> | <a style='font-weight:bold;color:red;' href='http://www.fishlee.net/honor/index.html' target='_blank'>捐助作者</a></li>" +
+		"<li> <a href='javascript:;' class='configLink' tab='tabLogin'>登录设置</a> | <a href='http://www.fishlee.net/soft/44/' style='color:blue;' target='_blank'>助手主页</a></li><li><a href='http://www.fishlee.net/soft/44/announcement.html' style='color:blue;' target='_blank'>免责声明</a> | <a href='" + utility.getUpdateUrl() + "' target='_blank' style='style='color:purple;''>下载新版</a> | <a style='font-weight:bold;color:red;' href='http://www.fishlee.net/soft/44/donate/index.html' target='_blank'>捐助作者</a></li>" +
 		'<li id="enableNotification"><input type="button" id="enableNotify" onclick="$(this).parent().hide();window.webkitNotifications.requestPermission();" value="点击启用桌面通知" style="line-height:25px;padding:5px;" /></li><li style="padding-top:10px;line-height:normal;color:gray;">请<strong style="color: red;">最后输验证码</strong>，输入完成后系统将自动帮你提交。登录过程中，请勿离开当前页。如系统繁忙，会自动重新刷新验证码，请直接输入验证码，输入完成后助手将自动帮你提交。</li>' +
 		"</ul>" +
 		"</div>" +
