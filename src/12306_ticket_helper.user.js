@@ -12,7 +12,7 @@
 // @require			http://lib.sinaapp.com/js/jquery/1.8.3/jquery.min.js
 // @icon			http://www.12306.cn/mormhweb/images/favicon.ico
 // @run-at			document-idle
-// @version 		4.2.9
+// @version 		4.3.1
 // @updateURL		http://static.liebao.cn/_softdownload/12306_ticket_helper.user.js
 // @supportURL		http://www.fishlee.net/soft/44/
 // @homepage		http://www.fishlee.net/soft/44/
@@ -22,7 +22,7 @@
 
 //=======START=======
 
-var version = "4.2.9";
+var version = "4.3.1";
 var updates = [
 	"更新了什么？你懂的"
 ];
@@ -957,12 +957,12 @@ var utility = {
 	},
 	getUpdateUrl: function () {
 		var ua = navigator.userAgent;
-		if (ua.indexOf(" SE ") > 0) return "http://www.fishlee.net/Service/Download.ashx/44/68/12306_ticket_helper.sext";
-		else if (ua.indexOf("Maxthon") > 0) return "http://www.fishlee.net/Service/Download.ashx/44/62/mxaddon.mxaddon";
-		else if (ua.indexOf("LBBROWSER") > 0) return "http://www.fishlee.net/Service/Download.ashx/44/69/12306_ticket_helper_for_liebaobrowser.crx";
-		else if (ua.indexOf("TaoBrowser") > 0) return "http://www.fishlee.net/Service/Download.ashx/44/65/12306_ticket_helper_for_taobrowser.crx";
-		else if (ua.indexOf("Firefox") > 0) return "http://www.fishlee.net/Service/Download.ashx/44/47/12306_ticket_helper.user.js";
-		else return "http://www.fishlee.net/Service/Download.ashx/44/63/12306_ticket_helper.crx";
+		if (ua.indexOf(" SE ") > 0) return "http://static.liebao.cn/_softdownload/32c8a36d-18f5-4600-9913-c7b83f484ee2.sext";
+		else if (ua.indexOf("Maxthon") > 0) return "http://static.liebao.cn/_softdownload/12306_ticket_assistant_for_maxthon3.mxaddon";
+		else if (ua.indexOf("LBBROWSER") > 0) return "http://static.liebao.cn/_softdownload/9d0d790e-d78f-43b3-8e4a-34f7ec57e851.crx";
+		else if (ua.indexOf("TaoBrowser") > 0) return "http://static.liebao.cn/_softdownload/12306_ticket_helper_for_taobrowser.crx";
+		else if (ua.indexOf("Firefox") > 0) return "http://static.liebao.cn/_softdownload/12306_ticket_helper.user.js";
+		else return "http://static.liebao.cn/_softdownload/12306_ticket_helper.crx";
 
 	}
 }
@@ -1170,6 +1170,7 @@ function storePasToLocal() {
 //#region 未完成订单查询页面
 
 function initNotCompleteOrderPage() {
+	return;
 	//处理显示时间的
 	(function () {
 		var tagInputs = $("input[name=cache_tour_flag]");
@@ -1180,7 +1181,7 @@ function initNotCompleteOrderPage() {
 			var flag = flags.shift();
 			flags.push(flag);
 
-			utility.get("https://dynamic.12306.cn/otsweb/order/myOrderAction.do?method=getOrderWaitTime&tourFlag=" + flag, null, "json", function (data) {
+			utility.get("https://dynamic.12306.cn/otsweb/order/myOrderAction.do?method=queryOrderWaitTime&tourFlag=" + flag, null, "json", function (data) {
 				var obj = $("#status_" + flag);
 				if (data.waitTime == 0 || data.waitTime == -1) {
 					obj.css({ "color": "green" }).html("订票成功！");
@@ -1416,13 +1417,28 @@ function initAutoCommitOrder() {
 				return;
 			}
 
-			submitConfirmOrder();
+			setTimeout(submitConfirmOrder, 2000 + Math.random() * 1000);
 		}, function () { utility.delayInvoke(null, queryLeftTickets, 2000); });
 	}
 
 	function submitConfirmOrder() {
+		var url;
+		if (tourFlag == 'dc') {
+			// 异步下单-单程
+			url = 'confirmPassengerAction.do?method=confirmSingleForQueueOrder';
+		} else if (tourFlag == 'wc') {
+			// 异步下单-往程
+			url = 'confirmPassengerAction.do?method=confirmPassengerInfoGoForQueue';
+		} else if (tourFlag == 'fc') {
+			// 异步下单-返程
+			url = 'confirmPassengerAction.do?method=confirmPassengerInfoBackForQueue';
+		} else if (tourFlag == 'gc') {
+			// 异步下单-改签
+			url = 'confirmPassengerResignAction.do?method=confirmPassengerInfoResignForQueue';
+		}
+
 		jQuery.ajax({
-			url: '/otsweb/order/confirmPassengerAction.do?method=confirmSingleForQueueOrder',
+			url: url,
 			data: $('#confirmPassenger').serialize(),
 			type: "POST",
 			timeout: 10000,
@@ -1493,7 +1509,7 @@ function initAutoCommitOrder() {
 		setCurOperationInfo(true, "订单提交成功, 正在等待队列完成操作....");
 
 		$.ajax({
-			url: '/otsweb/order/myOrderAction.do?method=getOrderWaitTime&tourFlag=' + tourFlag + '&' + Math.random(),
+			url: '/otsweb/order/myOrderAction.do?method=queryOrderWaitTime&tourFlag=' + tourFlag + '&' + Math.random(),
 			data: {},
 			type: 'GET',
 			timeout: 10000,
@@ -1537,7 +1553,7 @@ function initAutoCommitOrder() {
 						utility.notifyOnTop("警告！排队时间大于30分钟，成功率较低，请尽快电话订票或用小号重新排队！");
 					}
 
-					utility.delayInvoke("#countEle", waitingForQueueComplete, 1000);
+					utility.delayInvoke("#countEle", waitingForQueueComplete, 3000);
 				}
 			},
 			error: function (json) {
