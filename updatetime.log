@@ -1,0 +1,45 @@
+--2013-01-25 15:15:01--  http://static.liebao.cn/_softupdate/44/version.js
+Resolving static.liebao.cn... 162.105.28.232
+Connecting to static.liebao.cn|162.105.28.232|:80... connected.
+HTTP request sent, awaiting response... 
+  HTTP/1.1 200 OK
+  Date: Fri, 25 Jan 2013 07:04:36 GMT
+  Server: nginx/1.0.5
+  Content-Type: application/x-javascript
+  Content-Length: 343
+  Last-Modified: Thu, 24 Jan 2013 13:22:00 GMT
+  Accept-Ranges: bytes
+  Age: 1
+  X-Via: 1.1 lntw48:8107 (Cdn Cache Server V2.0), 1.1 bjjyw232:9090 (Cdn Cache Server V2.0)
+  Connection: keep-alive
+Length: 343 [application/x-javascript]
+Saving to: `version.js'
+
+     0K                                                       100% 62.2M=0s
+
+2013-01-25 15:15:01 (62.2 MB/s) - `version.js' saved [343/343]
+
+--2013-01-25 15:15:01--  http://static.liebao.cn/_softdownload/12306_ticket_helper.user.js
+Resolving static.liebao.cn... 162.105.28.232
+Connecting to static.liebao.cn|162.105.28.232|:80... connected.
+HTTP request sent, awaiting response... 
+  HTTP/1.1 200 OK
+  Date: Fri, 25 Jan 2013 07:05:11 GMT
+  Server: nginx/1.0.5
+  Content-Type: application/x-javascript
+  Content-Length: 171833
+  Last-Modified: Thu, 24 Jan 2013 14:02:42 GMT
+  Accept-Ranges: bytes
+  Age: 1
+  X-Via: 1.1 lntw50:8105 (Cdn Cache Server V2.0), 1.1 bjjyw232:9090 (Cdn Cache Server V2.0)
+  Connection: keep-alive
+Length: 171833 (168K) [application/x-javascript]
+Saving to: `12306_ticket_helper.user.js'
+
+     0K .......... .......... .......... .......... .......... 29% 11.0M 0s
+    50K .......... .......... .......... .......... .......... 59% 11.1M 0s
+   100K .......... .......... .......... .......... .......... 89% 10.5M 0s
+   150K .......... .......                                    100% 11.8M=0.01s
+
+2013-01-25 15:15:01 (10.9 MB/s) - `12306_ticket_helper.user.js' saved [171833/171833]
+

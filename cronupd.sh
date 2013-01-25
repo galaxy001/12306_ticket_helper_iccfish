@@ -7,8 +7,10 @@ env
 date
 
 cd /opt/galaxy/git/12306_ticket_helper_iccfish/
-wget -p http://static.liebao.cn/_softupdate/44/version.js
-wget -p http://static.liebao.cn/_softdownload/12306_ticket_helper.user.js
+mv 12306_ticket_helper.user.js 12306_ticket_helper.user.js.old
+mv version.js version.js.old
+wget -S http://static.liebao.cn/_softupdate/44/version.js -o updatetime.log
+wget -S http://static.liebao.cn/_softdownload/12306_ticket_helper.user.js -a updatetime.log
 
 THEVER=`perl -MPOSIX -lane 'if (/\bversion_12306_helper\b/) {@v=split /=/; $s=@v[-1]; $s=~s/[\s";]//g;print "$s @ ",POSIX::strftime( "%Y-%m-%d %R", localtime());exit;}' version.js`
 # 4.4.2 @ 2013-01-25 13:12
@@ -20,4 +22,7 @@ if [ $? -ne 0 ]; then
    git push
    echo "Updated: $THEVER"
    mv now.ver.user last.ver.user
+else
+   echo "Still: $THEVER"
+   rm now.ver.user
 fi
