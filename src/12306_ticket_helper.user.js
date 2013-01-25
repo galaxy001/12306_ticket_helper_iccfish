@@ -12,7 +12,7 @@
 // @require			http://lib.sinaapp.com/js/jquery/1.8.3/jquery.min.js
 // @icon			http://www.12306.cn/mormhweb/images/favicon.ico
 // @run-at			document-idle
-// @version 		4.2.7
+// @version 		4.2.8
 // @updateURL		http://www.fishlee.net/Service/Download.ashx/44/47/12306_ticket_helper.user.js
 // @supportURL		http://www.fishlee.net/soft/44/
 // @homepage		http://www.fishlee.net/soft/44/
@@ -22,7 +22,7 @@
 
 //=======START=======
 
-var version = "4.2.7";
+var version = "4.2.8";
 var updates = [
 	"更新了什么？你懂的"
 ];
@@ -1798,8 +1798,8 @@ function autoCommitOrderInSandbox() {
 function initTicketQuery() {
 	//初始化
 	if (!window.localStorage["pas"]) {
-		alert("亲，请访问一次常用联系人以加载列表~");
-		self.location = "/otsweb/passengerAction.do?method=initUsualPassenger12306";
+		alert("亲，请进入我的12306->常用联系人并稍等片刻以更新缓存~");
+		//self.location = "/otsweb/passengerAction.do?method=initUsualPassenger12306";
 		return;
 	}
 
@@ -2534,7 +2534,9 @@ function initTicketQuery() {
 		//刷新联系人列表
 		$("#btnRefreshPas").click(function () {
 			window.localStorage.removeItem("pas");
-			self.location = "/otsweb/passengerAction.do?method=initUsualPassenger12306";
+			
+			//self.location = "/otsweb/passengerAction.do?method=initUsualPassenger12306";
+			alert("请进入我的12306->常用联系人并稍等片刻以更新缓存 -.-");
 		});
 
 		//优选逻辑
