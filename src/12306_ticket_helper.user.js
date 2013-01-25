@@ -1,6 +1,6 @@
-﻿
+
 // ==UserScript==
-// @name 			12306.CN 订票助手 For Firefox&Chrome
+// @name   		12306.CN 订票助手 For Firefox&Chrome
 // @namespace		http://www.u-tide.com/fish/
 // @author			iFish@FishLee.net <ifish@fishlee.net> http://www.fishlle.net/
 // @developer		iFish
@@ -12,7 +12,7 @@
 // @require			http://lib.sinaapp.com/js/jquery/1.8.3/jquery.min.js
 // @icon			http://www.12306.cn/mormhweb/images/favicon.ico
 // @run-at			document-idle
-// @version 		4.2.1
+// @version 		4.2.5
 // @updateURL		http://www.fishlee.net/Service/Download.ashx/44/47/12306_ticket_helper.user.js
 // @supportURL		http://www.fishlee.net/soft/44/
 // @homepage		http://www.fishlee.net/soft/44/
@@ -22,11 +22,10 @@
 
 //=======START=======
 
-var version = "4.2.1";
+var version = "4.2.5";
 var updates = [
-	"修正硬座票没有时自动提交失效的问题",
-	"自动提交和自动预定逻辑和提示优化",
-	"移除GitHub上所有的资源引用"
+	"移除自动提交 (验证码不可提前输入)",
+	"修正加载联系人"
 ];
 
 var faqUrl = "http://www.fishlee.net/soft/44/faq.html";
@@ -236,8 +235,13 @@ function injectDom() {
 	});
 	//新版本更新显示提示
 	if (utility.getPref("helperVersion") != window.helperVersion) {
-		utility.setPref("helperVersion", window.helperVersion);
 
+		//检测老版本设置
+		if (utility.getAudioUrl().indexOf("github") != -1 || utility.getAudioUrl().indexOf("https://") != -1) {
+			utility.resetAudioUrl();
+		}
+
+		utility.setPref("helperVersion", window.helperVersion);
 		//仅顶层页面显示
 		try {
 			if (parent == self)
@@ -793,7 +797,7 @@ var utility = {
 		var pageIndex = 0;
 
 		function loadPage() {
-			utility.post("/otsweb/passengerAction.do?method=queryPagePassenger", { pageSize: 10, pageIndex: pageIndex }, "json", function (json) {
+			utility.post("/otsweb/passengerAction.do?method=getPagePassengerAll", { pageSize: 10, pageIndex: pageIndex }, "json", function (json) {
 				$.each(json.rows, function () { utility.allPassengers.push(this); });
 
 				if (utility.allPassengers.length >= json.recordCount) {
@@ -943,8 +947,17 @@ var utility = {
 		}
 
 		return this;
-	}
+	},
+	getUpdateUrl: function () {
+		var ua = navigator.userAgent;
+		if (ua.indexOf(" SE ") > 0) return "http://www.fishlee.net/Service/Download.ashx/44/68/12306_ticket_helper.sext";
+		else if (ua.indexOf("Maxthon") > 0) return "http://www.fishlee.net/Service/Download.ashx/44/62/mxaddon.mxaddon";
+		else if (ua.indexOf("LBBROWSER") > 0) return "http://www.fishlee.net/Service/Download.ashx/44/69/12306_ticket_helper_for_liebaobrowser.crx";
+		else if (ua.indexOf("TaoBrowser") > 0) return "http://www.fishlee.net/Service/Download.ashx/44/65/12306_ticket_helper_for_taobrowser.crx";
+		else if (ua.indexOf("Firefox") > 0) return "http://www.fishlee.net/Service/Download.ashx/44/47/12306_ticket_helper.user.js";
+		else return "http://www.fishlee.net/Service/Download.ashx/44/63/12306_ticket_helper.crx";
 
+	}
 }
 
 function unsafeInvoke(callback) {
@@ -1345,7 +1358,7 @@ function initAutoCommitOrder() {
 			},
 			error: function (msg) {
 				setCurOperationInfo(false, "当前请求发生错误");
-				utility.delayInvoke(null, submitForm, 3000);
+				utility.delayInvoke(null, submitForm, 1000);
 			}
 		});
 	}
@@ -1363,10 +1376,12 @@ function initAutoCommitOrder() {
 		utility.get("/otsweb/order/confirmPassengerAction.do?method=getQueueCount", queryLeftData, "json", function (data) {
 			console.log(data);
 			if (data.op_2) {
-				var errmsg = "排队人数过多，系统禁止排队，可以输入验证码重试 (排队人数=" + data.count + ")";
-				setCurOperationInfo(false, errmsg);
+				var errmsg = "排队人数过多，系统禁止排队，稍等自动重试 (排队人数=" + data.count + ")";
+				setCurOperationInfo(true, errmsg);
 				stop(errmsg);
-				reloadCode();
+
+				utility.delayInvoke(null, queryQueueCount, 1000);
+
 
 				return;
 			}
@@ -1469,6 +1484,7 @@ function initAutoCommitOrder() {
 					reloadCode();
 				} else if (json.waitTime == -2) {
 					var msg = "很抱歉, 铁道部说您占座失败 : " + json.msg + ', 赶紧重新来过!';
+					reloadToken();
 					utility.notify(msg);
 					setCurOperationInfo(false, msg);
 					stop(msg);
@@ -1890,7 +1906,7 @@ function initTicketQuery() {
 
 	extrahtml.push("</td></tr><tr class='fish_sep'><td colspan='4'><input type='button' value='添加自定义车票时间段' id='btnDefineTimeRange' />\
 <input type='button' value='清除自定义车票时间段' id='btnClearDefineTimeRange' /></td></tr>\
-<tr class='fish_sep'><td style='text-align:center;' colspan='4'><a href='http://www.fishlee.net/soft/44/' target='_blank' style='color:purple;'>12306.CN 订票助手 by iFish(木鱼)</a> | <a href='http://t.qq.com/ccfish/' target='_blank' style='color:blue;'>腾讯微博</a> | <a href='http://www.fishlee.net/soft/44/announcement.html' style='color:blue;' target='_blank'>免责声明</a> | <a href='http://www.fishlee.net/Discussion/Index/44' target='_blank'>反馈BUG</a> | <a style='font-weight:bold;color:red;' href='http://www.fishlee.net/soft/44/donate.html' target='_blank'>捐助作者</a> | 版本 v" + window.helperVersion + "，许可于 <strong>" + utility.regInfo.name + "，类型 - " + utility.regInfo.typeDesc + "</strong> 【<a href='javascript:;' class='reSignHelper'>重新注册</a>】</td></tr>\
+<tr class='fish_sep'><td style='text-align:center;' colspan='4'><a href='http://www.fishlee.net/soft/44/' target='_blank' style='color:purple;'>12306.CN 订票助手</a> | <a href='http://t.qq.com/ccfish/' target='_blank' style='color:blue;'>腾讯微博</a> | <a href='http://www.fishlee.net/soft/44/announcement.html' style='color:blue;' target='_blank'>免责声明</a> | <a href='"+ utility.getUpdateUrl() + "' target='_blank' style='color:purple;'>下载新版</a> | <a style='font-weight:bold;color:red;' href='http://www.fishlee.net/soft/44/donate.html' target='_blank'>捐助作者</a> | 版本 v" + window.helperVersion + "，许可于 <strong>" + utility.regInfo.name + "，类型 - " + utility.regInfo.typeDesc + "</strong> 【<a href='javascript:;' class='reSignHelper'>重新注册</a>】</td></tr>\
 		</table></div></div>");
 
 	$("body").append(extrahtml.join(""));
@@ -3033,6 +3049,7 @@ function initTicketQuery() {
 //#region 自动提交订单
 
 function initDirectSubmitOrder() {
+	return;
 	//if (Math.random() > 0.10) return;
 
 	console.log("[INFO] initialize direct submit order.");
@@ -3208,6 +3225,7 @@ function initDirectSubmitOrder() {
 	function checkOrderInfo() {
 		setCurOperationInfo(true, "正在检测订单状态....");
 		utility.notifyOnTop("开始自动提交订单！");
+		console.log(data);
 
 		utility.post("confirmPassengerAction.do?method=checkOrderInfo&rand=" + getVcCode(), formData.join("&") + "&randCode=" + getVcCode(), "json", function (data) {
 			console.log(data);
@@ -3227,11 +3245,15 @@ function initDirectSubmitOrder() {
 			queryQueueInfo();
 		}, function () {
 			setCurOperationInfo(false, "网络出现错误，稍等重试");
-			utility.delayInvoke(counter, checkOrderInfo, 2000);
+			utility.delayInvoke(counter, checkOrderInfo, 500);
 		});
 	}
 
 	function queryQueueInfo() {
+		if (!document.getElementById("autoorder").checked) {
+			hideStatus();
+			return;
+		}
 		setCurOperationInfo(true, "正在提交订单");
 		setTipMessage("正在检查队列。");
 
@@ -3246,22 +3268,38 @@ function initDirectSubmitOrder() {
 		};
 		utility.get("/otsweb/order/confirmPassengerAction.do?method=getQueueCount", queryLeftData, "json", function (data) {
 			if (data.op_2) {
-				utility.notifyOnTop("排队人数过多，系统禁止排队，可以输入验证码重试！");
+				//utility.notifyOnTop("排队人数过多，系统禁止排队，稍等重试。要重新查询，请刷新页面！");
 				setTipMessage("排队人数过多 (人数=" + data.count + ")");
-				setCurOperationInfo(false, "排队人数过多");
-				reloadCode();
+				setCurOperationInfo(true, "排队人数过多");
+				utility.delayInvoke(counter, queryQueueInfo, 500);
 			} else {
 				submitOrder();
 			}
-		}, function () { utility.delayInvoke(null, queryLeftTickets, 2000); });
+		}, function () { utility.delayInvoke(counter, queryQueueInfo, 500); });
 
 	}
 
 	function submitOrder() {
+		if (!document.getElementById("autoorder").checked) {
+			hideStatus();
+			return;
+		}
 		setCurOperationInfo(true, "正在提交订单");
 		setTipMessage("已检测状态。");
 
-		utility.post("/otsweb/order/confirmPassengerAction.do?method=confirmSingleForQueueOrder",
+		var order_type = 'confirmSingleForQueueOrder'; //'dc' 单程
+		if (tourFlag == 'wc') {
+			// 异步下单-往程
+			order_type = 'confirmPassengerInfoGoForQueue';
+		} else if (tourFlag == 'fc') {
+			// 异步下单-返程
+			order_type = 'confirmPassengerInfoBackForQueue';
+		} else if (tourFlag == 'gc') {
+			// 异步下单-改签
+			order_type = 'confirmPassengerInfoResignForQueue';
+		}
+
+		utility.post('/otsweb/order/confirmPassengerAction.do?method=' + order_type,
 			formData.join("&") + "&randCode=" + getVcCode(), "json", function (data) {
 				var msg = data.errMsg;
 
@@ -3378,7 +3416,7 @@ function initLogin() {
 		"<li class='fish_clock' id='countEle' style='font-weight:bold;'>等待操作</li>" +
 		"<li style='color:green;'><strong>操作信息</strong>：<span>休息中</span></li>" +
 		"<li style='color:green;'><strong>最后操作时间</strong>：<span>--</span></li>" +
-		"<li> <a href='javascript:;' class='configLink' tab='tabLogin'>登录设置</a> | <a href='http://t.qq.com/ccfish/' target='_blank' style='color:blue;'>腾讯微博</a> | <a href='http://www.fishlee.net/soft/44/' style='color:blue;' target='_blank'>助手主页</a></li><li><a href='http://www.fishlee.net/soft/44/announcement.html' style='color:blue;' target='_blank'>免责声明</a> | <a href='http://www.fishlee.net/Discussion/Index/44' target='_blank'>反馈BUG</a> | <a style='font-weight:bold;color:red;' href='http://www.fishlee.net/honor/index.html' target='_blank'>捐助作者</a></li>" +
+		"<li> <a href='javascript:;' class='configLink' tab='tabLogin'>登录设置</a> | <a href='http://t.qq.com/ccfish/' target='_blank' style='color:blue;'>腾讯微博</a> | <a href='http://www.fishlee.net/soft/44/' style='color:blue;' target='_blank'>助手主页</a></li><li><a href='http://www.fishlee.net/soft/44/announcement.html' style='color:blue;' target='_blank'>免责声明</a> | <a href='" + utility.getUpdateUrl() + "' target='_blank' style='style='color:purple;''>下载新版</a> | <a style='font-weight:bold;color:red;' href='http://www.fishlee.net/honor/index.html' target='_blank'>捐助作者</a></li>" +
 		'<li id="enableNotification"><input type="button" id="enableNotify" onclick="$(this).parent().hide();window.webkitNotifications.requestPermission();" value="点击启用桌面通知" style="line-height:25px;padding:5px;" /></li><li style="padding-top:10px;line-height:normal;color:gray;">请<strong style="color: red;">最后输验证码</strong>，输入完成后系统将自动帮你提交。登录过程中，请勿离开当前页。如系统繁忙，会自动重新刷新验证码，请直接输入验证码，输入完成后助手将自动帮你提交。</li>' +
 		"</ul>" +
 		"</div>" +
