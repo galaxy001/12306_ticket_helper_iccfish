@@ -12,7 +12,7 @@
 // @require			http://lib.sinaapp.com/js/jquery/1.8.3/jquery.min.js
 // @icon			http://www.12306.cn/mormhweb/images/favicon.ico
 // @run-at			document-idle
-// @version 		4.2.6
+// @version 		4.2.7
 // @updateURL		http://www.fishlee.net/Service/Download.ashx/44/47/12306_ticket_helper.user.js
 // @supportURL		http://www.fishlee.net/soft/44/
 // @homepage		http://www.fishlee.net/soft/44/
@@ -22,7 +22,7 @@
 
 //=======START=======
 
-var version = "4.2.6";
+var version = "4.2.7";
 var updates = [
 	"更新了什么？你懂的"
 ];
@@ -139,7 +139,7 @@ function injectDom() {
 	html.push('<p style="color: red;"> <strong style="font-size:16px;">啊嘞……看这里！本助手完全免费啊诸位大人！</strong>任何在第三方网站上出售的软件全他喵的是侵权出售啊！！看到的时候请亲务必记得退款退货打差评向青天大老爷举报啊！！</p>');
 	html.push('<p style="color:purple;"> 回家是一个单纯而简单的心愿，希望我们不会变得太复杂……</p>');
 	html.push('<p> 有很多朋友资助作者，正在木有暖气的南方饱受煎熬的作者感激涕零 ≥ω≤。<a href="http://www.fishlee.net/soft/44/donate.html" target="_blank">戳这里了解捐助详情</a>。 </p>');
-	html.push('<p style="color: blue;"> <strong style="font-size:16px;">那个，诸位票贩子们，放过本助手吧！！你们都去用什么自动识别验证码的好啦！还有铁道部的爷爷们，拜托你们改进下蛋疼的用户体验吧！你们的订票足够好用的话虽还来用这么难看而复杂的脚本啊！！！！</strong></p>');
+	html.push('<p style="color: blue;"> <strong style="">那个，诸位票贩子们，放过本助手吧！！你们都去用什么自动识别验证码的好啦！还有铁道部的爷爷们，拜托你们改进下的用户体验吧！你们的订票足够好用的话虽还来用脚本啊！！！！</strong></p>');
 	html.push('<p style="font-weight:bold;">当前版本更新内容</p>');
 	html.push('<ol>');
 	$.each(utility.getPref("updates").split('\t'), function (i, n) {
@@ -236,7 +236,7 @@ function injectDom() {
 	if (utility.getPref("helperVersion") != window.helperVersion) {
 
 		//检测老版本设置
-		if (utility.getAudioUrl().indexOf("github") != -1 || utility.getAudioUrl().indexOf("https://") != -1) {
+		if (utility.getAudioUrl().indexOf("github") != -1 || utility.getAudioUrl().indexOf("resbak.") != -1) {
 			utility.resetAudioUrl();
 		}
 
@@ -786,8 +786,8 @@ var utility = {
 		}
 	},
 	allPassengers: null,
-	getAllPassengers: function (callback) {
-		if (!utility.allPassengers && window.localStorage["pas"]) {
+	getAllPassengers: function (callback, ignoreLocalCache) {
+		if (!utility.allPassengers && window.localStorage["pas"] && !ignoreLocalCache) {
 			utility.allPassengers = eval("(" + window.localStorage["pas"] + ")");
 		}
 		if (utility.allPassengers) {
@@ -1158,7 +1158,7 @@ function storePasToLocal() {
 			alert("恭喜，联系人已经缓存到本地，现在可以去查票咯！");
 			self.location = "/otsweb/order/querySingleAction.do?method=init";
 		}
-	});
+	}, true);
 }
 
 //#endregion
@@ -1371,6 +1371,7 @@ function initAutoCommitOrder() {
 			type: "POST",
 			data: { tFlag: tourFlag },
 			dataType: "json",
+			timeout: 10000,
 			success: function (data) {
 				if ('Y' != data.errMsg || 'N' == data.checkHuimd || 'N' == data.check608) {
 					setCurOperationInfo(false, data.msg || data.errMsg);
@@ -1556,9 +1557,9 @@ function initAutoCommitOrder() {
 		submitFlag = false;
 	});
 	randEl.keyup(function (e) {
-		if (!submitFlag && !document.getElementById("autoStartCommit").checked) return;
-
-		if (e.charCode == 13 || randEl.val().length == 4) submitForm();
+		if (document.getElementById("autoStartCommit").checked && !breakFlag) {
+			if (e.charCode == 13 || randEl.val().length == 4) submitForm();
+		}
 	});
 
 	//清除上次保存的预定信息
@@ -1798,7 +1799,7 @@ function initTicketQuery() {
 	//初始化
 	if (!window.localStorage["pas"]) {
 		alert("亲，请访问一次常用联系人以加载列表~");
-		self.location = "/otsweb/passengerAction.do?method=initUsualPassenger";
+		self.location = "/otsweb/passengerAction.do?method=initUsualPassenger12306";
 		return;
 	}
 
@@ -1929,7 +1930,7 @@ function initTicketQuery() {
 <tr class='fish_sep musicFunc' id='helperbox_bottom'><td class='name'>自定义音乐地址</td><td colspan='3'><input type='text' id='txtMusicUrl' value='" + utility.getAudioUrl() + "' onfocus='this.select();' style='width:50%;' /> <input type='button' onclick='new Audio(document.getElementById(\"txtMusicUrl\").value).play();' value='测试'/><input type='button' onclick='utility.resetAudioUrl(); document.getElementById(\"txtMusicUrl\").value=utility.getAudioUrl();' value='恢复默认'/> (地址第一次使用可能会需要等待一会儿)</td></tr>\
 <tr class='fish_sep musicFunc'><td class='name'>可用音乐地址</td><td colspan='3'>");
 
-	var host1 = "http://resbak.fishlee.net/res/";
+	var host1 = "http://static.fishlee.net/resources/audio/";
 	//var host2 = "https://github.com/iccfish/12306_ticket_helper/raw/master/res/";
 	var musics = [["music1.ogg", "超级玛丽"], ["music2.ogg", "蓝精灵"]];
 	$.each(musics, function () {
@@ -2061,9 +2062,9 @@ function initTicketQuery() {
 		var d = new Date().getMinutes();
 		isSmartOn = document.getElementById("chkSmartSpeed").checked && time_server && time_server.getMinutes() >= 59;
 
-		timerCountDown = isSmartOn ? 60 - time_server.getSeconds() + 2 : timeCount;
+		timerCountDown = isSmartOn ? 60 - time_server.getSeconds() + 2 : timeCount + 2 * Math.random();
 		var str = (Math.round(timerCountDown * 10) / 10) + "";
-		$("#refreshtimer").html("[" + (isSmartOn ? "等待正点," : "") + timerCountDown + (str.indexOf('.') == -1 ? ".0" : "") + "秒后查询...]");
+		$("#refreshtimer").html("[" + (isSmartOn ? "等待正点," : "") + str + (str.indexOf('.') == -1 ? ".0" : "") + "秒后查询...]");
 		//没有定时器的时候，开启定时器准备刷新
 		$("#btnStopRefresh")[0].disabled = false;
 		timer = setInterval(countDownTimer, 200);
@@ -2508,7 +2509,7 @@ function initTicketQuery() {
 <tr class='fish_sep'><td colspan='4' id='whiteListTd'></td></tr>\
 <tr class='fish_sep caption'><td><label><input type='checkbox' id='swBlackList' checked='checked' name='swBlackList' />车次黑名单</label></td><td style='font-weight:normal;' colspan='2'>加入黑名单的车次，除非在白名单中，否则会被直接过滤而不会显示</td><td style='text-align:rigth;'><button class='fish_button' id='btnAddBlack'>添加</button><button class='fish_button' id='btnClearBlack'>清空</button></td></tr>\
 <tr class='fish_sep'><td colspan='4' id='blackListTd'></td></tr>\
-<tr class='caption autoorder_steps fish_sep' id='selectPasRow'><td colspan='3'><span class='hide indicator'>① </span>自动添加乘客 （加入此列表的乘客将会自动在提交订单的页面中添加上，<strong>最多选五位</strong>）</td><td><input type='button' class='fish_button' onclick=\"self.location='/otsweb/passengerAction.do?method=initAddPassenger&';\" value='添加联系人' /> (提示：新加的联系人五分钟之内无法订票)</td></tr>\
+<tr class='caption autoorder_steps fish_sep' id='selectPasRow'><td colspan='3'><span class='hide indicator'>① </span>自动添加乘客 （加入此列表的乘客将会自动在提交订单的页面中添加上，<strong>最多选五位</strong>）</td><td><input type='button' class='fish_button' onclick=\"self.location='/otsweb/passengerAction.do?method=initAddPassenger&';\" value='添加联系人' /> <input type='button' class='fish_button' id='btnRefreshPas' value='刷新列表' /></td></tr>\
 <tr class='fish_sep'><td class='name'>未选择</td><td id='passengerList' colspan='3'><span style='color:gray; font-style:italic;'>联系人列表正在加载中，请稍等...如果长时间无法加载成功，请尝试刷新页面  x_x</span></td></tr>\
 <tr class='fish_sep'><td class='name'>已选择</td><td id='passengerList1' colspan='3'></td></tr>\
 <tr class='fish_sep autoordertip' style='display:none;'><td class='name'>部分提交订单</td><td><label><input type='checkbox' id='autoorder_part' /> 当票数不足时，允许为部分的联系人先提交订单</label></td><td class='name'>提交为学生票</td><td><label><input type='checkbox' id='autoorder_stu' /> 即使是普通查询，也为学生联系人提交学生票</label></td></tr>\
@@ -2529,6 +2530,12 @@ function initTicketQuery() {
 <p style='font-size:16px; font-weight:bold;color:blue;'>一定要仔细看说明啊！切记多个浏览器准备不要老想着一棵树上吊死啊！千万不要因为自动提交订单导致你订不到票啊！！这样老衲会内疚的啊！！！！</p>\
 </td></tr>";
 		$("#helpertooltable tr:first").addClass("fish_sep").before(html);
+
+		//刷新联系人列表
+		$("#btnRefreshPas").click(function () {
+			window.localStorage.removeItem("pas");
+			self.location = "/otsweb/passengerAction.do?method=initUsualPassenger12306";
+		});
 
 		//优选逻辑
 		$("#autoorder_method").val(window.localStorage["autoorder_method"] || "0").change(function () { window.localStorage.setItem("autoorder_method", $(this).val()); });
