@@ -1,7 +1,7 @@
 12306_ticket_helper_iccfish
 ===========================
 
-This is not my work. it's his @iccfish job.
+This is not my work. it's his @iccfish job. (git://github.com/iccfish/12306_ticket_helper.git)
 
 I'm just manually updating the scripts to record the diffs that TDB had done (which is making no sense at all)!
 
