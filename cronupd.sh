@@ -3,6 +3,11 @@
 #PATH=/opt/bin:/sbin:/bin:/usr/sbin:/usr/bin
 #*/5 * * * *	huxs /bin/sh /opt/galaxy/git/12306_ticket_helper_iccfish/cronupd.sh 2>&1 >/opt/galaxy/git/12306_ticket_helper_iccfish/uplog.user
 
+export GIT_AUTHOR_NAME="Galaxy"
+export GIT_AUTHOR_EMAIL=galaxy001@gmail.com
+export GIT_COMMITTER_NAME="$GIT_AUTHOR_NAME"
+export GIT_COMMITTER_EMAIL="$GIT_AUTHOR_EMAIL"
+
 env
 date
 
