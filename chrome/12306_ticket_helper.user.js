@@ -12,7 +12,7 @@
 // @require			http://lib.sinaapp.com/js/jquery/1.8.3/jquery.min.js
 // @icon			http://www.12306.cn/mormhweb/images/favicon.ico
 // @run-at			document-idle
-// @version 		4.5.0
+// @version 		4.5.2
 // @updateURL		http://static.liebao.cn/_softdownload/12306_ticket_helper.user.js
 // @supportURL		http://www.fishlee.net/soft/44/
 // @homepage		http://www.fishlee.net/soft/44/
@@ -22,7 +22,7 @@
 
 //=======START=======
 
-var version = "4.5.0";
+var version = "4.5.2";
 var updates = [
 	"自4.5版本开始，建议使用谷歌浏览器以及类似的浏览器（支持CRX扩展的浏览器）进行订票，Firefox或其它一些浏览器因运行机制有限制，部分高级功能将暂时无法使用",
 	"想知道更新了什么？打死我也不告诉你~"
@@ -100,7 +100,7 @@ div.gridbox_light .odd_light,div.gridbox_light .ev_light{background:-webkit-line
 .validRow{background:-webkit-linear-gradient(#ffe0e5, #ffc7d0)!important;background:-moz-linear-gradient(#ffe0e5, #ffc7d0)!important;color:#700012;}\
 .unValidRow{opacity:0.8;}\
 .unValidCell{opacity:0.8;}\
-.btn130_2 {text-shadow:nonw;}\
+.btn130_2 {text-shadow:none;}\
 ";
 
 	document.head.appendChild(s);
@@ -3832,7 +3832,7 @@ function initLogin() {
 					stopLogin();
 				} else if (html.indexOf("欢迎您登录") != -1) {
 					utility.notifyOnTop('登录成功，开始查询车票吧！');
-					window.location.href = "https://dynamic.12306.cn/otsweb/order/querySingleAction.do?method=init";
+					setTimeout(function () { parent.window.$("#menu_left li:eq(0) a")[0].click(); }, 2000);
 				} else {
 					setTipMessage(msg);
 					utility.delayInvoke("#countEle", getLoginRandCode, utility.getLoginRetryTime());
