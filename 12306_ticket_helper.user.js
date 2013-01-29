@@ -12,7 +12,7 @@
 // @require			http://lib.sinaapp.com/js/jquery/1.8.3/jquery.min.js
 // @icon			http://www.12306.cn/mormhweb/images/favicon.ico
 // @run-at			document-idle
-// @version 		4.5.3
+// @version 		4.5.4
 // @updateURL		http://static.liebao.cn/_softdownload/12306_ticket_helper.user.js
 // @supportURL		http://www.fishlee.net/soft/44/
 // @homepage		http://www.fishlee.net/soft/44/
@@ -22,7 +22,7 @@
 
 //=======START=======
 
-var version = "4.5.3";
+var version = "4.5.4";
 var updates = [
 	"自4.5版本开始，建议使用谷歌浏览器以及类似的浏览器（支持CRX扩展的浏览器）进行订票，Firefox或其它一些浏览器因运行机制有限制，部分高级功能将暂时无法使用",
 	"想知道更新了什么？打死我也不告诉你~"
@@ -101,6 +101,7 @@ div.gridbox_light .odd_light,div.gridbox_light .ev_light{background:-webkit-line
 .unValidRow{opacity:0.8;}\
 .unValidCell{opacity:0.8;}\
 .btn130_2 {text-shadow:none;}\
+.warning{color:red;}\
 ";
 
 	document.head.appendChild(s);
@@ -2544,9 +2545,10 @@ function initTicketQuery() {
 	$("body").ajaxComplete(function (e, r, s) {
 		if (!$("#chkAutoRequery")[0].checked) return;
 		if (s.url.indexOf("/otsweb/order/querySingleAction.do") != -1 && r.responseText == "-1") {
-			//invalidQueryButton();
-			//delayButton();
-			//startTimer();
+			$("#cctypex").remove();
+			invalidQueryButton();
+			delayButton();
+			startTimer();
 		} else {
 			$("#serverMsg").html("");
 		}
@@ -3313,6 +3315,42 @@ function initTicketQuery() {
 
 	})();
 
+
+	//#endregion
+
+	//#region 查询的时间记录
+
+	(function () {
+		var lastTime = null;
+		var title = $(".cx_titler");
+
+		//测试
+		$("body").append("<input type='checkbox' style='display:none' id='cctypex' name='trainClassArr' value='XP' checked='checked' />");
+
+		$(document).ajaxComplete(function (e, xhr, o) {
+			console.log(o);
+			if (o.url.indexOf("method=queryLeftTicket") == -1 || xhr.reponseText == "-1") return;
+
+			var age = xhr.getResponseHeader("Age");
+			var date = xhr.getResponseHeader("Date") || "<未知>";
+			var dateStr = "<未知>";
+
+			if (date) {
+				date = new Date(date);
+				dateStr = utility.formatTime(date);
+			}
+
+			var isCache = (age == 1 || date == lastTime);
+			var html = "数据时间：" + dateStr;
+			title.html((isCache ? "<strong>我勒个去</strong>！这可能是TDB在拿缓存的数据忽悠你！" : "") + html);
+			if (isCache) {
+				title.addClass("warning");
+			} else {
+				title.removeClass("warning");
+			}
+			$("#cctypex").val(Math.round(Math.random() * 10000));
+		});
+	})();
 
 	//#endregion
 
