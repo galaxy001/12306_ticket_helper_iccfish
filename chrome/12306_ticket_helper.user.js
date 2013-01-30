@@ -12,7 +12,7 @@
 // @require			http://lib.sinaapp.com/js/jquery/1.8.3/jquery.min.js
 // @icon			http://www.12306.cn/mormhweb/images/favicon.ico
 // @run-at			document-idle
-// @version 		4.5.5
+// @version 		4.5.6
 // @updateURL		http://static.liebao.cn/_softdownload/12306_ticket_helper.user.js
 // @supportURL		http://www.fishlee.net/soft/44/
 // @homepage		http://www.fishlee.net/soft/44/
@@ -22,7 +22,7 @@
 
 //=======START=======
 
-var version = "4.5.5";
+var version = "4.5.6";
 var updates = [
 	"<span style='color:purple; font-weight:bold; '>亲，这可能是节前助手最后一次更新了。在这一年不短却也不长的一年中，感谢你的陪伴。如果助手帮你买到票了，作者也会很高兴。如果没有帮到你，作者也会很遗憾，但你不是一个人没有买到票，请不要难过气馁。作者无法变出更多的票出来，这成为永恒的遗憾。</span>",
 	"<span style='color:red; font-weight: bold;'>亲爱的们，春节快乐，囧途顺利，会被逼婚的同学记得阅读防逼婚指南喔 :-)</span>"
@@ -311,7 +311,7 @@ var utility = {
 	regInfo: null,
 	disabledFeaturesCache: null,
 	isWebKit: function () {
-		return window.webkitNotifications || true;
+		return window.webkitNotifications || false;
 	},
 	isFirefox: function () {
 		return !utility.isWebKit();
@@ -2305,17 +2305,20 @@ function initTicketQuery() {
 		if (document.getElementById("chkSmartSpeed").checked && time_server && time_server.getMinutes() >= 59) {
 			isSmartOn = true;
 			timerCountDown = 60 - time_server.getSeconds() + 2;
-		} else if (document.getElementById("chkWaitMode").checked && new Date().getHours() < parseInt(waitHour.val())) {
-			var now = new Date();
+		} else if (document.getElementById("chkWaitMode").checked && new Date().getHours() < parseInt(waitHour.val()) && time_server) {
 			var wait = new Date();
+			wait.setFullYear(time_server.getFullYear());
+			wait.setMonth(time_server.getMonth());
+			wait.setDate(time_server.getDate());
 			wait.setHours(parseInt(waitHour.val()));
 			wait.setMinutes(0);
 			wait.setSeconds(5);
 
-			timerCountDown = (wait - now) / 1000;
+			timerCountDown = (wait - time_server) / 1000;
 			isSmartOn = true;
 		} else {
 			timerCountDown = timeCount + 2 * Math.random();
+			isSmartOn = false;
 		}
 
 		var str = (Math.round(timerCountDown * 10) / 10) + "";
