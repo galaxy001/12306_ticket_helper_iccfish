@@ -1,7 +1,6 @@
-var version_12306_helper = "4.5.4";
+var version_12306_helper = "4.5.5";
 var version_updater = [
-	"自4.5版本开始，建议使用谷歌浏览器以及类似的浏览器（支持CRX扩展的浏览器）进行订票，Firefox或其它一些浏览器因运行机制有限制，部分高级功能将暂时无法使用",
-	"想知道更新了什么？打死我也不告诉你~"
+	"增加蹲点模式和结案陈词……"
 ];
 var fishlee12306_msgid=16;
 var fishlee12306_msgver="4.3.2";
