@@ -12,7 +12,7 @@
 // @require			http://lib.sinaapp.com/js/jquery/1.8.3/jquery.min.js
 // @icon			http://www.12306.cn/mormhweb/images/favicon.ico
 // @run-at			document-idle
-// @version 		4.5.9
+// @version 		4.6.0
 // @updateURL		http://static.liebao.cn/_softdownload/12306_ticket_helper.user.js
 // @supportURL		http://www.fishlee.net/soft/44/
 // @homepage		http://www.fishlee.net/soft/44/
@@ -22,7 +22,7 @@
 
 //=======START=======
 
-var version = "4.5.9";
+var version = "4.6.0";
 var updates = [
 	"<span style='color:purple; font-weight:bold; '>亲，节前助手可能会很少更新了。在这一年不短却也不长的一年中，感谢你的陪伴。如果助手帮你买到票了，作者也会很高兴。如果没有帮到你，作者也会很遗憾，但你不是一个人没有买到票，请不要难过气馁。作者无法变出更多的票出来，这成为永恒的遗憾。</span>",
 	"<span style='color:red; font-weight: bold;'>亲爱的们，春节快乐，囧途顺利，会被逼婚的同学记得阅读防逼婚指南喔 :-)</span>"
@@ -1336,7 +1336,7 @@ function initNotCompleteOrderPage() {
 				}
 
 				if (data.waitTime > 0) {
-					obj.css({ "color": "red" }).html("排队中<br />排队数【" + (data.waitCount || "未知") + "】<br />预计时间【" + utility.getSecondInfo(data.waitTime) + "】<br />不过这时间不<br />怎么靠谱 ╮(╯▽╰)╭");
+					obj.css({ "color": "red" }).html("等待开奖中<br />排队数【" + (data.waitCount || "未知") + "】<br />预计时间【" + utility.getSecondInfo(data.waitTime) + "】<br />不过这时间不<br />怎么靠谱 ╮(╯▽╰)╭");
 				} else {
 					obj.css({ "color": "red" }).html("奇怪的状态码 [" + data.waitTime + "]....");
 				}
@@ -1500,7 +1500,7 @@ function initAutoCommitOrder() {
 		}
 
 		count++;
-		setCurOperationInfo(true, "第 " + count + " 次提交");
+		setCurOperationInfo(true, "第 " + count + " 次试着买彩票");
 		if (breakFlag) {
 			stop("已取消自动提交");
 			breakFlag = 0;
@@ -1546,7 +1546,7 @@ function initAutoCommitOrder() {
 		utility.get(getQueueCountUrl, queryLeftData, "json", function (data) {
 			console.log(data);
 			if (data.op_2) {
-				var errmsg = "系统说人多，不许排队，看起来没办法了……等下再去看看服务器的心情 (据说人数=" + data.count + ")";
+				var errmsg = "系统说人多，不许买彩票了，看起来没办法了……等下再去看看服务器的心情 (据说人数=" + data.count + ")";
 				setCurOperationInfo(true, errmsg);
 				stop(errmsg);
 
@@ -1601,7 +1601,7 @@ function initAutoCommitOrder() {
 					stop(errmsg);
 					reloadCode();
 				} else {
-					utility.notifyOnTop("订单提交成功, 正在等待队列完成操作，请及时注意订单状态");
+					utility.notifyOnTop("彩票已买下, 正在等待开奖，请及时注意开奖状态");
 					waitingForQueueComplete();
 				}
 			},
@@ -1629,7 +1629,7 @@ function initAutoCommitOrder() {
 	}
 
 	function waitingForQueueComplete() {
-		setCurOperationInfo(true, "订单提交成功, 正在等待队列完成操作....");
+		setCurOperationInfo(true, "彩票提交成功，请等待开奖....");
 
 		$.ajax({
 			url: queueCheckUrl,
@@ -1641,11 +1641,11 @@ function initAutoCommitOrder() {
 				console.log(json);
 
 				if (json.waitTime == -1 || json.waitTime == 0) {
-					utility.notifyOnTop("订票成功!");
+					utility.notifyOnTop("中奖咯!");
 					if (json.orderId)
 						window.location.replace("/otsweb/order/confirmPassengerAction.do?method=payOrder&orderSequence_no=" + json.orderId);
 					else window.location.replace('/otsweb/order/myOrderAction.do?method=queryMyOrderNotComplete&leftmenu=Y');
-					stop("订票成功！");
+					stop("中奖咯！");
 				} else if (json.waitTime == -3) {
 					var msg = "很抱歉, 铁道部无齿地撤销了您的订单, 赶紧重新下!";
 					utility.notify(msg);
@@ -1666,7 +1666,7 @@ function initAutoCommitOrder() {
 					utility.notifyOnTop(msg);
 					location.href = '/otsweb/order/myOrderAction.do?method=queryMyOrderNotComplete&leftmenu=Y';
 				} else {
-					var msg = "订单需要 " + utility.getSecondInfo(json.waitTime) + " 处理完成， 请等待，不过你知道的，铁道部说的一直不怎么准。（排队人数=" + (json.waitCount || "未知") + "）";
+					var msg = "彩票还要 " + utility.getSecondInfo(json.waitTime) + " 开奖， 请等待，不过你知道的，铁道部说的一直不怎么准。（排队人数=" + (json.waitCount || "未知") + "）";
 					if (json.waitTime > 1800) {
 						msg += "<span style='color:red; font-weight: bold;'>警告：排队时间大于30分钟，请不要放弃电话订票或用小号重新排队等其它方式继续订票！</span>";
 					}
@@ -2178,7 +2178,7 @@ function initTicketQuery() {
 		//extrahtml.push("<a href='javascript:;' url='" + host2 + this[0] + "' class='murl'>" + this[1] + "</a>(HTTPS)&nbsp;&nbsp;&nbsp;&nbsp;");
 	});
 
-	extrahtml.push("</td></tr><tr class='fish_sep'><td colspan='4'><input class='fish_button' type='button' value='添加自定义车票时间段' id='btnDefineTimeRange' />\
+	extrahtml.push("</td></tr><tr class='fish_sep' style='display:none;'><td colspan='4'><input class='fish_button' type='button' value='添加自定义车票时间段' id='btnDefineTimeRange' />\
 <input class='fish_button' type='button' value='清除自定义车票时间段' id='btnClearDefineTimeRange' /></td></tr>\
 <tr class='fish_sep'><td class='tfooter' colspan='4'><a href='http://www.fishlee.net/soft/44/' target='_blank'>12306订票助手 @iFish</a> | <a href='http://weibo.com/Acathur' target='_blank'>美工设计 @Acathur</a> | <a href='http://www.fishlee.net/soft/44/announcement.html' style='color:#0f7edb;' target='_blank'>免责声明</a> | <a href='" + utility.getUpdateUrl() + "' target='_blank'>下载新版</a> | <a style='font-weight:bold;color:red;' href='http://www.fishlee.net/soft/44/donate.html' target='_blank'>捐助作者</a> | 版本 v" + window.helperVersion + "，许可于 <strong>" + utility.regInfo.name + "，类型 - " + utility.regInfo.typeDesc + "</strong> 【<a href='javascript:;' class='reSignHelper'>重新注册</a>】</td></tr>\
 		</table></div></div>");
@@ -2214,10 +2214,10 @@ function initTicketQuery() {
 		obj.options[obj.options.length] = new Option(g, g);
 		obj.selectedIndex = obj.options.length - 1;
 	}
-	if (window.localStorage["customTimeRange"]) {
-		var ctrs = window.localStorage["customTimeRange"].split("|");
-		$.each(ctrs, function () { addCustomeTimeRangeToList(this); });
-	}
+	//if (window.localStorage["customTimeRange"]) {
+	//	var ctrs = window.localStorage["customTimeRange"].split("|");
+	//	$.each(ctrs, function () { addCustomeTimeRangeToList(this); });
+	//}
 	$("#btnClearDefineTimeRange").click(function () {
 		if (!confirm("确定要清除自定义的时间段吗？清除后请刷新页面。")) return;
 		window.localStorage.removeItem("customTimeRange");
@@ -2329,7 +2329,7 @@ function initTicketQuery() {
 		$("#refreshtimer").html("[" + (isSmartOn ? "等待正点," : "") + str + (str.indexOf('.') == -1 ? ".0" : "") + "秒后查询...]");
 		//没有定时器的时候，开启定时器准备刷新
 		$("#btnStopRefresh")[0].disabled = false;
-		timer = setInterval(countDownTimer, 500);
+		timer = setInterval(countDownTimer, 200);
 	}
 
 	function displayQueryInfo() {
@@ -3607,8 +3607,8 @@ function initDirectSubmitOrder() {
 		utility.get("/otsweb/order/confirmPassengerAction.do?method=getQueueCount", queryLeftData, "json", function (data) {
 			if (data.op_2) {
 				//utility.notifyOnTop("排队人数过多，系统禁止排队，稍等重试。要重新查询，请刷新页面！");
-				setTipMessage("排队人数过多 (人数=" + data.count + ")");
-				setCurOperationInfo(true, "排队人数过多");
+				setTipMessage("抽奖人数过多 (人数=" + data.count + ")");
+				setCurOperationInfo(true, "抽奖人数过多");
 				utility.delayInvoke(counter, queryQueueInfo, 500);
 			} else {
 				submitOrder();
@@ -3643,8 +3643,8 @@ function initDirectSubmitOrder() {
 
 				if (msg == "Y") {
 					setTipMessage("订单提交成功");
-					setCurOperationInfo(false, "订单提交成功，请等待排队完成。");
-					utility.notifyOnTop("订单提交成功，请等待排队完成。");
+					setCurOperationInfo(false, "彩票提交成功，请等待开奖。");
+					utility.notifyOnTop("彩票提交成功，请等待开奖。");
 
 					redirectToNotCompleteQuery();
 
