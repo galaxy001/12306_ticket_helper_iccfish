@@ -12,7 +12,7 @@
 // @require			http://lib.sinaapp.com/js/jquery/1.8.3/jquery.min.js
 // @icon			http://www.12306.cn/mormhweb/images/favicon.ico
 // @run-at			document-idle
-// @version 		4.5.8
+// @version 		4.5.9
 // @updateURL		http://static.liebao.cn/_softdownload/12306_ticket_helper.user.js
 // @supportURL		http://www.fishlee.net/soft/44/
 // @homepage		http://www.fishlee.net/soft/44/
@@ -22,7 +22,7 @@
 
 //=======START=======
 
-var version = "4.5.8";
+var version = "4.5.9";
 var updates = [
 	"<span style='color:purple; font-weight:bold; '>亲，节前助手可能会很少更新了。在这一年不短却也不长的一年中，感谢你的陪伴。如果助手帮你买到票了，作者也会很高兴。如果没有帮到你，作者也会很遗憾，但你不是一个人没有买到票，请不要难过气馁。作者无法变出更多的票出来，这成为永恒的遗憾。</span>",
 	"<span style='color:red; font-weight: bold;'>亲爱的们，春节快乐，囧途顺利，会被逼婚的同学记得阅读防逼婚指南喔 :-)</span>"
@@ -3353,7 +3353,7 @@ function initTicketQuery() {
 			if (o.url.indexOf("method=queryLeftTicket") == -1 || xhr.reponseText == "-1") return;
 
 			var age = xhr.getResponseHeader("Age");
-			var xcache = xhr.getResponseHeader("X-Cache");
+			var xcache = xhr.getResponseHeader("X-Cache") || "";
 			var date = xhr.getResponseHeader("Date") || "<未知>";
 			var dateStr = "<未知>";
 

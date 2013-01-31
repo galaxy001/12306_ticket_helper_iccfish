@@ -12,7 +12,7 @@
 // @require			http://lib.sinaapp.com/js/jquery/1.8.3/jquery.min.js
 // @icon			http://www.12306.cn/mormhweb/images/favicon.ico
 // @run-at			document-idle
-// @version 		4.5.7
+// @version 		4.5.8
 // @updateURL		http://static.liebao.cn/_softdownload/12306_ticket_helper.user.js
 // @supportURL		http://www.fishlee.net/soft/44/
 // @homepage		http://www.fishlee.net/soft/44/
@@ -22,7 +22,7 @@
 
 //=======START=======
 
-var version = "4.5.7";
+var version = "4.5.8";
 var updates = [
 	"<span style='color:purple; font-weight:bold; '>亲，节前助手可能会很少更新了。在这一年不短却也不长的一年中，感谢你的陪伴。如果助手帮你买到票了，作者也会很高兴。如果没有帮到你，作者也会很遗憾，但你不是一个人没有买到票，请不要难过气馁。作者无法变出更多的票出来，这成为永恒的遗憾。</span>",
 	"<span style='color:red; font-weight: bold;'>亲爱的们，春节快乐，囧途顺利，会被逼婚的同学记得阅读防逼婚指南喔 :-)</span>"
@@ -31,7 +31,7 @@ var updates = [
 var faqUrl = "http://www.fishlee.net/soft/44/faq.html";
 //标记
 var utility_emabed = false;
-var compVersion = "5.68";
+var compVersion = "5.69";
 
 
 //#region -----------------UI界面--------------------------
@@ -2051,7 +2051,6 @@ function initTicketQuery() {
 	var timer = null;
 	var isTicketAvailable = false;
 	var audio = null; //通知声音
-	var timerCountDown = 0;
 	var timeCount = 0;
 	var autoBook = false;
 	//初始化表单
@@ -2274,6 +2273,8 @@ function initTicketQuery() {
 
 	//定时查询
 	var isSmartOn = false;
+	var waitToTime = null;
+
 	function resetTimer() {
 		queryCount = 0;
 		$("#btnStopRefresh")[0].disabled = true;
@@ -2285,7 +2286,7 @@ function initTicketQuery() {
 	}
 
 	function countDownTimer() {
-		timerCountDown -= 0.2;
+		var timerCountDown = (waitToTime - new Date()) / 1000;
 		var str = (Math.round(timerCountDown * 10) / 10) + "";
 		$("#refreshtimer").html("[" + (isSmartOn ? "等待正点," : "") + str + (str.indexOf('.') == -1 ? ".0" : "") + "秒后查询...]");
 
@@ -2301,6 +2302,7 @@ function initTicketQuery() {
 		if (timer) return;
 
 		var d = new Date().getMinutes();
+		var timerCountDown = 0;
 		//chkWaitMode
 		if (document.getElementById("chkSmartSpeed").checked && time_server && time_server.getMinutes() >= 59) {
 			isSmartOn = true;
@@ -2320,12 +2322,14 @@ function initTicketQuery() {
 			timerCountDown = timeCount + 2 * Math.random();
 			isSmartOn = false;
 		}
+		waitToTime = new Date();
+		waitToTime.setSeconds(waitToTime.getSeconds() + timerCountDown);
 
 		var str = (Math.round(timerCountDown * 10) / 10) + "";
 		$("#refreshtimer").html("[" + (isSmartOn ? "等待正点," : "") + str + (str.indexOf('.') == -1 ? ".0" : "") + "秒后查询...]");
 		//没有定时器的时候，开启定时器准备刷新
 		$("#btnStopRefresh")[0].disabled = false;
-		timer = setInterval(countDownTimer, 200);
+		timer = setInterval(countDownTimer, 500);
 	}
 
 	function displayQueryInfo() {
@@ -2567,7 +2571,6 @@ function initTicketQuery() {
 	$("body").ajaxComplete(function (e, r, s) {
 		if (!$("#chkAutoRequery")[0].checked) return;
 		if (s.url.indexOf("/otsweb/order/querySingleAction.do") != -1 && r.responseText == "-1") {
-			$("#cctypex").remove();
 			invalidQueryButton();
 			delayButton();
 			startTimer();
@@ -3346,9 +3349,6 @@ function initTicketQuery() {
 		var lastTime = null;
 		var title = $(".cx_titler");
 
-		//测试
-		$("body").append("<input type='checkbox' style='display:none' id='cctypex' name='trainClassArr' value='XP' checked='checked' />");
-
 		$(document).ajaxComplete(function (e, xhr, o) {
 			if (o.url.indexOf("method=queryLeftTicket") == -1 || xhr.reponseText == "-1") return;
 
@@ -3364,13 +3364,12 @@ function initTicketQuery() {
 
 			var isCache = (age == 1 || date == lastTime || xcache.indexOf("HIT") != -1);
 			var html = "数据时间：" + dateStr;
-			title.html((isCache ? "<strong>我勒个去</strong>！这可能是TDB在拿缓存的数据忽悠你！" : "") + html);
+			title.html((isCache ? "这可能是TDB在拿旧数据忽悠你！整点抢票请开启『等待整点』模式！" : "") + html);
 			if (isCache) {
 				title.addClass("warning");
 			} else {
 				title.removeClass("warning");
 			}
-			$("#cctypex").val(Math.round(Math.random() * 10000) * (new Date().getMinutes < 2 ? (new Date().getMinutes() + 1) * 10 : 1));
 		});
 	})();
 
