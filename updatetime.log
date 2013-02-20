@@ -64,3 +64,53 @@ Saving to: `12306_ticket_helper.crx'
 
 2013-02-20 14:45:06 (81.2 KB/s) - `12306_ticket_helper.crx' saved [79075/79075]
 
+                         16%  195 =2m28s
+
+2013-02-20 14:47:30 (195 B/s) - Read error at byte 28871/176647 (Connection timed out). Retrying.
+
+--2013-02-20 14:47:31--  (try: 2)  http://static.liebao.cn/_softdownload/12306_ticket_helper.user.js
+Connecting to static.liebao.cn|203.80.222.236|:80... connected.
+HTTP request sent, awaiting response... 
+  HTTP/1.1 206 Partial Content
+  Date: Wed, 20 Feb 2013 06:22:52 GMT
+  Server: nginx/1.0.5
+  Content-Type: application/x-javascript
+  Last-Modified: Tue, 19 Feb 2013 13:54:00 GMT
+  Accept-Ranges: bytes
+  Content-Range: bytes 28871-176646/176647
+  Content-Length: 147776
+  Age: 1
+  X-Via: 1.1 gdzj24:80 (Cdn Cache Server V2.0), 1.1 xgkp236:9090 (Cdn Cache Server V2.0)
+  Connection: keep-alive
+Length: 176647 (173K), 147776 (144K) remaining [application/x-javascript]
+Saving to: `12306_ticket_helper.user.js'
+
+     0K ,,,,,,,,,, ,,,,,,,,,, ,,,,,,,,.. .......... .......... 28% 65.6K 4s
+    50K .......... .......... .......... .......... .......... 57%  131K 1s
+   100K .......... .......... .......... .......... .......... 86%  261K 0s
+   150K .......... .......... ..                              100% 11.4M=1.3s
+
+2013-02-20 14:47:33 (108 KB/s) - `12306_ticket_helper.user.js' saved [176647/176647]
+
+--2013-02-20 14:47:33--  http://static.liebao.cn/_softdownload/12306_ticket_helper.crx
+Resolving static.liebao.cn... 203.80.222.236
+Connecting to static.liebao.cn|203.80.222.236|:80... connected.
+HTTP request sent, awaiting response... 
+  HTTP/1.1 200 OK
+  Date: Wed, 20 Feb 2013 06:24:35 GMT
+  Server: nginx/1.0.5
+  Content-Type: application/octet-stream
+  Content-Length: 79075
+  Last-Modified: Tue, 19 Feb 2013 13:54:00 GMT
+  Accept-Ranges: bytes
+  Age: 1
+  X-Via: 1.1 xgkp236:9090 (Cdn Cache Server V2.0)
+  Connection: keep-alive
+Length: 79075 (77K) [application/octet-stream]
+Saving to: `12306_ticket_helper.crx'
+
+     0K .......... .......... .......... .......... .......... 64% 65.6K 0s
+    50K .......... .......... .......                         100%  143K=1.0s
+
+2013-02-20 14:47:35 (81.1 KB/s) - `12306_ticket_helper.crx' saved [79075/79075]
+
