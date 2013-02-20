@@ -348,1451 +348,168 @@ var utility = {
 		utility.setPref("disabled", utility.disabledFeaturesCache.join('|'));
 	},
 	clearFeatrueDisabled: function () {
-		/// <summary>清空禁止标记位</summary>
-		utility.setPref("disabled", "");
-		utility.disabledFeaturesCache = [];
-	},
-	getScriptVersion: function () {
-		/// <summary>获得12306的网站脚本版本</summary>
-		return /=([\d\.]+)$/i.exec($("script[src*=/otsweb/]:eq(0)").attr("src") + "")[1];
-	},
-	checkCompatible: function () {
-		var sv = utility.getScriptVersion();
-		if (sv != window.compVersion) {
-			if (utility.getPref("compWarning") != sv) {
-				utility.setPref("compWarning", sv);
-				alert("警告：检测到12306已改版，助手功能可能会部分失效。请在正式购票前做好测试，以免耽误您的购票。\n出现任何异常时，请暂时手动或改用IE购票，并留意助手升级。");
-			}
-			$(".versionWarning").show();
+		/// <summary>清穢不到票啊！！这样老衲会内疚的啊！！！！</p>\
+</td></tr>";
+		$("#helpertooltable tr:first").addClass("fish_sep").before(html);
 
-			var istop = false;
+		//刷新联系人列表
+		$("#btnRefreshPas").click(function () {
+			window.localStorage.removeItem("pas");
+
+			//self.location = "/otsweb/passengerAction.do?method=initUsualPassenger12306";
+			alert("请进入我的12306->常用联系人并稍等片刻以更新缓存 -.-");
+		}).hide();
+
+		//优选逻辑
+		$("#autoorder_method").val(window.localStorage["autoorder_method"] || "0").change(function () { window.localStorage.setItem("autoorder_method", $(this).val()); });
+		$("#autoorder_autocancel").attr("checked", (window.localStorage["autoorder_autocancel"] || "1") == "1").change(function () { window.localStorage.setItem("autoorder_autocancel", this.checked ? "1" : "0"); });
+
+		//自动预定列表
+		list_autoorder = utility.selectionArea.call($("#autobookListTd"), { syncToStorageKey: "list_autoBookList", onAdd: onAutoOrderRowStyle, onRemove: onAutoOrderRowStyle, onClear: onAutoOrderRowStyle });
+		list_blacklist = utility.selectionArea.call($("#blackListTd"), { syncToStorageKey: "list_blackList" });
+		list_whitelist = utility.selectionArea.call($("#whiteListTd"), { syncToStorageKey: "list_whiteList" });
+
+		var autoBookHeader = $("#swAutoBook").closest("tr");
+		function onAutoOrderRowStyle() {
+			if (!document.getElementById("autoorder").checked) return;
+
+			autoBookHeader.removeClass("steps stepsok");
+			autoBookHeader.addClass(list_autoorder.datalist.length ? "stepsok" : "steps");
+		}
+
+		function appendTrainCodeToList(target) {
+			var code = prompt("请输入您要加入列表的车次。车次可以使用正则表达式（亲，不知道的话请直接填写车次编号喔），比如 【.*】(不包括【】号) 可以代表所有车次，【K.*】可以代表所有K字头的车次，【D.*】可以代表所有D字头车次等等");
+			if (!code) return;
+
+			//修正部分符号
+			code = code.replace(/(，|,|\/|\\|、|-)/g, "|");
 			try {
-				istop = self == parent;
+				new RegExp(code);
 			} catch (e) {
-				istop = true;
-			}
-			if (!istop) {
-				$("body").prepend("<div style='opacity:0.9;z-index:999; position:fixed; left:-350px; top:0px; width: 700px;margin-left:50%; color:#8A0023;border:1px solid #8A0023;line-height: 20px;background: -webkit-linear-gradient(#FFE4EA, #FFC3D1);background: -moz-linear-gradient(#FFE4EA, #FFC3D1);padding: 5px;'>亲，<strong>老衲用旁光发现网站改版鸟</strong>！由于还木有测试当前助手的兼容性，请务必在正式购票前做好测试哈！必要时请先用IE顶着喔。</div>");
-			}
-		} else {
-			$(".versionWarning").hide();
-		}
-	},
-	trim: function (data) {
-		if (typeof ($) != 'undefined') return $.trim(data);
-
-		return data.replace(/(^\s+|\s+$)/g, "");
-	},
-	getTopWindow: function () {
-		try {
-			if (parent == self) return self;
-			else return parent.window.utility.getTopWindow();
-		} catch (e) {
-			//跨域的话，也是顶层
-			return self;
-		}
-	},
-	init: function () {
-		$.extend({
-			any: function (array, callback) {
-				var flag = false;
-				$.each(array, function (i, v) {
-					flag = callback.call(this, i, v);
-					if (flag) return false;
-				});
-				return flag;
-			},
-			first: function (array, callback) {
-				var result = null;
-				$.each(array, function (i, v) {
-					result = callback.call(this, i, v);
-					if (result) return false;
-				});
-				return result;
-			}
-		});
-
-
-		if (utility.isWebKit) {
-			$(document).ajaxSend(function (e, xhr, obj) { if (obj.refer) xhr.setRequestHeader("TRefer", obj.refer); });
-		}
-	},
-	runningQueue: null,
-	appendLog: function (settings) {
-		/// <summary>记录日志</summary>
-		if (!utility.runningQueue) utility.runningQueue = [];
-		var log = { url: settings.url, data: settings.data, response: null, success: null };
-		if (log.url.indexOf("Passenger") != -1) return;	//不记录对乘客的请求
-
-		utility.runningQueue.push(log);
-		settings.log = log;
-	},
-	showLog: function () {
-		if (!utility.runningQueue) {
-			alert("当前页面尚未产生日志记录。");
-			return;
-		}
-
-		var log = [];
-		$.each(utility.runningQueue, function () {
-			log.push("成功：" + (this.success ? "是" : "否") + "\r\n地址：" + this.url + "\r\n提交数据：" + utility.formatData(this.data) + "\r\n返回数据：" + utility.formatData(this.response));
-		});
-		$("#runningLog").val(log.join("\r\n----------------------------------\r\n"));
-
-		utility.showOptionDialog("tabLog");
-	},
-	//获取登录到IE的代码 Add By XPHelper
-	showLoginIE: function () {
-		var strCookie = document.cookie;
-		var arrCookie = strCookie.split("; ");
-		var IECode = "javascript:";
-		var cookie = [];
-		for (var i = 0; i < arrCookie.length; i++) {
-			var arr = arrCookie[i].split("=");
-			if (arr.length < 2 || arr[0].indexOf("helper.") != -1) continue;
-			cookie.push("document.cookie=\"" + arr[0] + "=" + arr[1] + "\";");
-		}
-		IECode += cookie.join("");
-		IECode += "self.location.reload();";
-		$("#LoginIECode").val(IECode);
-	},
-	formatData: function (data) {
-		if (!data) return "(null)";
-		if (typeof (data) == "string") return data;
-		var html = [];
-		for (var i in data) {
-			html.push('"' + i + '":\"' + (this[i] + "").replace(/(\r|\n|")/g, function (a) { "\\" + a; }) + '\"');
-		}
-		return "{" + html.join(",") + "}";
-	},
-	notify: function (msg, timeout) {
-		console.log("信息提示: " + msg);
-		if (window.webkitNotifications) {
-			if (window.webkitNotifications.checkPermission() == 0) {
-				utility.closeNotify();
-
-				if (utility.notifyObj == null)
-					utility.notifyObj = webkitNotifications.createNotification(utility.icon, '订票', msg);
-				utility.notifyObj.show();
-				if (!timeout || timeout != 0) utility.timerObj = setTimeout(utility.closeNotify, timeout || 5000);
-			} else {
-				alert("【啊喂！！桌面通知还木有开启！请戳界面中的『点击启用桌面通知』按钮来开启！】\n\n" + msg);
-			}
-		} else {
-			if (typeof (GM_notification) != 'undefined') {
-				GM_notification(msg);
-			} else {
-				console.log("主页面中脚本信息, 无法提示, 写入通知区域.");
-				utility.notifyOnTop(msg);
-			}
-		}
-	},
-	notifyOnTop: function (msg) {
-		window.localStorage.setItem("notify", msg);
-	},
-	closeNotify: function () {
-		if (!utility.notifyObj) return;
-
-		utility.notifyObj.cancel();
-		if (utility.timerObj) {
-			clearTimeout(utility.timerObj);
-		}
-		utility.timerObj = null;
-		utility.notifyObj = null;
-	},
-	setPref: function (name, value) {
-		window.localStorage.setItem(name, value);
-	},
-	getPref: function (name) {
-		return window.localStorage.getItem(name);
-	},
-	unsafeCallback: function (callback) {
-		if (typeof (unsafeInvoke) == "undefined") callback();
-		else unsafeInvoke(callback);
-	},
-	getTimeInfo: function () {
-		var d = new Date();
-		return d.getHours() + ":" + (d.getMinutes() < 10 ? "0" : "") + d.getMinutes() + ":" + (d.getSeconds() < 10 ? "0" : "") + d.getSeconds();
-	},
-	savePrefs: function (obj, prefix) {
-		var objs = obj.find("input");
-		objs.change(function () {
-			var type = this.getAttribute("type");
-			if (type == "text") utility.setPref(prefix + "_" + this.getAttribute("id"), $(this).val());
-			else if (type == "checkbox") utility.setPref(prefix + "_" + this.getAttribute("id"), this.checked ? 1 : 0);
-		})
-	},
-	reloadPrefs: function (obj, prefix) {
-		var objs = obj.find("input");
-		prefix = prefix || "";
-		objs.each(function () {
-			var e = $(this);
-			var type = e.attr("type");
-			var id = e.attr("id");
-			var value = utility.getPref(prefix + "_" + id);
-			if (typeof (value) == "undefined" || value == null) return;
-
-			if (type == "text") e.val(value);
-			else if (type == "checkbox") this.checked = value == "1";
-			e.change();
-		});
-		utility.savePrefs(obj, prefix);
-	},
-	getErrorMsg: function (msg) {
-		/// <summary>获得给定信息中的错误信息</summary>
-		var m = msg.match(/var\s+message\s*=\s*"([^"]*)/);
-		return m && m[1] ? m[1] : "&lt;未知信息&gt;";
-	},
-	delayInvoke: function (target, callback, timeout) {
-		target = target || "#countEle";
-		var e = typeof (target) == "string" ? $(target) : target;
-		if (timeout <= 0) {
-			e.html("正在执行").removeClass("fish_clock").addClass("fish_running");
-			callback();
-		} else {
-			var str = (Math.floor(timeout / 100) / 10) + '';
-			if (str.indexOf(".") == -1) str += ".0";
-			e.html(str + " 秒后再来!...").removeClass("fish_running").addClass("fish_clock");
-			setTimeout(function () {
-				utility.delayInvoke(target, callback, timeout - 500);
-			}, 500);
-		}
-	},
-	saveList: function (name) {
-		/// <summary>将指定列表的值保存到配置中</summary>
-		var dom = document.getElementById(name);
-		window.localStorage["list_" + name] = utility.getOptionArray(dom).join("\t");
-	},
-	loadList: function (name) {
-		/// <summary>将指定的列表的值从配置中加载</summary>
-		var dom = document.getElementById(name);
-		var data = window.localStorage["list_" + name];
-		if (!data) return;
-
-		if (data.indexOf("\t") != -1)
-			data = data.split('\t');
-		else data = data.split('|');
-		$.each(data, function () {
-			dom.options[dom.options.length] = new Option(this, this);
-		});
-	},
-	addOption: function (dom, text, value) {
-		/// <summary>在指定的列表中加入新的选项</summary>
-		dom.options[dom.options.length] = new Option(text, value);
-	},
-	getOptionArray: function (dom) {
-		/// <summary>获得选项的数组格式</summary>
-		return $.map(dom.options, function (o) { return o.value; });
-	},
-	inOptionList: function (dom, value) {
-		/// <summary>判断指定的值是否在列表中</summary>
-		for (var i = 0; i < dom.options.length; i++) {
-			if (dom.options[i].value == value) return true;
-		}
-		return false;
-	},
-	getAudioUrl: function () {
-		/// <summary>获得音乐地址</summary>
-		return window.localStorage["audioUrl"] || (navigator.userAgent.indexOf("Firefox") != -1 ? "http://static.fishlee.net/resources/audio/song.ogg" : "http://static.fishlee.net/resources/audio/song.ogg");
-	},
-	getFailAudioUrl: function () {
-		return (utility.isWebKit() ? "http://static.fishlee.net/resources/audio/" : "http://static.fishlee.net/resources/audio/") + "music3.ogg";
-	},
-	playFailAudio: function () {
-		if (!window.Audio) return;
-		new Audio(utility.getFailAudioUrl()).play()
-	},
-	resetAudioUrl: function () {
-		/// <summary>恢复音乐地址为默认</summary>
-		window.localStorage.removeItem("audioUrl");
-	},
-	parseDate: function (s) { /(\d{4})[-/](\d{1,2})[-/](\d{1,2})/.exec(s); return new Date(RegExp.$1, RegExp.$2 - 1, RegExp.$3); },
-	getDate: function (s) {
-		/// <summary>获得指定日期的天单位</summary>
-		return new Date(s.getFullYear(), s.getMonth(), s.getDate());
-	},
-	formatDate: function (d) {
-		/// <summary>格式化日期</summary>
-		var y = d.getFullYear();
-
-		return y + "-" + utility.formatDateShort(d);
-	},
-	formatDateShort: function (d) {
-		/// <summary>格式化日期</summary>
-		var mm = d.getMonth() + 1;
-		var d = d.getDate();
-
-		return (mm > 9 ? mm : "0" + mm) + "-" + (d > 9 ? d : "0" + d);
-	},
-	formatTime: function (d) {
-		function padTo2Digit(digit) {
-			return digit < 10 ? '0' + digit : digit;
-		}
-		return utility.formatDate(d) + " " + padTo2Digit(d.getHours()) + ":" + padTo2Digit(d.getMinutes()) + ":" + padTo2Digit(d.getSeconds());
-	},
-	addTimeSpan: function (date, y, mm, d, h, m, s) {
-		/// <summary>对指定的日期进行偏移</summary>
-		return new Date(date.getFullYear() + y, date.getMonth() + mm, date.getDate() + d, date.getHours() + h, date.getMinutes() + m, date.getSeconds() + s);
-	},
-	serializeForm: function (form) {
-		/// <summary>序列化表单为对象</summary>
-		var v = {};
-		var o = form.serializeArray();
-		for (var i in o) {
-			if (typeof (v[o[i].name]) == 'undefined') v[o[i].name] = o[i].value;
-			else v[o[i].name] += "," + o[i].value;
-		}
-		return v;
-	},
-	getSecondInfo: function (second) {
-		var show_time = "";
-		var hour = parseInt(second / 3600);  //时
-		if (hour > 0) {
-			show_time = hour + "小时";
-			second = second % 3600;
-		}
-		var minute = parseInt(second / 60);  //分
-		if (minute >= 1) {
-			show_time = show_time + minute + "分";
-			second = second % 60;
-		} else if (hour >= 1 && second > 0) {
-			show_time = show_time + "0分";
-		}
-		if (second > 0) {
-			show_time = show_time + second + "秒";
-		}
-
-		return show_time;
-	},
-	post: function (url, data, dataType, succCallback, errorCallback, featureFlag, refer) {
-		var onError = function (xhr) {
-			var code = utility.checkResponse(xhr);
-			if (code < 1) {
-				alert("警告：" + (code == 0 ? "操作失败" : "系统已强制退出登录") + "，可能是系统已升级。" +
-					(featureFlag ? "\n为了保证您的安全，功能【" + featureFlag + "】已被自动禁用，请重新登录。\n在助手升级后，功能将会被自动重新开启。\n\n请重新登录。" : ""));
-				utility.disableFeature(featureFlag);
-
-				if (code == -1) {
-					//被强退
-					self.location = "/otsweb/loginAction.do?method=init";
-				}
-			} else {
-				if (errorCallback) errorCallback.apply(this, arguments);
-			}
-		}
-		$.ajax({
-			url: url,
-			data: data,
-			timeout: 10000,
-			type: "POST",
-			success: function (data, state, xhr) {
-				if (utility.checkResponse(xhr) < 1) onError(xhr);
-				else {
-					if (succCallback) succCallback.apply(this, arguments);
-				}
-			},
-			error: onError,
-			dataType: dataType,
-			refer: utility.getFullUrl(refer)
-		});
-	},
-	checkResponse: function (xhr) {
-		var text = xhr.responseText;
-		if (!text || text.indexOf("<title>登录</title>") != -1) return -1;
-		if (text == "-1") return 0;
-		return 1;
-	},
-	get: function (url, data, dataType, succCallback, errorCallback, featureFlag, refer) {
-		var onError = function (xhr) {
-			var code = utility.checkResponse(xhr);
-			if (code < 1) {
-				alert("警告：" + (code == 0 ? "操作失败" : "系统已强制退出登录") + "，可能是系统已升级。" +
-					(featureFlag ? "\n为了保证您的安全，功能【" + featureFlag + "】已被自动禁用，请重新登录。\n在助手升级后，功能将会被自动重新开启。\n\n请重新登录。" : ""));
-				utility.disableFeature(featureFlag);
-
-				if (code == -1) {
-					//被强退
-					self.location = "/otsweb/loginAction.do?method=init";
-				}
-			} else {
-				if (errorCallback) errorCallback.apply(this, arguments);
-			}
-		}
-		$.ajax({
-			url: url,
-			data: data,
-			timeout: 10000,
-			type: "GET",
-			success: function (data, state, xhr) {
-				if (utility.checkResponse(xhr) < 1) onError(xhr);
-				else {
-					if (succCallback) succCallback.apply(this, arguments);
-				}
-			},
-			error: onError,
-			dataType: dataType,
-			refer: utility.getFullUrl(refer)
-		});
-	},
-	showDialog: function (object, optx) {
-		/// <summary>显示对话框。其中带有 close_button 样式的控件会自动作为关闭按钮</summary>
-		return (function (opt) {
-			var dataKey = "fs_dlg_opt";
-			if (this.data(dataKey)) {
-				//this.data(dataKey).closeDialog();
+				alert("嗯……看起来同学您输入的不是正确的正则表达式哦。");
 				return;
 			}
 
-			opt = $.extend({ bindControl: null, removeDialog: this.attr("autoCreate") == "1", onClose: null, animationMove: 20, speed: "fast", fx: "linear", show: "fadeInDown", hide: "fadeOutUp", onShow: null, timeOut: 0 }, opt);
-			this.data("fs_dlg_opt", opt);
-			var top = "0px";
-			var left = "50%";
-
-			this.css({
-				"position": opt.parent ? "absolute" : "fixed",
-				"left": left,
-				"top": top,
-				"margin-left": "-" + (this.width() / 2) + "px",
-				"margin-top": "0px",
-				"z-index": "9999"
-			});
-			var obj = this;
-			this.changeLoadingIcon = function (icon) {
-				/// <summary>更改加载对话框的图标</summary>
-				obj.removeClass().addClass("loadingDialog loadicon_" + (icon || "tip"));
-				return obj;
-			};
-			this.autoCloseDialog = function (timeout) {
-				/// <summary>设置当前对话框在指定时间后自动关闭</summary>
-				setTimeout(function () { obj.closeDialog(); }, timeout || 2500);
-				return obj;
-			};
-			this.setLoadingMessage = function (msgHtml) {
-				obj.find("div").html(msgHtml);
-				return obj;
-			};
-			this.closeDialog = function () {
-				/// <summary>关闭对话框</summary>
-				obj.removeData(dataKey);
-				obj.animate({ "marginTop": "+=" + opt.animationMove + "px", "opacity": "hide" }, opt.speed, opt.fx, function () {
-					if (opt.bindControl) opt.bindControl.enable();
-					if (opt.onClose) opt.onClose.call(obj);
-					if (opt.removeDialog) obj.remove();
-				})
-
-				return obj;
-			};
-			$('.close_button', this).unbind("click").click(obj.closeDialog);
-			//auto close
-			if (opt.timeOut > 0) {
-				var handler = opt.onShow;
-				opt.onShow = function () {
-					setTimeout(function () { $(obj).closeDialog(); }, opt.timeOut);
-					if (handler != null) handler.call(this);
-				};
-			}
-			//show it
-			if (opt.bindControl) opt.bindControl.disable();
-			this.animate({ "marginTop": "+=" + opt.animationMove + "px", "opacity": "show" }, opt.speed, opt.fx, function () { opt.onShow && opt.onShow.call(obj); })
-			this.data(dataKey, this);
-
-			return this;
-		}).call(object, optx);
-	},
-	fishTab: function (obj, opt) {
-		return (function (opt) {
-			var self = this;
-			opt = $.extend({ switchOnHover: false, switchOnClick: true }, opt);
-			this.addClass("fishTab");
-
-
-			this.showTab = function (tabid) {
-				self.find(".current").removeClass("current");
-				self.find("ul.tabNav li[tab=" + tabid + "], div." + tabid).addClass("current");
-			};
-			self.find(".tabNav li").hover(function () {
-				if (!opt.switchOnHover) return;
-				self.showTab($(this).attr("tab"));
-			}).click(function () {
-				if (!opt.switchOnClick) return;
-				self.showTab($(this).attr("tab"));
-			});
-			this.showTab(self.find(".tabNav").attr("default") || self.find(".tabNav li:eq(0)").attr("tab"));
-
-			return this;
-		}).call(obj, opt);
-	},
-	getLoginRetryTime: function () {
-		return parseInt(window.localStorage.getItem("login.retryLimit")) || 2000;
-	},
-	showOptionDialog: function (tab) {
-		if (tab) utility.configTab.showTab(tab);
-		utility.showDialog($("#fishOption"));
-	},
-	addCookie: function (name, value, expDays) {
-		var cook = name + "=" + value + "; path=/; domain=.12306.cn";
-		if (expDays > 0) {
-			cook += "; expires=" + new Date(new Date().getTime() + expDays * 3600 * 1000 * 24).toGMTString();
-		}
-		document.cookie = cook;
-	},
-	getCookie: function (name) {
-		var cook = document.cookie;
-		var arr = cook.split("; ");
-		for (var i = 0; i < arr.length; i++) {
-			var arg = arr[i].split('=');
-			if (arg[0] == name) return arg[1];
-		}
-	},
-	setSnInfo: function (name, sn) {
-		utility.setPref("helper.regUser", name);
-		utility.setPref("helper.regSn", sn);
-		utility.addCookie("helper.regUser", name, 999);
-		utility.addCookie("helper.regSn", sn, 999);
-	},
-	verifySn: function (skipTimeVerify, name, sn) {
-		name = name || utility.getPref("helper.regUser") || utility.getCookie("helper.regUser");
-		sn = sn || utility.getPref("helper.regSn") || utility.getCookie("helper.regSn");
-		if (!name && sn) return utility.verifySn2(skipTimeVerify, sn);
-		if (!name || !sn) return { result: 0, msg: "未注册", name: "基本用户", typeDesc: "基本版", type: "DEMO" };
-
-		utility.setSnInfo(name, sn);
-
-		var args = sn.split(',');
-		if (!skipTimeVerify) {
-			if ((new Date() - args[0]) / 60000 > 5) {
-				return { result: -1, msg: "序列号注册已失效" };
-			}
-		}
-		var dec = [];
-		var encKey = args[0] + args[1];
-		var j = 0;
-		for (var i = 0; i < args[2].length; i += 4) {
-			dec.push(String.fromCharCode(parseInt(args[2].substr(i, 4), 16) ^ encKey.charCodeAt(j)));
-			j++;
-			if (j >= encKey.length) j = 0;
-		}
-		var data = dec.join("");
-		data = { result: null, type: data.substring(0, 4), name: data.substring(4) };
-		data.result = data.name == name ? 0 : -3;
-		data.msg = data.result == 0 ? "成功验证" : "注册无效"
-		data.typeDesc = data.type == "NRML" ? "正式版" : (data.type == "GROP" ? "内部版, <span style='color:blue;'>感谢您参与我们之中</span>!" : "<span style='color:red;'>捐助版, 非常感谢您的支持</span>!");
-
-		return data;
-	},
-	verifySn2: function (skipTimeVerify, data) {
-		data = utility.trim(data);
-		try {
-			var nameLen = parseInt(data.substr(0, 2), 16);
-			var name = data.substr(2, nameLen);
-			data = data.substring(2 + nameLen);
-
-			var arr = [];
-			for (var i = 0; i < data.length; i++) {
-				var c = data.charCodeAt(i);
-				if (c >= 97) arr.push(String.fromCharCode(c - 49));
-				else arr.push(data.charAt(i));
-			}
-			data = arr.join("");
-			var ticket = parseInt(data.substr(0, 14), 16);
-			var key = parseInt(data.substr(14, 1), 16);
-			var encKey = ticket.toString(16).toUpperCase() + key.toString().toUpperCase();
-			data = data.substring(15);
-			var dec = [];
-			var j = 0;
-			for (var i = 0; i < data.length; i += 4) {
-				dec.push(String.fromCharCode(parseInt(data.substr(i, 4), 16) ^ encKey.charCodeAt(j)));
-				j++;
-				if (j >= encKey.length) j = 0;
-			}
-			dec = dec.join("").split('|');
-			var regVersion = dec[0].substr(0, 4);
-			var regName = dec[0].substring(4);
-			var bindAcc = dec.slice(1, dec.length);
-
-			if (!bindAcc && !skipTimeVerify && (new Date() - ticket) / 60000 > 5) {
-				return { result: -1, msg: "注册码已失效， 请重新申请" };
-			}
-			if (regName != name) {
-				return { result: -3, msg: "注册失败，用户名不匹配" };
-			}
-			var data = { name: name, type: regVersion, bindAcc: bindAcc, ticket: ticket, result: 0, msg: "成功注册" };
-			switch (data.type) {
-				case "NRML": data.typeDesc = "正式版"; break;
-				case "GROP": data.typeDesc = "内部版, <span style='color:blue;'>感谢您参与我们之中</span>!"; break;
-				case "DONT": data.typeDesc = "<span style='color:red;'>捐助版, 非常感谢您的支持</span>!"; break;
-				case "PART": data.typeDesc = "合作版，欢迎您的使用";
-			}
-			data.regTime = new Date(ticket);
-			data.regVersion = 2;
-
-			return data;
-		} catch (e) {
-			return { result: -4, msg: "数据错误" };
-		}
-	},
-	allPassengers: null,
-	getAllPassengers: function (callback, ignoreLocalCache) {
-		if (utility.allPassengers) {
-			callback(utility.allPassengers);
-			return;
+			target.add(code);
 		}
 
-		var tw = utility.getTopWindow();
-		if (tw != self) return tw.utility.getAllPassengers(callback, ignoreLocalCache);
-		if (utility.isfeatureDisabled("pasload"))
-			return [];
-
-		//开始加载所有乘客
-		utility.allPassengers = [];
-		var pageIndex = 0;
-
-		function loadPage() {
-			utility.post("/otsweb/passengerAction.do?method=getPagePassengerAll", { pageSize: 10, pageIndex: pageIndex }, "json", function (json) {
-				$.each(json.rows, function () { utility.allPassengers.push(this); });
-
-				if (utility.allPassengers.length >= json.recordCount) {
-					callback(utility.allPassengers);
-				} else {
-					pageIndex++;
-					setTimeout(loadPage, 1000);
-				}
-			}, function () {
-				setTimeout(loadPage, 3000);
-			}, "pasload", "/otsweb/passengerAction.do?method=initUsualPassenger12306");
+		function emptyList(target) {
+			target.emptyList();
 		}
 
-		loadPage();
-	},
-	getFullUrl: function (path) {
-		if (typeof (path) == 'undefined' || !path) return "";
-		return location.protocol + "//" + location.host + path;
-	},
-	regCache: {},
-	getRegCache: function (value) {
-		return utility.regCache[value] || (utility.regCache[value] = new RegExp("^(" + value + ")$", "i"));
-	},
-	preCompileReg: function (optionList) {
-		var data = $.map(optionList, function (e) {
-			return e.value;
-		});
-		return new RegExp("^(" + data.join("|") + ")$", "i");
-	},
-	enableLog: function () {
-		$("body").append('<button class="fish_button" style="width:100px;position:fixed;left:265px;top:8px;height:30px;" onclick="utility.showLog();">显示运行日志</button>');
-		$(document).ajaxSuccess(function (a, b, c) {
-			if (!c.log) return;
-			c.log.response = b.responseText;
-			c.log.success = true;
-		}).ajaxSend(function (a, b, c) {
-			utility.appendLog(c);
-		}).ajaxError(function (a, b, c) {
-			if (!c.log) return;
-			c.log.response = b.responseText;
-		});
-	},
-	//获取登录到IE的代码 Add By XPHelper
-	enableLoginIE: function () {
-		$("body").append('<button class="fish_button configLink" style="width:150px;position:fixed;right:14px;top:20px;height:35px;"tab="tabLoginIE">获取登录到IE的代码</button>');
-	},
-	analyzeForm: function (html) {
-		var data = {};
 
-		//action
-		var m = /<form.*?action="([^"]+)"/.exec(html);
-		data.action = m ? RegExp.$1 : "";
+		//绑定添加清空事件
+		$("#btnAddAutoBook").click(function () { appendTrainCodeToList(list_autoorder); });
+		$("#btnAddWhite").click(function () { appendTrainCodeToList(list_whitelist); });
+		$("#btnAddBlack").click(function () { appendTrainCodeToList(list_blacklist); });
+		$("#btnClearAutoBook").click(function () { emptyList(list_autoorder); });
+		$("#btnClearWhite").click(function () { emptyList(list_whitelist); });
+		$("#btnClearBlack").click(function () { emptyList(list_blacklist); });
 
-		//inputs
-		data.fields = {};
-		var inputs = html.match(/<input\s*(.|\r|\n)*?>/gi);
-		$.each(inputs, function () {
-			if (!/name=['"]([^'"]+?)['"]/.exec(this)) return;
-			var name = RegExp.$1;
-			data.fields[RegExp.$1] = !/value=['"]([^'"]+?)['"]/.exec(this) ? "" : RegExp.$1;
-		});
-
-		//tourflag
-		m = /submit_form_confirm\('confirmPassenger','([a-z]+)'\)/.exec(html);
-		if (m) data.tourFlag = RegExp.$1;
-
-		return data;
-	},
-	selectionArea: function (opt) {
-		var self = this;
-		this.options = $.extend({ onAdd: function () { }, onRemove: function () { }, onClear: function () { }, onRemoveConfirm: function () { return true; }, syncToStorageKey: "", defaultList: null, preloadList: null }, opt);
-		this.append('<div style="padding:5px; border:1px dashed gray; background-color:#fafafa; width:110px;">(还没有添加任何项)</div>');
-		this.datalist = [];
-
-		this.add = function (data) {
-			if ($.inArray(data, self.datalist) > -1) return;
-
-			var text = typeof (data) == "string" ? data : data.text;
-
-			var html = $('<input type="button" class="lineButton" value="' + text + '" title="点击删除" />');
-			self.append(html);
-			html.click(self.removeByButton);
-			self.datalist.push(data);
-			self.syncToStorage();
-			self.checkEmpty();
-			self.options.onAdd.call(self, data, html);
-		};
-
-		this.removeByButton = function () {
+		$("#swBlackList, #swAutoBook").each(function () {
 			var obj = $(this);
-			var idx = obj.index() - 1;
-			var value = self.datalist[idx];
+			var name = obj.attr("name");
 
-			if (!self.options.onRemoveConfirm.call(self, value, obj, idx)) {
-				return;
-			}
+			var opt = localStorage.getItem(name);
+			if (opt != null) this.checked = opt == "1";
+		}).change(function () {
+			var obj = $(this);
+			var name = obj.attr("name");
 
-			obj.remove();
-			self.datalist.splice(idx, 1);
-			self.syncToStorage();
-			self.checkEmpty();
-			self.options.onRemove.call(self, value, obj);
-		};
+			localStorage.setItem(name, this.checked ? "1" : "0");
+		});
 
-		this.emptyList = function () {
-			self.datalist = [];
-			self.find("input").remove();
-			self.syncToStorage();
-			self.checkEmpty();
-			self.options.onClear.call(self);
-		};
-
-		this.isInList = function (data) {
-			/// <summary>判断指定的值是否在列表中</summary>
-			return $.inArray($.inArray(data, self.datalist)) > -1;
-		};
-
-		this.isInRegList = function (data) {
-			/// <summary>判断指定的值是否在列表中。这里假定是字符串，使用正则进行判断</summary>
-			for (var i = 0; i < self.datalist.length; i++) {
-				if (utility.getRegCache(self.datalist[i]).test(data)) return true;
-			}
-			return false;
-		};
-
-		this.syncToStorage = function () {
-			if (!self.options.syncToStorageKey) return;
-
-			window.localStorage.setItem(self.options.syncToStorageKey, self.datalist.join("\t"));
-		};
-
-		this.checkEmpty = function () {
-			if (self.find("input").length) {
-				self.find("div").hide();
-			} else {
-				self.find("div").show();
-			}
-		};
-
-		if (self.options.syncToStorageKey) {
-			var list = self.options.preloadList;
-			if (!list) {
-				var list = window.localStorage.getItem(this.options.syncToStorageKey);
-				if (!list) list = this.options.defaultList;
-				else list = list.split('\t');
-			}
-
-			if (list) {
-				$.each(list, function () { self.add(this + ""); });
-			}
-		}
-
-		return this;
-	},
-	getUpdateUrl: function () {
-		var ua = navigator.userAgent;
-		if (ua.indexOf(" SE ") > 0) return "http://static.fishlee.net/_softdownload/32c8a36d-18f5-4600-9913-c7b83f484ee2.sext";
-		else if (ua.indexOf("Maxthon") > 0) return "http://static.fishlee.net/_softdownload/12306_ticket_assistant_for_maxthon3.mxaddon";
-		else if (ua.indexOf("LBBROWSER") > 0) return "http://static.fishlee.net/_softdownload/9d0d790e-d78f-43b3-8e4a-34f7ec57e851.crx";
-			//else if (ua.indexOf("TaoBrowser") > 0) return "http://static.fishlee.net/_softdownload/12306_ticket_helper_for_taobrowser.crx";
-		else if (ua.indexOf("Firefox") > 0) return "http://static.fishlee.net/_softdownload/12306_ticket_helper.user.js";
-		else return "http://static.fishlee.net/_softdownload/12306_ticket_helper.crx";
-	},
-	isAdvancedSupport: function () {
-		if (!utility.isWebKit()) return false;
-
-		var ua = navigator.userAgent;
-		return ua.indexOf(" SE ") == -1 && ua.indexOf("Maxthon") == -1;
-	},
-	getTicketInfo: function (v) {
-		var data = {}, match = v.match(/([\dA-Za-z])\*{5}(\d{4})/gi);
-		for (var i in match) {
-			var cls = match[i][0];
-			var ct = parseInt(/\*0*(\d+)/.exec(match[i])[1]);
-			if (ct < 3000) { data[cls] = ct; }
-			else {
-				data['empty'] = ct - 3000;
-			}
-		}; return data;
-	},
-	isDemoUser: function () {
-		return utility.regInfo == null || utility.regInfo.type == "DEMO";
-	}
-}
-
-function unsafeInvoke(callback) {
-	/// <summary>非沙箱模式下的回调</summary>
-	var cb = document.createElement("script");
-	cb.type = "text/javascript";
-	cb.textContent = buildCallback(callback);
-	document.head.appendChild(cb);
-}
-
-function buildCallback(callback) {
-	var content = "";
-	if (!utility_emabed) {
-		content += "window.helperVersion='" + version + "'; window.compVersion='" + compVersion + "'; if(typeof(window.utility)!='undefined' && navigator.userAgent.indexOf('Maxthon')==-1){ alert('我勒个去! 检测到您似乎同时运行了两只助手! 请转到『附加组件管理『（Firefox）或『扩展管理』（Chrome）中卸载老版本的助手！');}; \r\nwindow.utility=" + buildObjectJavascriptCode(utility) + "; window.utility.init();\r\n";
-		utility_emabed = true;
-	}
-	content += "(" + buildObjectJavascriptCode(callback) + ")();";
-
-	return content;
-}
-
-function buildObjectJavascriptCode(object) {
-	/// <summary>将指定的Javascript对象编译为脚本</summary>
-	if (!object) return null;
-
-	var t = typeof (object);
-	if (t == "string") {
-		return "\"" + object.replace(/(\r|\n|\\)/gi, function (a, b) {
-			switch (b) {
-				case "\r":
-					return "\\r";
-				case "\n":
-					return "\\n";
-				case "\\":
-					return "\\\\";
-			}
-		}) + "\"";
-	}
-	if (t != "object") return object + "";
-
-	var code = [];
-	for (var i in object) {
-		var obj = object[i];
-		var objType = typeof (obj);
-
-		if ((objType == "object" || objType == "string") && obj) {
-			code.push(i + ":" + buildObjectJavascriptCode(obj));
-		} else {
-			code.push(i + ":" + obj);
-		}
-	}
-
-	return "{" + code.join(",") + "}";
-}
-
-var isChrome = utility.isWebKit();
-var isFirefox = utility.isFirefox();
-
-if (location.host == "dynamic.12306.cn" || (location.host == "www.12306.cn" && location.protocol == "https:")) {
-	if (!isChrome && !isFirefox) {
-		alert("很抱歉，未能识别您的浏览器，或您的浏览器尚不支持脚本运行，请使用Firefox或Chrome浏览器！\n如果您运行的是Maxthon3，请确认当前页面运行在高速模式而不是兼容模式下 :-)");
-	} else if (isFirefox && typeof (GM_notification) == 'undefined') {
-		alert("很抱歉，本脚本需要最新的Scriptish扩展、不支持GreaseMonkey，请禁用您的GreaseMonkey扩展并安装Scriptish！");
-		window.open("https://addons.mozilla.org/zh-CN/firefox/addon/scriptish/");
-	} else if (!window.localStorage) {
-		alert("警告! localStorage 为 null, 助手无法运行. 请查看浏览器是否已经禁用 localStorage!\nFirefox请设置 about:config 中的 dom.storage.enabled 为 true .");
-	} else {
-
-		//记录更新
-		utility.setPref("updates", updates.join("\t"));
-		initUIDisplay();
-		unsafeInvoke(injectDom);
-		entryPoint();
-	}
-}
-
-//#endregion
-
-//#region -----------------入口----------------------
-
-function entryPoint() {
-	var location = window.location;
-	var path = location.pathname;
-
-	utility.regInfo = utility.verifySn(true);
-	if (utility.regInfo.result != 0) {
-		//return;
-	}
-
-	//
-	unsafeInvoke(autoReloadIfError);
-	if ((path == "/otsweb/loginAction.do" && location.search != '?method=initForMy12306') || path == "/otsweb/login.jsp") {
-		//登录页
-		unsafeInvoke(initLogin);
-	}
-	if (false && utility.regInfo.bindAcc && localStorage.getItem("_sessionuser") && utility.regInfo.bindAcc.length > 0 && utility.regInfo.bindAcc[0] && utility.regInfo.bindAcc[0] != "*") {
-		var user = localStorage.getItem("_sessionuser");
-		var ok = false;
-		for (var i = 0; i < utility.regInfo.bindAcc.length; i++) {
-			if (utility.regInfo.bindAcc[i] == user) {
-				ok = true;
-				break;
-			}
-		}
-		if (!ok) return;
-	}
-	if (path == "/otsweb/order/querySingleAction.do") {
-		if (location.search == "?method=init" && document.getElementById("submitQuery")) {
-			unsafeInvoke(initTicketQuery);
-			unsafeInvoke(initAdvancedTicketQuery);
-			unsafeInvoke(initDirectSubmitOrder);
-		}
-		if (location.search == "?method=submutOrderRequest") {
-			unsafeInvoke(initSubmitOrderQuest);
-		}
-	}
-	if (path == "/otsweb/order/orderAction.do") {
-		if (location.search.indexOf("method=cancelMyOrderNotComplete") != -1 && document.getElementById("submitQuery")) {
-			unsafeInvoke(initTicketQuery);
-			unsafeInvoke(initAdvancedTicketQuery);
-			unsafeInvoke(initDirectSubmitOrder);
-		}
-	}
-	if (path == "/otsweb/order/payConfirmOnlineSingleAction.do") {
-		if (location.search.indexOf("method=cancelOrder") != -1 && document.getElementById("submitQuery")) {
-			unsafeInvoke(initTicketQuery);
-			unsafeInvoke(initAdvancedTicketQuery);
-			unsafeInvoke(initDirectSubmitOrder);
-		}
-	}
-	if (path == "/otsweb/order/myOrderAction.do") {
-		if (location.search.indexOf("method=resign") != -1 && document.getElementById("submitQuery")) {
-			unsafeInvoke(initTicketQuery);
-			unsafeInvoke(initAdvancedTicketQuery);
-			unsafeInvoke(initDirectSubmitOrder);
-		}
-	}
-	if (path == "/otsweb/order/confirmPassengerAction.do") {
-		if (location.search == "?method=init") {
-			unsafeInvoke(initAutoCommitOrder);
-			unsafeInvoke(autoCommitOrderInSandbox);
-		}
-		if (location.search.indexOf("?method=payOrder") != -1) {
-			unsafeInvoke(initPagePayOrder);
-			unsafeInvoke(utility.enableLoginIE);
-		}
-	}
-	if (path == "/otsweb/order/myOrderAction.do") {
-		if (location.search.indexOf("?method=laterEpay") != -1 || location.search.indexOf("?method=queryMyOrderNotComplete") != -1) {
-			unsafeInvoke(initNotCompleteOrderPage);
-			unsafeInvoke(initPayOrder);
-			unsafeInvoke(utility.enableLoginIE);
-		}
-	}
-	if (path == "/otsweb/passengerAction.do") {
-		if (location.search.indexOf("?method=initUsualPassenger") != -1) {
-			unsafeInvoke(storePasToLocal);
-		}
-	}
-	if (path == "/otsweb/main.jsp" || path == "/otsweb/") {
-		//主框架
-		console.log("正在注入主框架脚本。");
-
-		//跨页面弹窗提示，防止因为页面跳转导致对话框不关闭
-		console.log("启动跨页面信息调用检查函数");
-		window.setInterval(function () {
-			var msg = window.localStorage["notify"];
-			if (typeof (msg != 'undefined') && msg) {
-				console.log("主窗口拦截提示请求: " + msg);
-				window.localStorage.removeItem("notify");
-				utility.notify(msg);
-			}
-		}, 100);
-
-		unsafeInvoke(injectMainPageFunction);
-	}
-}
-
-//#endregion
-
-//#region 未完成订单查询页面
-
-function initNotCompleteOrderPage() {
-	utility.checkCompatible();
-
-	if (!OrderQueueWaitTime || !OrderQueueWaitTime.prototype.getWaitTime) return;
-	var queueCheckUrl = /url\s*:\s*['"]([^'"]+)['"]/i.exec(OrderQueueWaitTime.prototype.getWaitTime + '')[1];	//排队地址
-	if (!queueCheckUrl) return;
-
-	//处理显示时间的
-	(function () {
-		var tagInputs = $("input[name=cache_tour_flag]");
-		var flags = $.map(tagInputs, function (e, i) { return e.value; });
-		$.each(flags, function () { $("#showTime_" + this).hide().after("<span id='status_" + this + "'>正在查询...</span>"); });
-
-		function doCheck() {
-			var flag = flags.shift();
-			flags.push(flag);
-
-			utility.get(queueCheckUrl, { tourFlag: flag }, "json", function (data) {
-				var obj = $("#status_" + flag);
-				if (data.waitTime == 0 || data.waitTime == -1) {
-					obj.css({ "color": "green" }).html("订票成功！");
-					utility.notifyOnTop("订票成功！请尽快付款！");
-					parent.playAudio();
-					self.location.reload();
-					return;
-				}
-
-				if (data.waitTime == -2) {
-					utility.notifyOnTop("出票失败！请重新订票！" + data.msg);
-					parent.playFailAudio();
-					obj.css({ "color": "red" }).html("出票失败！" + data.msg);
-
-					return;
-				}
-				if (data.waitTime == -3) {
-					utility.notifyOnTop("订单已经被取消！");
-					parent.playFailAudio();
-					obj.css({ "color": "red" }).html("订单已经被取消！！");
-
-					return;
-				}
-				if (data.waitTime == -4) {
-					utility.notifyOnTop("正在处理中....");
-					obj.css({ "color": "blue" }).html("正在处理中....");
-				}
-
-				if (data.waitTime > 0) {
-					obj.css({ "color": "red" }).html("等待开奖中<br />排队数【" + (data.waitCount || "未知") + "】<br />预计时间【" + utility.getSecondInfo(data.waitTime) + "】<br />不过这时间不<br />怎么靠谱 ╮(╯▽╰)╭");
-				} else {
-					obj.css({ "color": "red" }).html("奇怪的状态码 [" + data.waitTime + "]....");
-				}
-
-
-				setTimeout(doCheck, 2000);
-			}, function () {
-				utility.notifyOnTop("查询状态错误，正在刷新页面！");
-				self.location.reload();
+		var seatlist = [
+			["", "=请选择="],
+			["9", "商务座"],
+			["P", "特等座"],
+			["6", "高级软卧"],
+			["4", "软卧"],
+			["3", "硬卧"],
+			["2", "软座"],
+			["1", "硬座"],
+			["empty", "硬座(无座)"],
+			["M", "一等座"],
+			["O", "二等座"]
+		];
+		var level = [[0, '随机'], [3, "上铺"], [2, '中铺'], [1, '下铺']];
+		var seatDom = document.getElementById("preSelectSeatList");
+		var seatLevelDom = document.getElementById("preselectseatlevel");
+		$.each(seatlist, function () {
+			seatDom.options[seatDom.options.length] = new Option(this[1], this[0]);
+		});
+		$.each(level, function () {
+			seatLevelDom.options[seatLevelDom.options.length] = new Option(this[1], this[0]);
+		});
+		//刷新优选列表
+		var seatLevelRow = $("#seatLevelRow");
+		function refreshSeatTypeOrder() {
+			var list = $("#preseatlist input");
+			if (initialized) $(":checkbox[name=seatoption]").attr("checked", false).change();
+			seatLevelOrder = [];
+			list.each(function () {
+				var code = $(this).attr("code");
+				seatLevelOrder.push(code);
+				if (initialized) $("#seatoption_" + code).attr("checked", true).change();
 			});
-		}
-
-		if (flags.length > 0) doCheck();
-	})();
-}
-
-//#endregion
-
-//#region 提交页面出错
-
-function initSubmitOrderQuest() {
-	if ($("div.error_text").length > 0) {
-		parent.window.resubmitForm();
-	}
-}
-
-//#endregion
-
-//#region 订票页面，声音提示
-
-function initPagePayOrder() {
-	new Audio(utility.getAudioUrl()).play();
-}
-
-//#endregion
-
-//#region -----------------出错自动刷新----------------------
-
-function autoReloadIfError() {
-	if ($.trim($("h1:first").text()) == "错误") {
-		$("h1:first").css({ color: 'red', 'font-size': "18px" }).html("&gt;_&lt; 啊吖!，敢踹我出门啦。。。2秒后我一定会回来的 ╮(╯▽╰)╭");
-		setTimeout(function () {
-			self.location.reload();
-		}, 2000);
-	}
-}
-
-//#endregion
-
-//#region -----------------主框架----------------------
-
-function injectMainPageFunction() {
-	//资源
-	var main = $("#main")[0];
-	main.onload = function () {
-		var location = null;
-		try {
-			location = main.contentWindow.location + '';
-		} catch (e) {
-			//出错了，跨站
-		}
-		if (!location || location == "http://www.12306.cn/mormhweb/logFiles/error.html") {
-			resubmitForm();
-		}
-	}
-
-	if (window.webkitNotifications && window.webkitNotifications.checkPermission() != 0) {
-		if (confirm("喂！快戳『点击启用桌面通知』，不然提示会阻碍操作，导致运行变慢，然后就没票了！\n\n如果是第一次看到介句话，点击『取消』并按提示操作。如果反复邂逅这个对话框，就戳『确定』以打开助手主页的常见问题并查找解决办法。\n\n搜狗高速浏览器暂不支持保存此权限，每次访问时可能都会邂逅这个对话框……")) {
-			window.open("http://www.fishlee.net/soft/44/faq.html");
-		}
-	}
-
-	window.resubmitForm = function () {
-		var form = $("#orderForm");
-		if (form.length == 0 || form.attr("success") != "0") return;
-
-		utility.notify("页面出错了！正在重新预定！");
-		setTimeout(function () { document.getElementById("orderForm").submit(); }, 3000);
-	}
-	window.playAudio = function () {
-		new Audio(utility.getAudioUrl()).play();
-	};
-	window.playFailAudio = function () {
-		utility.playFailAudio();
-	};
-}
-
-//#endregion
-
-//#region -----------------自动提交----------------------
-function initAutoCommitOrder() {
-	utility.checkCompatible();
-
-	var count = 0;
-	var breakFlag = 0;
-	var randCode = "";
-	var submitFlag = false;
-	var tourFlag = /'(dc|fc|wc|gc)'/.exec($("div.tj_btn :button:eq(2)")[0].onclick + '')[1] || "dc";
-	var randEl = $("#rand");
-	var autoSubmitFlag = "autocommitorder";
-	var entryTime = new Date();
-
-	//启用日志
-	utility.enableLog();
-
-	//#region 如果系统出错，那么重新提交
-
-	if ($(".error_text").length > 0 && parent.$("#orderForm").length > 0) {
-		parent.resubmitForm();
-
-		return;
-	}
-
-	//#endregion
-
-	//各地址
-	var checkOrderInfoUrl = /url\s*:\s*['"]([^'"]+)['"]/i.exec(submit_form_confirm + '')[1];					//检查订单信息
-	var getQueueCountUrl = /url\s*:\s*['"]([^'"]+)['"]/i.exec(showOrderDialog + '')[1];
-	var confirmUrl = /tourFlag\s*==\s*['"]dc['"](.|\s)+?['"]([^'"]+)['"]/i.exec(queueOrder + '')[2];			//提交订单地址
-	var queueCheckUrl = /url\s*:\s*['"]([^'"]+)['"]/i.exec(OrderQueueWaitTime.prototype.getWaitTime + '')[1];	//排队地址
-	var isAutoSubmitEnabled = checkOrderInfoUrl && getQueueCountUrl && confirmUrl && queueCheckUrl;
-	if (!isAutoSubmitEnabled) {
-		alert("嗯……看起来木有找到相关提交地址……so……自动提交已被自动禁用来着……");
-	}
-
-	function stop(msg) {
-		setCurOperationInfo(false, "错误 - " + msg);
-		setTipMessage(msg);
-		$("div.tj_btn button, div.tj_btn input").each(function () {
-			this.disabled = false;
-			$(this).removeClass().addClass("long_button_u");
-		});
-		$("#btnCancelAuto").hide();
-		submitFlag = false;
-	}
-
-	var reloadCode = function () {
-		$("#img_rrand_code").click();
-		$("#rand").val("")[0].select();
-	};
-
-	var getSleepTime = function () {
-		return 1000 * Math.max(parseInt($("#pauseTime").val()), 1);
-	};
-
-	//订单等待时间过久的警告
-	var waitTimeTooLong_alert = false;
-
-	function submitForm() {
-		if (window.isSafeMobeBlocked) {
-			setCurOperationInfo(true, "正在等安全期再上……╮(╯▽╰)╭");
-			return;	//保护期
-		}
-
-		randEl[0].blur();
-		//$(document).trigger("stopcheckcount");
-		if (!window.submit_form_check || !submit_form_check("confirmPassenger")) {
-			setCurOperationInfo(false, "您的表单没有填写完整!");
-			stop("请填写完整表单");
-			return;
-		}
-
-		count++;
-		setCurOperationInfo(true, "第 " + count + " 次试着买彩票");
-		if (breakFlag) {
-			stop("已取消自动提交");
-			breakFlag = 0;
-			return;
-		}
-		$("#btnCancelAuto").show().removeClass().addClass("long_button_u_down")[0].disabled = false; //阻止被禁用
-		breakFlag = 0;
-		waitTimeTooLong_alert = false;
-
-		$("#confirmPassenger").ajaxSubmit({
-			url: checkOrderInfoUrl + $("#rand").val(),
-			type: "POST",
-			data: { tFlag: tourFlag },
-			dataType: "json",
-			timeout: 10000,
-			success: function (data) {
-				if ('Y' != data.errMsg || 'N' == data.checkHuimd || 'N' == data.check608) {
-					setCurOperationInfo(false, data.msg || data.errMsg);
-					stop(data.msg || data.errMsg);
-					reloadCode();
-				}
-				else {
-					queryQueueCount();
-				}
-			},
-			error: function (msg) {
-				setCurOperationInfo(false, "当前请求发生错误");
-				utility.delayInvoke(null, submitForm, 1000);
-			}
-		});
-	}
-
-	function queryQueueCount() {
-		var queryLeftData = {
-			train_date: $("#start_date").val(),
-			train_no: $("#train_no").val(),
-			station: $("#station_train_code").val(),
-			seat: $("#passenger_1_seat").val(),
-			from: $("#from_station_telecode").val(),
-			to: $("#to_station_telecode").val(),
-			ticket: $("#left_ticket").val()
-		};
-		utility.get(getQueueCountUrl, queryLeftData, "json", function (data) {
-			console.log(data);
-			if (data.op_2) {
-				var errmsg = "系统说人多，不许买彩票了，看起来没办法了……等下再去看看服务器的心情 (据说人数=" + data.count + ")";
-				setCurOperationInfo(true, errmsg);
-				stop(errmsg);
-
-				utility.delayInvoke(null, queryQueueCount, 1000);
-				return;
-			}
-
-			setTimeout(submitConfirmOrder, 1000);
-		}, function () { utility.delayInvoke(null, queryQueueCount, 2000); });
-	}
-
-	function submitConfirmOrder() {
-		jQuery.ajax({
-			url: confirmUrl,
-			data: $('#confirmPassenger').serialize(),
-			type: "POST",
-			timeout: 10000,
-			dataType: 'json',
-			success: function (msg) {
-				console.log(msg);
-
-				var errmsg = msg.errMsg;
-				if (errmsg != 'Y') {
-					if (errmsg.indexOf("包含未付款订单") != -1) {
-						alert("您有未支付订单! 等啥呢, 赶紧点确定支付去.");
-						window.location.replace("/otsweb/order/myOrderAction.do?method=queryMyOrderNotComplete&leftmenu=Y");
-						return;
-					}
-					if (errmsg.indexOf("重复提交") != -1) {
-						stop("重复提交错误，已刷新TOKEN，请重新输入验证码提交");
-						reloadToken();
-						reloadCode();
-						return;
-					}
-					if (errmsg.indexOf("后台处理异常") != -1 || errmsg.indexOf("非法请求") != -1) {
-						if (lastform) {
-							utility.notifyOnTop("后台处理异常，已自动重新提交表单，请填写验证码并提交！");
-							lastform.submit();
-						} else {
-							stop("后台处理异常，请返回查询页重新预定！");
-						}
-						return;
-					}
-					if (errmsg.indexOf("包含排队中") != -1) {
-						console.log("惊现排队中的订单， 进入轮询状态");
-						waitingForQueueComplete();
-						return;
-					}
-
-
-					setCurOperationInfo(false, errmsg);
-					stop(errmsg);
-					reloadCode();
-				} else {
-					utility.notifyOnTop("彩票已买下, 正在等待开奖，请及时注意开奖状态");
-					waitingForQueueComplete();
-				}
-			},
-			error: function (msg) {
-				setCurOperationInfo(false, "当前请求发生错误");
-				utility.delayInvoke(null, submitForm, 3000);
-			}
-		});
-	}
-
-	function reloadToken(submit) {
-		setCurOperationInfo(true, "正在刷新TOKEN....");
-		utility.get(self.location + '', null, "text", function (text) {
-			if (!/TOKEN"\s*value="([a-f\d]+)"/i.test(text)) {
-				setCurOperationInfo(false, "无法获得TOKEN，正在重试");
-				utility.delayInvoke("#countEle", reloadToken, 1000);
+			if (!list.length) {
+				$("#preseatlist_empty").show();
+				$(":checkbox[name=seatoption]").attr("checked", true).change();
+				window.localStorage.setItem("autoSelect_preSelectSeatType", "");
 			} else {
-				var token = RegExp.$1;
-				setCurOperationInfo(false, "已获得TOKEN - " + token);
-				console.log("已刷新TOKEN=" + token);
-				$("input[name=org.apache.struts.taglib.html.TOKEN]").val(token);
+				$("#preseatlist_empty").hide();
+				window.localStorage.setItem("autoSelect_preSelectSeatType", seatLevelOrder[0]);
 			}
-			safeMode.restart();	//重启安全模式
-		}, function () { utility.delayInvoke("#countEle", reloadToken, 1000); });
-	}
+			if (initialized) utility.notifyOnTop("已经根据您选择的席别自动切换了席别过滤选项，请注意，并作出需要的调整。");
+			window.localStorage.setItem("preSelectSeatType", seatLevelOrder.join('|'));
 
-	function waitingForQueueComplete() {
-		setCurOperationInfo(true, "彩票提交成功，请等待开奖....");
-
-		$.ajax({
-			url: queueCheckUrl,
-			data: { tourFlag: tourFlag },
-			type: 'GET',
-			timeout: 10000,
-			dataType: 'json',
-			success: function (json) {
-				console.log(json);
-
-				if (json.waitTime == -1 || json.waitTime == 0) {
-					utility.notifyOnTop("中奖咯!");
-					if (json.orderId)
-						window.location.replace("/otsweb/order/confirmPassengerAction.do?method=payOrder&orderSequence_no=" + json.orderId);
-					else window.location.replace('/otsweb/order/myOrderAction.do?method=queryMyOrderNotComplete&leftmenu=Y');
-					stop("中奖咯！");
-				} else if (json.waitTime == -3) {
-					var msg = "很抱歉, 铁道部无齿地撤销了您的订单, 赶紧重新下!";
-					utility.notify(msg);
-					setCurOperationInfo(false, msg);
-					stop(msg);
-					reloadCode();
-				} else if (json.waitTime == -2) {
-					var msg = "很抱歉, 铁道部说您占座失败 : " + json.msg + ', 赶紧重新来过! 当长时间出现占座失败时, 建议您更改车次!';
-					reloadToken();
-					utility.notify(msg);
-					setCurOperationInfo(false, msg);
-					stop(msg);
-					reloadCode();
-				}
-				else if (json.waitTime < 0) {
-					var msg = '很抱歉, 未知的状态信息 : waitTime=' + json.waitTime + ', 可能已成功，请验证未支付订单.';
-					setTipMessage(msg);
-					utility.notifyOnTop(msg);
-					location.href = '/otsweb/order/myOrderAction.do?method=queryMyOrderNotComplete&leftmenu=Y';
-				} else {
-					var msg = "彩票还要 " + utility.getSecondInfo(json.waitTime) + " 开奖， 请等待，不过你知道的，铁道部说的一直不怎么准。（排队人数=" + (json.waitCount || "未知") + "）";
-					if (json.waitTime > 1800) {
-						msg += "<span style='color:red; font-weight: bold;'>警告：排队时间大于30分钟，请不要放弃电话订票或用小号重新排队等其它方式继续订票！</span>";
-					}
-					setTipMessage(msg);
-
-					if (json.waitTime > 1800 && !waitTimeTooLong_alert) {
-						waitTimeTooLong_alert = true;
-						utility.notifyOnTop("警告！排队时间大于30分钟，成功率较低，请尽快电话订票或用小号重新排队！");
-					}
-
-					utility.delayInvoke("#countEle", waitingForQueueComplete, 3000);
-				}
-			},
-			error: function (json) {
-				utility.notifyOnTop("请求发生异常，可能是登录状态不对，请验证。如果没有问题，请手动进入未完成订单页面查询。");
-				self.location.reload();
+			if (document.getElementById("autoorder").checked) {
+				seatLevelRow.removeClass("stepsok steps");
+				seatLevelRow.addClass(seatLevelOrder.length ? "stepsok" : "steps");
 			}
-		});
-	}
-
-	if (isAutoSubmitEnabled) {
-		$("div.tj_btn").append("<button class='long_button_u_down' type='button' id='btnAutoSubmit'>自动提交</button> <button class='long_button_u_down' type='button' id='btnCancelAuto' style='display:none;'>取消自动</button>");
-		$("#btnAutoSubmit").click(function () {
-			count = 0;
-			breakFlag = 0;
-			submitFlag = true;
-			submitForm();
-		});
-		$("#btnCancelAuto").click(function () {
-			$(this).hide();
-			breakFlag = 1;
-			submitFlag = false;
-		});
-		randEl.keyup(function (e) {
-			if (document.getElementById("autoStartCommit").checked && !breakFlag) {
-				if (e.charCode == 13 || randEl.val().length == 4) {
-					submitFlag = true;
-					submitForm();
-				}
-			}
-		});
-	}
-
-	//清除上次保存的预定信息
-	var lastform = null;
-	if (parent) {
-		lastform = parent.$("#orderForm");
-		lastform.attr("success", "1");
-	}
-
-	//进度提示框
-	$("table.table_qr tr:last").before("<tr><td style='border-top:1px dotted #ccc;height:100px;' colspan='9' id='orderCountCell'></td></tr><tr><td style='border-top:1px dotted #ccc;' colspan='9'><ul id='tipScript'>" +
-	"<li class='fish_clock' id='countEle' style='font-weight:bold;'>等待操作</li>" +
-	"<li style='color:green;'><strong>操作信息</strong>：<span>休息中</span></li>" +
-	"<li style='color:green;'><strong>最后操作时间</strong>：<span>--</span></li></ul></td></tr>");
-
-	var tip = $("#tipScript li");
-	var errorCount = 0;
-
-	//以下是函数
-	function setCurOperationInfo(running, msg) {
-		var ele = $("#countEle");
-		ele.removeClass().addClass(running ? "fish_running" : "fish_clock").html(msg || (running ? "正在操作中……" : "等待中……"));
-	}
-
-	function setTipMessage(msg) {
-		tip.eq(2).find("span").html(utility.getTimeInfo());
-		tip.eq(1).find("span").html(msg);
-	}
-
-	//提交频率差别
-	$(".table_qr tr:last").before("<tr><td colspan='9'><div style='display:;'>\
-失败时休息时间：<input type='text' size='4' class='input_20txt' style='text-align:center;' value='3' id='pauseTime' />秒 (设置自动重新提交时的时间间隔不得低于1)  </div>\
-安全期时间长度：<input type='text' size='4' class='input_20txt' style='text-align:center;' value='3' id='safeModeTime' />秒 (默认为 <span class='defaultSafeModeTime'></span>秒，可以更改试试，过短可能会导致提交时你被铁道部踹出去……如果发现验证码突然不能显示了，可能需要尝试改大这里的数字喔)  \
-<div><label><input type='checkbox' id='autoStartCommit' /> 验证码戳完自动提交，不选就是你自己戳『提交订单』按钮咯——发生异常（提交不了订单等）的请取消勾选此选项唷</label></div><label><input type='checkbox' id='autoDelayInvoke' /> 启用安全模式——进入本页10秒钟内的自动提交的自动提交会自动推迟到<span class='defaultSafeModeTime'></span>秒之后。如果你希望自己掐表，请取消勾选并重试提交，注意的是……一旦时间果断小心被铁道部踹出门哦。</label></div><div><label><input type='checkbox' id='showHelp' /> 显示帮助</label></div></td></tr>");
-	document.getElementById("autoStartCommit").checked = typeof (window.localStorage["disableAutoStartCommit"]) == 'undefined';
-	document.getElementById("showHelp").checked = typeof (window.localStorage["showHelp"]) != 'undefined';
-	document.getElementById("autoDelayInvoke").checked = typeof (window.localStorage["autoDelayInvoke"]) == 'undefined';
-	$("#autoStartCommit").change(function () {
-		if (this.checked) window.localStorage.removeItem("disableAutoStartCommit");
-		else window.localStorage.setItem("disableAutoStartCommit", "1");
-	});
-	$("#autoDelayInvoke").change(function () {
-		if (this.checked) window.localStorage.removeItem("autoDelayInvoke");
-		else window.localStorage.setItem("autoDelayInvoke", "1");
-	});
-	$("#showHelp").change(function () {
-		if (this.checked) {
-			window.localStorage.setItem("showHelp", "1");
-			$("table.table_qr tr:last").show();
 		}
-		else {
-			window.localStorage.removeItem("showHelp");
-			$("table.table_qr tr:last").hide();
-		}
-	}).change();
-	if (!isAutoSubmitEnabled) {
-		$("#pauseTime, #autoStartCommit").parent().hide();
-	}
+		//选中后添加到列表中
+		$("#preSelectSeatList").change(function () {
+			var index = seatDom.selectedIndex;
+			if (index == 0) return;
 
-	//#region 自动刷新席位预定请求数
+			//添加
+			var opt = seatDom.options[index];
+			var html = "<input type='button' title='点击删除' class='seatTypeButton lineButton' value='" + opt.text + "' code='" + opt.value + "' />";
+			$("#preseatlist").append(html);
+			$("#preseatlist_empty").hide();
+			//当前选项移除
+			seatDom.options[index] = null;
+			seatDom.selectedIndex = 0;
+			refreshSeatTypeOrder();
+		});
+		//席别的按钮点击后自动删除
+		$("input.seatTypeButton").live("click", function () {
+			var btn = $(this);
+			btn.remove();
 
-	var seatQueue = [];
-	(fu
+			//加回列表
+			var code = btn.attr("code");
+			var name = btn.val();
+			seatDom.options[seatDom.options.length] = new Option(name, code);
+
+			//刷新列表
+			refreshSeatTypeOrder();
+		});
+		(function () {
+			var preseattype = window.localStorage.getItem("preSelectSeatType") || window.localStorage.getItem("autoSelect_preSelectSeatType");
+			if (!preseattype) return;
+
+			preseattype = preseattype.split('|');
+			var el = $(seatDom);
+			$.each(preseattype, function () { el.val(this + ""); el.change(); });
+		})();
+		$(seatLevelDom).val(window.localStorage.getItem("preselectseatlevel") || "").change(function () {
+			window.localStorage.setItem("preselectseatlevel", $(this).val());
+		});
+		var pre_autoorder_book_status;
+		$("#autoorder").click(function () {
+			if (this.checked) {
+				pre_autoorder_book_status = document.getElementById("swAutoBook").checked;
+				document.getElementById("swAutoBook").checked = true;
+				//alert("警告！选中将会启用自动下单功能，并取代自动预定功能，请输入验证码，当指定的车次中的指定席别可用时，助手�
