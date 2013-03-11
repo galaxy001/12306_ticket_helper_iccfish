@@ -12,7 +12,7 @@
 // @require			http://lib.sinaapp.com/js/jquery/1.8.3/jquery.min.js
 // @icon			http://www.12306.cn/mormhweb/images/favicon.ico
 // @run-at			document-idle
-// @version 		4.7.1
+// @version 		4.7.0
 // @updateURL		http://static.fishlee.net/_softdownload/12306_ticket_helper.user.js
 // @supportURL		http://www.fishlee.net/soft/44/
 // @homepage		http://www.fishlee.net/soft/44/
@@ -22,11 +22,10 @@
 
 //=======START=======
 
-var version = "4.7.1";
+var version = "4.7.0";
 var updates = [
 	"+ 增加每次查询后自动切换列车类型功能，以提高查票及时率",
 	"+ 增加仅找到优选车次后才提示有票的功能",
-	"* [4.7.1] 修改默认开启『仅当找到符合要求的车次时，才提示我有票』的选项为关闭；请升级完成后自行检查此选项是否依然为启用状态",
 	"* 修改默认等待的安全时间为5秒",
 	"* 修复无法重新注册的BUG",
 	"* 其它UI改进"
@@ -2836,7 +2835,7 @@ function initTicketQuery() {
 
 	(function () {
 		var html = "\
-<tr class='fish_sep caption'><td><label><input type='checkbox' id='swWhiteList' name='swWhiteList' data-target='whiteListRow' checked='checked' /> 车次白名单</label></td><td style='font-weight:normal;' colspan='2'>加入白名单的车次，将不会被过滤(仅为搭配黑名单)</td><td style='text-align:rigth;'><button class='fish_button' id='btnAddWhite'>添加</button><button class='fish_button' id='btnClearWhite'>清空</button></td></tr>\
+<tr class='fish_sep caption'><td><label><input type='checkbox' id='swWhiteList' data-target='whiteListRow' checked='checked' /> 车次白名单</label></td><td style='font-weight:normal;' colspan='2'>加入白名单的车次，将不会被过滤(仅为搭配黑名单)</td><td style='text-align:rigth;'><button class='fish_button' id='btnAddWhite'>添加</button><button class='fish_button' id='btnClearWhite'>清空</button></td></tr>\
 <tr class='fish_sep' id='whiteListRow'><td colspan='4' id='whiteListTd'></td></tr>\
 <tr class='fish_sep caption'><td><label><input type='checkbox' id='swBlackList' checked='checked' data-target='blacklistRow' name='swBlackList' />车次黑名单</label></td><td style='font-weight:normal;' colspan='2'>加入黑名单的车次，除非在白名单中，否则会被直接过滤而不会显示</td><td style='text-align:rigth;'><button class='fish_button' id='btnAddBlack'>添加</button><button class='fish_button' id='btnClearBlack'>清空</button></td></tr>\
 <tr class='fish_sep' id='blacklistRow'><td colspan='4' id='blackListTd'></td></tr>\
@@ -2849,9 +2848,9 @@ function initTicketQuery() {
 <tr class='fish_sep autoorder_steps caption'><td colspan='2'><label><span class='hide indicator'>③</span> 自动为我选择车次和席别</label></td><td style='font-weight:normal;'><select id='autoorder_method'><option value='0'>席别优先</option><option value='1'>车次优先</option></select></td><td style='text-align:rigth;'><button id='btnAddAutoBook' class='fish_button'>添加</button><button id='btnClearAutoBook' class='fish_button'>清空</button></td></tr>\
 <tr class='fish_sep'><td colspan='4' id='autobookListTd'></td></tr>\
 <tr class='fish_sep'><td colspan='4'>\
-<div><label><input type='checkbox' id='swOnlyValid' name='swOnlyValid' /> 仅当找到符合要求的车次时，才提示我有票</label></div>\
-<div><label><input type='checkbox' id='swAutoBook' checked='checked' name='swAutoBook' /> <span class='hide indicator'>④</span> 当找到符合要求的车次和席别时，自动转到预定界面</label></div>\
-<div><label><input type='checkbox' id='autoBookTip' name='autoBookTip' checked='checked' /> 如果自动预定成功，进入预定页面后播放提示音乐并弹窗提示</label></div>\
+<div><label><input type='checkbox' id='swOnlyValid' /> 仅当找到符合要求的车次时，才提示我有票</label></div>\
+<div><label><input type='checkbox' id='swAutoBook' checked='checked' /> <span class='hide indicator'>④</span> 当找到符合要求的车次和席别时，自动转到预定界面</label></div>\
+<div><label><input type='checkbox' id='autoBookTip' checked='checked' /> 如果自动预定成功，进入预定页面后播放提示音乐并弹窗提示</label></div>\
 </td></tr>\
 <tr class='fish_sep autoordertip' style='display:none;'><td class='name'>自动回滚</td><td><label><input type='checkbox' id='autoorder_autocancel' /> 自动提交失败时，自动取消自动提交并再次预定</label></td></tr>\
 <tr class='caption autoorder_steps fish_sep highlightrow'><td class='name autoordertd'><label style='display:none;color:red;'><input type='checkbox' id='autoorder'/>自动提交订单</label></td><td class='autoordertd' colspan='3'><p style='display:none;'><img id='randCode' src='/otsweb/passCodeAction.do?rand=randp' /> <input size='4' maxlength='4' type='text' id='randCodeTxt' /> (验证码可在放票前填写，临近放票时建议点击图片刷新并重新填写，以策安全。请务必控制好阁下的眼神……)</p></td></tr>\
@@ -2922,10 +2921,9 @@ function initTicketQuery() {
 		$("#btnClearBlack").click(function () { emptyList(list_blacklist); });
 
 
-		$("#swBlackList, #swAutoBook, #swOnlyValid, #swWhiteList").each(function () {
+		$("#swBlackList, #swAutoBook, #swOnlyValid").each(function () {
 			var obj = $(this);
 			var name = obj.attr("name");
-			if(!name)return;
 
 			var opt = localStorage.getItem(name);
 			if (opt != null) this.checked = opt == "1";
@@ -3486,7 +3484,7 @@ function initTicketQuery() {
 
 			html.push("<label style='margin-right:10px;'><input type='checkbox' id='unwantClass_" + this.value + "' name='unwantClass' value='" + this.value + "' /> " + $(this).parent().text() + "</label>");
 		});
-		html.push("</td><td colspan='2'>选择肯定不要的列车类型，每次查询后小的会随机更改查询条件，好查得更及时~</td></tr>");
+		html.push("</td><td colspan='2'>选择不想要的列车类型，每次查询后小的会随机变换是否勾选，好查得更及时~</td></tr>");
 
 		$("#autoChangeDateList").parent().after(html.join(""));
 		utility.reloadPrefs($("#trAutoChangeClass"), "");
