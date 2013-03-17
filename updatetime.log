@@ -1,67 +1,85 @@
---2013-03-11 21:55:01--  http://static.liebao.cn/_softupdate/44/version.js
-Resolving static.liebao.cn... 27.24.190.90, 222.89.166.13, 222.243.110.166
-Connecting to static.liebao.cn|27.24.190.90|:80... connected.
+--2013-03-17 20:45:01--  http://static.liebao.cn/_softupdate/44/version.js
+Resolving static.liebao.cn... 119.147.246.37
+Connecting to static.liebao.cn|119.147.246.37|:80... connected.
+HTTP request sent, awaiting response... Read error (Connection timed out) in headers.
+Retrying.
+
+--2013-03-17 20:45:04--  (try: 2)  http://static.liebao.cn/_softupdate/44/version.js
+Connecting to static.liebao.cn|119.147.246.37|:80... connected.
 HTTP request sent, awaiting response... 
   HTTP/1.1 200 OK
-  Date: Mon, 11 Mar 2013 13:40:05 GMT
+  Date: Sun, 17 Mar 2013 12:40:10 GMT
   Server: nginx/1.0.5
   Content-Type: application/x-javascript
   Content-Length: 1015
   Last-Modified: Mon, 11 Mar 2013 13:23:51 GMT
   Accept-Ranges: bytes
   Age: 1
-  X-Via: 1.1 gdzj23:8106 (Cdn Cache Server V2.0), 1.1 hbxn86:9080 (Cdn Cache Server V2.0)
+  X-Via: 1.1 gdzj23:8106 (Cdn Cache Server V2.0), 1.1 stzc18:9080 (Cdn Cache Server V2.0)
   Connection: keep-alive
 Length: 1015 [application/x-javascript]
-Saving to: `version.js'
+Saving to: `version.js.2'
 
-     0K                                                       100%  165M=0s
+     0K                                                       100%  144M=0s
 
-2013-03-11 21:55:01 (165 MB/s) - `version.js' saved [1015/1015]
+2013-03-17 20:45:04 (144 MB/s) - `version.js.2' saved [1015/1015]
 
---2013-03-11 21:55:01--  http://static.liebao.cn/_softdownload/12306_ticket_helper.user.js
-Resolving static.liebao.cn... 222.243.110.166, 222.89.166.13, 27.24.190.90
-Connecting to static.liebao.cn|222.243.110.166|:80... connected.
-HTTP request sent, awaiting response... 
-  HTTP/1.1 200 OK
-  Date: Mon, 11 Mar 2013 13:40:06 GMT
+1 200 OK
+  Date: Sun, 17 Mar 2013 12:40:13 GMT
   Server: nginx/1.0.5
   Content-Type: application/x-javascript
   Content-Length: 180328
   Last-Modified: Mon, 11 Mar 2013 13:18:30 GMT
   Accept-Ranges: bytes
   Age: 1
-  X-Via: 1.1 gdzj24:80 (Cdn Cache Server V2.0), 1.1 hnsydx149:9080 (Cdn Cache Server V2.0)
+  X-Via: 1.1 gdzj24:80 (Cdn Cache Server V2.0), 1.1 stzc21:9080 (Cdn Cache Server V2.0)
   Connection: keep-alive
 Length: 180328 (176K) [application/x-javascript]
 Saving to: `12306_ticket_helper.user.js'
 
-     0K .......... .......... .......... .......... .......... 28% 9.36K 13s
-    50K .......... .......... .......... .......... .......... 56% 6.90K 10s
-   100K .......... .......... .......... .......... .......... 85% 9.13K 3s
-   150K .......... .......... ......                          100% 7.98K=21s
-
-2013-03-11 21:55:23 (8.25 KB/s) - `12306_ticket_helper.user.js' saved [180328/180328]
-
---2013-03-11 21:55:23--  http://static.liebao.cn/_softdownload/12306_ticket_helper.crx
-Resolving static.liebao.cn... 222.89.166.13, 222.243.110.166, 27.24.190.90
-Connecting to static.liebao.cn|222.89.166.13|:80... connected.
+     0K .......... .......... ......--2013-03-17 20:45:04--  http://static.liebao.cn/_softdownload/12306_ticket_helper.user.js
+Resolving static.liebao.cn... 119.147.246.37
+Connecting to static.liebao.cn|119.147.246.37|:80... .... ........connected.
 HTTP request sent, awaiting response... 
   HTTP/1.1 200 OK
-  Date: Mon, 11 Mar 2013 13:35:20 GMT
+  Date: Sun, 17 Mar 2013 12:40:13 GMT
+  Server: nginx/1.0.5
+  Content-Type: application/x-javascript
+  Content-Length: 180328
+  Last-Modified: Mon, 11 Mar 2013 13:18:30 GMT
+  Accept-Ranges: bytes
+  Age: 1
+  X-Via: 1.1 gdzj24:80 (Cdn Cache Server V2.0), 1.1 stzc21:9080 (Cdn Cache Server V2.0)
+  Connection: keep-alive
+Length: 180328 (176K) [application/x-javascript]
+Saving to: `12306_ticket_helper.user.js.3'
+
+     0K .......... .......... .......... .......... .......... 28% 93.0K 1s
+    50K .......... .......... .......... .......... .......... 56% 91.8K 1s
+   100K .......... .......... .......... .......... .......... 85%  465K 0s
+   150K .......... .......... ......                          100% 61.1K=1.6s
+
+2013-03-17 20:45:07 (109 KB/s) - `12306_ticket_helper.user.js.3' saved [180328/180328]
+
+--2013-03-17 20:45:07--  http://static.liebao.cn/_softdownload/12306_ticket_helper.crx
+Resolving static.liebao.cn... 119.147.246.37
+Connecting to static.liebao.cn|119.147.246.37|:80... connected.
+HTTP request sent, awaiting response... 
+  HTTP/1.1 200 OK
+  Date: Sun, 17 Mar 2013 12:35:14 GMT
   Server: nginx/1.0.5
   Content-Type: application/octet-stream
   Content-Length: 87936
   Last-Modified: Mon, 11 Mar 2013 13:18:31 GMT
   Accept-Ranges: bytes
   Age: 1
-  X-Via: 1.1 gdzj21:8104 (Cdn Cache Server V2.0), 1.1 hnxc9:9080 (Cdn Cache Server V2.0)
+  X-Via: 1.1 gdzj21:8104 (Cdn Cache Server V2.0), 1.1 stzc18:9080 (Cdn Cache Server V2.0)
   Connection: keep-alive
 Length: 87936 (86K) [application/octet-stream]
 Saving to: `12306_ticket_helper.crx'
 
-     0K .......... .......... .......... .......... .......... 58%  233K 0s
-    50K .......... .......... .......... .....                100% 19.7K=2.0s
+     0K .......... .......... .......... .......... .......... 58% 31.8K 1s
+    50K .......... .......... .......... .....                100% 35.0K=2.6s
 
-2013-03-11 21:55:25 (42.2 KB/s) - `12306_ticket_helper.crx' saved [87936/87936]
+2013-03-17 20:45:09 (33.1 KB/s) - `12306_ticket_helper.crx' saved [87936/87936]
 
