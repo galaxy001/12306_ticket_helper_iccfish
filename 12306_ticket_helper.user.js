@@ -1311,7 +1311,7 @@ function entryPoint() {
 		});
 	} else {
 		unsafeInvoke(function () {
-			var bodyEle = $("div.enter_w, div.conWrap");
+			var bodyEle = $("div.conWrap");
 			if (bodyEle.length != 1) return;
 			
 			var main = parent.$("#main");
