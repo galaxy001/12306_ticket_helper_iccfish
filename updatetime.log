@@ -1,113 +1,66 @@
---2013-04-21 19:30:01--  http://static.liebao.cn/_softupdate/44/version.js
-Resolving static.liebao.cn... 125.221.95.104
-Connecting to static.liebao.cn|125.221.95.104|:80... connected.
+--2013-04-21 19:35:01--  http://static.liebao.cn/_softupdate/44/version.js
+Resolving static.liebao.cn... 124.163.221.44
+Connecting to static.liebao.cn|124.163.221.44|:80... connected.
 HTTP request sent, awaiting response... 
   HTTP/1.1 200 OK
-  Date: Sun, 21 Apr 2013 11:30:04 GMT
+  Date: Sun, 21 Apr 2013 11:10:02 GMT
   Server: nginx/1.0.5
   Content-Type: application/x-javascript
-  Content-Length: 685
+  Content-Length: 741
   Last-Modified: Sun, 24 Mar 2013 13:20:22 GMT
   Accept-Ranges: bytes
-  X-Via: 1.1 hbbd80:88 (Cdn Cache Server V2.0), 1.1 wh113:9080 (Cdn Cache Server V2.0)
+  Age: 1
+  X-Via: 1.1 sdyt34:8106 (Cdn Cache Server V2.0), 1.1 sxxz41:9080 (Cdn Cache Server V2.0)
   Connection: keep-alive
-Length: 685 [application/x-javascript]
+Length: 741 [application/x-javascript]
 Saving to: `version.js'
 
-     0K                                                       100% 65.2M=0s
+     0K                                                       100% 71.9M=0s
 
-2013-04-21 19:30:03 (65.2 MB/s) - `version.js' saved [685/685]
+2013-04-21 19:35:01 (71.9 MB/s) - `version.js' saved [741/741]
 
---2013-04-21 19:30:03--  http://static.liebao.cn/_softdownload/12306_ticket_helper.user.js
-Resolving static.liebao.cn... 125.221.95.104
-Connecting to static.liebao.cn|125.221.95.104|:80... connected.
+--2013-04-21 19:35:01--  http://static.liebao.cn/_softdownload/12306_ticket_helper.user.js
+Resolving static.liebao.cn... 124.163.221.44
+Connecting to static.liebao.cn|124.163.221.44|:80... connected.
 HTTP request sent, awaiting response... 
   HTTP/1.1 200 OK
-  Date: Sun, 21 Apr 2013 11:00:08 GMT
+  Date: Sun, 21 Apr 2013 11:10:03 GMT
   Server: nginx/1.0.5
   Content-Type: application/x-javascript
   Content-Length: 183313
   Last-Modified: Sun, 24 Mar 2013 13:12:11 GMT
   Accept-Ranges: bytes
   Age: 1
-  X-Via: 1.1 hbbd85:8104 (Cdn Cache Server V2.0), 1.1 wh112:9080 (Cdn Cache Server V2.0)
+  X-Via: 1.1 sdyt35:8104 (Cdn Cache Server V2.0), 1.1 sxxz42:9080 (Cdn Cache Server V2.0)
   Connection: keep-alive
 Length: 183313 (179K) [application/x-javascript]
 Saving to: `12306_ticket_helper.user.js'
 
-     0K .......... .......... .......... .......... .......... 27% 49.1K 3s
-    50K .......... .......... .......... .......... .......... 55% 23.7K 2s
-   100K .......... .......... .......... .......... .......... 83% 28.6K 1s
-   150K .......... .......... .........                       100% 58.1K=5.4s
+     0K .......... .......... .......... .......... .......... 27% 30.1K 4s
+    50K .......... .......... .......... .......... .......... 55% 28.2K 3s
+   100K .......... .......... .......... .......... .......... 83% 59.3K 1s
+   150K .......... .......... .........                       100% 56.1K=4.8s
 
-2013-04-21 19:30:08 (33.3 KB/s) - `12306_ticket_helper.user.js' saved [183313/183313]
+2013-04-21 19:35:06 (37.3 KB/s) - `12306_ticket_helper.user.js' saved [183313/183313]
 
---2013-04-21 19:30:08--  http://static.liebao.cn/_softdownload/12306_ticket_helper.crx
-Resolving static.liebao.cn... 125.221.95.104
-Connecting to static.liebao.cn|125.221.95.104|:80... connected.
+--2013-04-21 19:35:06--  http://static.liebao.cn/_softdownload/12306_ticket_helper.crx
+Resolving static.liebao.cn... 124.163.221.44
+Connecting to static.liebao.cn|124.163.221.44|:80... connected.
 HTTP request sent, awaiting response... 
   HTTP/1.1 200 OK
-  Date: Sun, 21 Apr 2013 11:30:09 GMT
+  Date: Sun, 21 Apr 2013 11:35:08 GMT
   Server: nginx/1.0.5
   Content-Type: application/octet-stream
   Content-Length: 81218
   Last-Modified: Sun, 24 Mar 2013 13:12:12 GMT
   Accept-Ranges: bytes
-  X-Via: 1.1 hbbd85:8107 (Cdn Cache Server V2.0), 1.1 wh111:9080 (Cdn Cache Server V2.0)
+  X-Via: 1.1 sdyt40:88 (Cdn Cache Server V2.0), 1.1 sxxz39:9080 (Cdn Cache Server V2.0)
   Connection: keep-alive
 Length: 81218 (79K) [application/octet-stream]
 Saving to: `12306_ticket_helper.crx'
 
-     0K .......... .......... .......... .......... .......... 63% 69.5K 0s
-    50K .......... .......... .........                       100% 16.0K=2.5s
+     0K .......... .......... .......... .......... .......... 63% 34.1K 1s
+    50K .......... .......... .........                       100% 76.1K=1.9s
 
-2013-04-21 19:30:11 (31.1 KB/s) - `12306_ticket_helper.crx' saved [81218/81218]
-
-                            69% 1.47K=38s
-
-2013-04-21 19:30:40 (3.26 KB/s) - Read error at byte 128127/183313 (Connection timed out). Retrying.
-
---2013-04-21 19:30:41--  (try: 2)  http://static.liebao.cn/_softdownload/12306_ticket_helper.user.js
-Connecting to static.liebao.cn|124.163.221.44|:80... connected.
-HTTP request sent, awaiting response... 
-  HTTP/1.1 206 Partial Content
-  Date: Sun, 21 Apr 2013 11:10:03 GMT
-  Server: nginx/1.0.5
-  Content-Type: application/x-javascript
-  Last-Modified: Sun, 24 Mar 2013 13:12:11 GMT
-  Accept-Ranges: bytes
-  Content-Range: bytes 128127-183312/183313
-  Content-Length: 55186
-  Age: 1
-  X-Via: 1.1 sdyt35:8104 (Cdn Cache Server V2.0), 1.1 sxxz42:9080 (Cdn Cache Server V2.0)
-  Connection: keep-alive
-Length: 183313 (179K), 55186 (54K) remaining [application/x-javascript]
-Saving to: `12306_ticket_helper.user.js'
-
-        [ skipping 100K ]
-   100K ,,,,,,,,,, ,,,,,,,,,, ,,,,,..... .......... .......... 83% 31.2K 2s
-   150K .......... .......... .........                       100% 22.8K=2.9s
-
-2013-04-21 19:30:44 (18.8 KB/s) - `12306_ticket_helper.user.js' saved [183313/183313]
-
---2013-04-21 19:30:44--  http://static.liebao.cn/_softdownload/12306_ticket_helper.crx
-Resolving static.liebao.cn... 60.220.213.144
-Connecting to static.liebao.cn|60.220.213.144|:80... connected.
-HTTP request sent, awaiting response... 
-  HTTP/1.1 200 OK
-  Date: Sun, 21 Apr 2013 11:30:46 GMT
-  Server: nginx/1.0.5
-  Content-Type: application/octet-stream
-  Content-Length: 81218
-  Last-Modified: Sun, 24 Mar 2013 13:12:12 GMT
-  Accept-Ranges: bytes
-  X-Via: 1.1 sdyt40:88 (Cdn Cache Server V2.0), 1.1 sxcz140:9080 (Cdn Cache Server V2.0)
-  Connection: keep-alive
-Length: 81218 (79K) [application/octet-stream]
-Saving to: `12306_ticket_helper.crx.1'
-
-     0K .......... .......... .......... .......... .......... 63% 43.3K 1s
-    50K .......... .......... .........                       100% 24.8K=2.3s
-
-2013-04-21 19:30:47 (33.9 KB/s) - `12306_ticket_helper.crx.1' saved [81218/81218]
+2013-04-21 19:35:08 (42.8 KB/s) - `12306_ticket_helper.crx' saved [81218/81218]
 
