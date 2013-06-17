@@ -65,3 +65,29 @@ Saving to: `12306_ticket_helper.crx'
 
 2013-06-17 23:15:27 (12.8 KB/s) - `12306_ticket_helper.crx' saved [81218/81218]
 
+.... .........                       100%  118 =5m4s
+
+2013-06-17 23:16:01 (230 B/s) - `12306_ticket_helper.user.js' saved [183313/183313]
+
+--2013-06-17 23:16:01--  http://static.liebao.cn/_softdownload/12306_ticket_helper.crx
+Resolving static.liebao.cn... 222.192.185.19, 222.192.185.20
+Connecting to static.liebao.cn|222.192.185.19|:80... connected.
+HTTP request sent, awaiting response... 
+  HTTP/1.1 200 OK
+  Date: Mon, 17 Jun 2013 15:10:18 GMT
+  Server: nginx/1.0.5
+  Content-Type: application/octet-stream
+  Content-Length: 81218
+  Last-Modified: Sun, 24 Mar 2013 13:12:12 GMT
+  Accept-Ranges: bytes
+  Age: 1
+  X-Via: 1.1 hbbd85:8107 (Cdn Cache Server V2.0), 1.1 njjyw7:6060 (Cdn Cache Server V2.0)
+  Connection: keep-alive
+Length: 81218 (79K) [application/octet-stream]
+Saving to: `12306_ticket_helper.crx'
+
+     0K .......... .......... .......... .......... .......... 63% 22.8K 1s
+    50K .......... .......... .........                       100% 16.7K=4.0s
+
+2013-06-17 23:16:05 (20.1 KB/s) - `12306_ticket_helper.crx' saved [81218/81218]
+
