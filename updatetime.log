@@ -1,9 +1,9 @@
---2013-06-17 17:15:01--  http://static.liebao.cn/_softupdate/44/version.js
-Resolving static.liebao.cn... 222.192.185.19, 222.192.185.20
-Connecting to static.liebao.cn|222.192.185.19|:80... connected.
+--2013-06-17 20:55:01--  http://static.liebao.cn/_softupdate/44/version.js
+Resolving static.liebao.cn... 222.192.185.20, 222.192.185.19
+Connecting to static.liebao.cn|222.192.185.20|:80... connected.
 HTTP request sent, awaiting response... 
   HTTP/1.1 200 OK
-  Date: Mon, 17 Jun 2013 09:05:05 GMT
+  Date: Mon, 17 Jun 2013 12:30:05 GMT
   Server: nginx/1.0.5
   Content-Type: application/x-javascript
   Content-Length: 741
@@ -15,16 +15,16 @@ HTTP request sent, awaiting response...
 Length: 741 [application/x-javascript]
 Saving to: `version.js'
 
-     0K                                                       100% 69.3M=0s
+     0K                                                       100% 70.5M=0s
 
-2013-06-17 17:15:02 (69.3 MB/s) - `version.js' saved [741/741]
+2013-06-17 20:55:02 (70.5 MB/s) - `version.js' saved [741/741]
 
---2013-06-17 17:15:02--  http://static.liebao.cn/_softdownload/12306_ticket_helper.user.js
-Resolving static.liebao.cn... 222.192.185.20, 222.192.185.19
-Connecting to static.liebao.cn|222.192.185.20|:80... connected.
+--2013-06-17 20:55:02--  http://static.liebao.cn/_softdownload/12306_ticket_helper.user.js
+Resolving static.liebao.cn... 222.192.185.19, 222.192.185.20
+Connecting to static.liebao.cn|222.192.185.19|:80... connected.
 HTTP request sent, awaiting response... 
   HTTP/1.1 200 OK
-  Date: Mon, 17 Jun 2013 08:50:05 GMT
+  Date: Mon, 17 Jun 2013 12:45:04 GMT
   Server: nginx/1.0.5
   Content-Type: application/x-javascript
   Content-Length: 183313
@@ -36,32 +36,31 @@ HTTP request sent, awaiting response...
 Length: 183313 (179K) [application/x-javascript]
 Saving to: `12306_ticket_helper.user.js'
 
-     0K .......... .......... .......... .......... .......... 27% 36.2K 4s
-    50K .......... .......... .......... .......... .......... 55% 17.7K 3s
-   100K .......... .......... .......... .......... .......... 83% 17.7K 1s
-   150K .......... .......... .........                       100% 55.6K=7.6s
+     0K .......... .......... .......... .......... .......... 27% 19.0K 7s
+    50K .......... .......... .......... .......... .......... 55% 23.9K 4s
+   100K .......... .......... .......... .......... .......... 83% 4.32K 3s
+   150K .......... .......... .........                       100% 7.81K=20s
 
-2013-06-17 17:15:10 (23.7 KB/s) - `12306_ticket_helper.user.js' saved [183313/183313]
+2013-06-17 20:55:22 (8.95 KB/s) - `12306_ticket_helper.user.js' saved [183313/183313]
 
---2013-06-17 17:15:10--  http://static.liebao.cn/_softdownload/12306_ticket_helper.crx
-Resolving static.liebao.cn... 222.192.185.19, 222.192.185.20
-Connecting to static.liebao.cn|222.192.185.19|:80... connected.
+--2013-06-17 20:55:22--  http://static.liebao.cn/_softdownload/12306_ticket_helper.crx
+Resolving static.liebao.cn... 222.192.185.20, 222.192.185.19
+Connecting to static.liebao.cn|222.192.185.20|:80... connected.
 HTTP request sent, awaiting response... 
   HTTP/1.1 200 OK
-  Date: Mon, 17 Jun 2013 09:05:15 GMT
+  Date: Mon, 17 Jun 2013 12:55:25 GMT
   Server: nginx/1.0.5
   Content-Type: application/octet-stream
   Content-Length: 81218
   Last-Modified: Sun, 24 Mar 2013 13:12:12 GMT
   Accept-Ranges: bytes
-  Age: 1
   X-Via: 1.1 hbbd85:8107 (Cdn Cache Server V2.0), 1.1 njjyw7:6060 (Cdn Cache Server V2.0)
   Connection: keep-alive
 Length: 81218 (79K) [application/octet-stream]
 Saving to: `12306_ticket_helper.crx'
 
-     0K .......... .......... .......... .......... .......... 63% 28.5K 1s
-    50K .......... .......... .........                       100% 24.6K=3.0s
+     0K .......... .......... .......... .......... .......... 63% 43.9K 1s
+    50K .......... .......... .........                       100% 26.2K=2.3s
 
-2013-06-17 17:15:13 (26.9 KB/s) - `12306_ticket_helper.crx' saved [81218/81218]
+2013-06-17 20:55:26 (35.1 KB/s) - `12306_ticket_helper.crx' saved [81218/81218]
 
