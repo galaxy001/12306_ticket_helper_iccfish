@@ -4386,3 +4386,214 @@ function compareVersion(v1, v2) {
 
 //#endregion
 
+��运行，请手动操作。\n您可以在登录页面下方的帮助区点击【重新注册】来修改绑定。");
+			return;
+		}
+
+		count++;
+		utility.setPref("_sessionuser", $("#UserName").val());
+		inRunning = true;
+		getLoginRandCode();
+	}
+
+	function stopLogin() {
+		//等待重试时，刷新验证码
+		$("#img_rrand_code").click();
+		$("#randCode").val("")[0].select();
+		inRunning = false;
+	}
+
+	//初始化
+	function executeLogin() {
+		count = 1;
+		utility.notify("自动登录中：(1) 次登录中...");
+		setTipMessage("开始登录中....");
+		getLoginRandCode();
+
+		return false;
+	}
+
+	var kun = utility.getPref("__un");
+	if (kun) {
+		$("#UserName").val(kun);
+	}
+	$("#password").val(utility.getPref("__up") || "");
+
+	$("#randCode").keyup(function (e) {
+		if (!$("#autoLogin")[0].checked) return;
+
+		e = e || event;
+		if (e.charCode == 13 || $("#randCode").val().length == 4) relogin();
+	});
+
+	//#region 起售时间提示和查询
+
+	function addDays(count) {
+		return new Date(this.getFullYear(), this.getMonth(), this.getDate() + count);
+	}
+
+	var curDate = new Date();
+
+	var html = ["<li style='font-weight:bold; color:blue;'><u>助手提示</u>：网上和电话订票提前20天，本日起售【<u>"];
+	html.push(utility.formatDate(addDays.call(curDate, 19)));
+	html.push("</u>】日车票；代售点和车站提前18天，本日起售【<u>");
+	html.push(utility.formatDate(addDays.call(curDate, 17)));
+	html.push("</u>】日车票。<br />【<a href='javascript:;' id='querySaleDate'>根据乘车日期推算起售日期</a>】【<a href='http://www.12306.cn/mormhweb/zxdt/tlxw_tdbtz56.html' target='_blank'>以相关公告、车站公告为准</a>】");
+
+	$("div.enter_from ul").append(html.join(""));
+
+	$("#querySaleDate").click(function () {
+		var date = prompt("请输入您要乘车的日期，如：2013-02-01");
+		if (!date) return;
+
+		if (!/(\d{4})[-/]0?(\d{1,2})[-/]0?(\d{1,2})/.exec(date)) {
+			alert("很抱歉未能识别日期");
+		}
+		date = new Date(parseInt(RegExp.$1), parseInt(RegExp.$2) - 1, parseInt(RegExp.$3));
+		alert("您查询的乘车日期是：" + utility.formatDate(date) + "\n\n互联网、电话起售日期是：" + utility.formatDate(addDays.call(date, -19)) + "\n车站、代售点起售日期是：" + utility.formatDate(addDays.call(date, -17)) + "\n\n以上结果仅供参考。");
+	});
+
+	//#endregion
+}
+
+//#endregion
+
+//#region 自动重新支付
+
+function initPayOrder() {
+	//如果出错，自动刷新
+	if ($("div.error_text").length > 0) {
+		utility.notify("页面出错，稍后自动刷新！");
+		setTimeout(function () { self.location.reload(); }, 3000);
+	}
+
+	return;
+	// undone
+
+	window.payOrder = this;
+
+	//epayOrder
+	var oldCall = window.epayOrder;
+	var formUrl, formData;
+
+	$("#myOrderForm").submit(function () {
+		var form = $(this);
+		var action = form.attr("action");
+		if (acton && action.index("laterEpay") != -1) {
+			return false;
+		}
+	});
+	window.epayOrder = function () {
+		oldCall.apply(arguments);
+
+		var form = $("#myOrderForm");
+		var formData = utility.serializeForm(form);
+		var formUrl = form.attr("action");
+	};
+
+	function getsubmitForm() {
+		utility.post(formUrl, formData, "text", function (html) {
+		}, function () {
+
+		});
+	}
+}
+
+//#endregion
+
+//#region 高级查询
+
+function initAdvancedTicketQuery() {
+	return;
+	$("div.cx_title_w").before("<div class='outerbox' style='width:99%;'><div class='box' id='advQuery'><div class='title'><big>12306订票助手 高级查询</big><div class='time-comp'><label><input type='checkbox' name='' id='' value='1' /> 启用高级查询功能</lable></div></div></div></div>");
+	var destContainer = $("#advQuery");
+
+	if (utility.isDemoUser()) {
+		destContainer.append("<div style=''></div>");
+		return;
+	}
+
+	var html = [];
+	html.push("<table class='gridtb'>\
+<tr>\
+<th>日期</th>\
+<th>车次</th>\
+<th>始发站</th>\
+<th>到达站</th>\
+<th>发时</th>\
+<th>到时</th>\
+<th>历时</th>\
+<th>商务</th>\
+<th>特等</th>\
+<th>一等</th>\
+<th>二等</th>\
+<th>高软</th>\
+<th>软卧</th>\
+<th>硬卧</th>\
+<th>软座</th>\
+<th>硬座</th>\
+<th>无座</th>\
+<th>其它</th>\
+<th class='last'>操作</th>\
+</tr>\
+</table>");
+
+	destContainer.append(html.join(""));
+
+
+}
+
+//#endregion
+
+
+//#region 更新专用检测代码
+
+if (location.pathname == "/otsweb/" || location.pathname == "/otsweb/main.jsp") {
+	if (isFirefox) {
+		//firefox 专用检测代码
+		GM_xmlhttpRequest({
+			method: "GET",
+			url: "http://www.fishlee.net/service/update/44/version.js",
+			onload: function (o) {
+				eval(o.responseText);
+
+				if (typeof (fishlee12306_msgid) != 'undefined') {
+					if (utility.getPref("helperlastmsgid") != fishlee12306_msgid) {
+						utility.setPref("helperlastmsgid", fishlee12306_msgid);
+
+						if (!fishlee12306_msgver || compareVersion(version, fishlee12306_msgver) < 0) {
+							if (fishlee12306_msg) alert(fishlee12306_msg);
+						}
+					}
+				}
+
+				console.log("[INFO] 更新检查：当前助手版本=" + version + "，新版本=" + version_12306_helper);
+				if (compareVersion(version, version_12306_helper) < 0 && confirm("订票助手已发布新版 【" + version_12306_helper + "】，为了您的正常使用，请及时更新!是否立刻更新？\n\n本次更新内容如下：\n" + version_updater.join("\n"))) {
+					GM_openInTab("http://www.fishlee.net/Service/Download.ashx/44/47/12306_ticket_helper.user.js", true, true);
+				}
+			}
+		});
+	} else {
+		unsafeInvoke(function () {
+			$("body").append('<iframe id="checkVersion" width="0" height="0" style="visibility:hidden;" src="http://static.fishlee.net/content/scriptProxy.html?script=http://static.fishlee.net/content/images/apps/cn12306/checkVersion.js&v=' + window.helperVersion + '"></iframe>');
+		});
+	}
+}
+function compareVersion(v1, v2) {
+	var vv1 = v1.split('.');
+	var vv2 = v2.split('.');
+
+	var length = Math.min(vv1.length, vv2.length);
+	for (var i = 0; i < length; i++) {
+		var s1 = parseInt(vv1[i]);
+		var s2 = parseInt(vv2[i]);
+
+		if (s1 < s2) return -1;
+		if (s1 > s2) return 1;
+	}
+
+	return vv1.length > vv2.length ? 1 : vv1.length < vv2.length ? -1 : 0;
+}
+
+//#endregion
+
