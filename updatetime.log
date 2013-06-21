@@ -1,67 +1,61 @@
---2013-06-21 10:40:01--  http://static.liebao.cn/_softupdate/44/version.js
-Resolving static.liebao.cn... 222.192.185.19, 222.192.185.20
-Connecting to static.liebao.cn|222.192.185.19|:80... connected.
+--2013-06-21 11:06:51--  http://www.fishlee.net/service/update/44/version.js
+Resolving www.fishlee.net... 223.4.96.58
+Connecting to www.fishlee.net|223.4.96.58|:80... connected.
 HTTP request sent, awaiting response... 
   HTTP/1.1 200 OK
-  Date: Fri, 21 Jun 2013 02:15:06 GMT
-  Server: nginx/1.0.5
-  Content-Type: application/x-javascript
-  Content-Length: 741
-  Last-Modified: Sun, 24 Mar 2013 13:20:22 GMT
-  Accept-Ranges: bytes
-  Age: 1
-  X-Via: 1.1 hbbd80:88 (Cdn Cache Server V2.0), 1.1 njjyw7:6060 (Cdn Cache Server V2.0)
-  Connection: keep-alive
-Length: 741 [application/x-javascript]
-Saving to: `version.js'
-
-     0K                                                       100% 69.5M=0s
-
-2013-06-21 10:40:02 (69.5 MB/s) - `version.js' saved [741/741]
-
---2013-06-21 10:40:02--  http://static.liebao.cn/_softdownload/12306_ticket_helper.user.js
-Resolving static.liebao.cn... 222.192.185.20, 222.192.185.19
-Connecting to static.liebao.cn|222.192.185.20|:80... connected.
-HTTP request sent, awaiting response... 
-  HTTP/1.1 200 OK
-  Date: Fri, 21 Jun 2013 02:25:05 GMT
-  Server: nginx/1.0.5
-  Content-Type: application/x-javascript
-  Content-Length: 183313
-  Last-Modified: Sun, 24 Mar 2013 13:12:11 GMT
-  Accept-Ranges: bytes
-  Age: 1
-  X-Via: 1.1 hbbd85:8104 (Cdn Cache Server V2.0), 1.1 njjyw7:6060 (Cdn Cache Server V2.0)
-  Connection: keep-alive
-Length: 183313 (179K) [application/x-javascript]
-Saving to: `12306_ticket_helper.user.js'
-
-     0K .......... .......... .......... .......... .......... 27%  379K 0s
-    50K .......... .......... .......... .......... .......... 55%  721K 0s
-   100K .......... .......... .......... .......... .......... 83% 1.74M 0s
-   150K .......... .......... .........                       100%  454K=0.3s
-
-2013-06-21 10:40:02 (610 KB/s) - `12306_ticket_helper.user.js' saved [183313/183313]
-
---2013-06-21 10:40:02--  http://static.liebao.cn/_softdownload/12306_ticket_helper.crx
-Resolving static.liebao.cn... 222.192.185.19, 222.192.185.20
-Connecting to static.liebao.cn|222.192.185.19|:80... connected.
-HTTP request sent, awaiting response... 
-  HTTP/1.1 200 OK
-  Date: Fri, 21 Jun 2013 02:25:06 GMT
-  Server: nginx/1.0.5
+  Cache-Control: private
   Content-Type: application/octet-stream
-  Content-Length: 81218
-  Last-Modified: Sun, 24 Mar 2013 13:12:12 GMT
-  Accept-Ranges: bytes
-  Age: 1
-  X-Via: 1.1 hbbd85:8107 (Cdn Cache Server V2.0), 1.1 njjyw7:6060 (Cdn Cache Server V2.0)
-  Connection: keep-alive
-Length: 81218 (79K) [application/octet-stream]
-Saving to: `12306_ticket_helper.crx'
+  Server: Microsoft-IIS/7.5
+  Content-Disposition: attachment; filename=version.js
+  Date: Fri, 21 Jun 2013 03:07:02 GMT
+  Connection: close
+  Content-Length: 1039
+Length: 1039 (1.0K) [application/octet-stream]
+Saving to: “version.js”
 
-     0K .......... .......... .......... .......... .......... 63%  173K 0s
-    50K .......... .......... .........                       100%  333K=0.4s
+     0K .                                                     100% 7.57K=0.1s
 
-2013-06-21 10:40:03 (211 KB/s) - `12306_ticket_helper.crx' saved [81218/81218]
+2013-06-21 11:06:51 (7.57 KB/s) - “version.js” saved [1039/1039]
+
+--2013-06-21 11:06:51--  http://www.fishlee.net/Service/Download.ashx/44/47/12306_ticket_helper.user.js
+Resolving www.fishlee.net... 223.4.96.58
+Connecting to www.fishlee.net|223.4.96.58|:80... connected.
+HTTP request sent, awaiting response... 
+  HTTP/1.1 200 OK
+  Cache-Control: private
+  Content-Type: application/octet-stream
+  Server: Microsoft-IIS/7.5
+  Content-Disposition: attachment; filename=12306_ticket_helper.user.js
+  Date: Fri, 21 Jun 2013 03:07:03 GMT
+  Connection: close
+  Content-Length: 194770
+Length: 194770 (190K) [application/octet-stream]
+Saving to: “12306_ticket_helper.user.js”
+
+     0K .......... .......... .......... .......... .......... 26% 74.3K 2s
+    50K .......... .......... .......... .......... .......... 52%  187K 1s
+   100K .......... .......... .......... .......... .......... 78%  196K 0s
+   150K .......... .......... .......... ..........           100% 64.9K=1.8s
+
+2013-06-21 11:06:54 (105 KB/s) - “12306_ticket_helper.user.js” saved [194770/194770]
+
+--2013-06-21 11:06:54--  http://www.fishlee.net/Service/Download.ashx/44/63/12306_ticket_helper.crx
+Resolving www.fishlee.net... 223.4.96.58
+Connecting to www.fishlee.net|223.4.96.58|:80... connected.
+HTTP request sent, awaiting response... 
+  HTTP/1.1 200 OK
+  Cache-Control: private
+  Content-Type: application/octet-stream
+  Server: Microsoft-IIS/7.5
+  Content-Disposition: attachment; filename=12306_ticket_helper.crx
+  Date: Fri, 21 Jun 2013 03:07:05 GMT
+  Connection: close
+  Content-Length: 85045
+Length: 85045 (83K) [application/octet-stream]
+Saving to: “12306_ticket_helper.crx”
+
+     0K .......... .......... .......... .......... .......... 60% 38.1K 1s
+    50K .......... .......... .......... ...                  100% 67.4K=1.8s
+
+2013-06-21 11:06:56 (46.1 KB/s) - “12306_ticket_helper.crx” saved [85045/85045]
 
