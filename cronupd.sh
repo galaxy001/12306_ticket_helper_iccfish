@@ -15,9 +15,9 @@ cd /opt/galaxy/git/12306_ticket_helper_iccfish/
 mv 12306_ticket_helper.user.js 12306_ticket_helper.user.js.old
 mv version.js version.js.old
 mv 12306_ticket_helper.crx 12306_ticket_helper_last.crx
-wget -S http://static.liebao.cn/_softupdate/44/version.js -o updatetime.log
-wget -S http://static.liebao.cn/_softdownload/12306_ticket_helper.user.js -a updatetime.log
-wget -S http://static.liebao.cn/_softdownload/12306_ticket_helper.crx -a updatetime.log
+wget -S http://www.fishlee.net/service/update/44/version.js -o updatetime.log
+wget -S http://www.fishlee.net/Service/Download.ashx/44/47/12306_ticket_helper.user.js -a updatetime.log
+wget -S http://www.fishlee.net/Service/Download.ashx/44/63/12306_ticket_helper.crx -a updatetime.log
 
 THEVER=`perl -MPOSIX -MFile::stat -lane 'if (/\bvar\s+version\b/) {@v=split /=/; $s=@v[-1]; $s=~s/[\s";]//g;$b=stat($ARGV)->[9];print "$s @ ",strftime("%Y-%m-%d %T %Z",localtime($b));exit;}' 12306_ticket_helper.user.js`
 # 4.5.0 @ 2013-01-26 18:15:56 CST
