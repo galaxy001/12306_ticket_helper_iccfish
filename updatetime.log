@@ -1,4 +1,4 @@
---2013-06-21 11:09:25--  http://www.fishlee.net/service/update/44/version.js
+--2013-06-24 15:45:01--  http://www.fishlee.net/service/update/44/version.js
 Resolving www.fishlee.net... 223.4.96.58
 Connecting to www.fishlee.net|223.4.96.58|:80... connected.
 HTTP request sent, awaiting response... 
@@ -7,17 +7,17 @@ HTTP request sent, awaiting response...
   Content-Type: application/octet-stream
   Server: Microsoft-IIS/7.5
   Content-Disposition: attachment; filename=version.js
-  Date: Fri, 21 Jun 2013 03:09:37 GMT
+  Date: Mon, 24 Jun 2013 07:45:04 GMT
   Connection: close
-  Content-Length: 1039
-Length: 1039 (1.0K) [application/octet-stream]
-Saving to: “version.js”
+  Content-Length: 875
+Length: 875 [application/octet-stream]
+Saving to: `version.js'
 
-     0K .                                                     100% 5.08K=0.2s
+     0K                                                       100% 3.42K=0.2s
 
-2013-06-21 11:09:26 (5.08 KB/s) - “version.js” saved [1039/1039]
+2013-06-24 15:45:02 (3.42 KB/s) - `version.js' saved [875/875]
 
---2013-06-21 11:09:26--  http://www.fishlee.net/Service/Download.ashx/44/47/12306_ticket_helper.user.js
+--2013-06-24 15:45:02--  http://www.fishlee.net/Service/Download.ashx/44/47/12306_ticket_helper.user.js
 Resolving www.fishlee.net... 223.4.96.58
 Connecting to www.fishlee.net|223.4.96.58|:80... connected.
 HTTP request sent, awaiting response... 
@@ -26,20 +26,20 @@ HTTP request sent, awaiting response...
   Content-Type: application/octet-stream
   Server: Microsoft-IIS/7.5
   Content-Disposition: attachment; filename=12306_ticket_helper.user.js
-  Date: Fri, 21 Jun 2013 03:09:37 GMT
+  Date: Mon, 24 Jun 2013 07:45:05 GMT
   Connection: close
-  Content-Length: 194770
-Length: 194770 (190K) [application/octet-stream]
-Saving to: “12306_ticket_helper.user.js”
+  Content-Length: 194647
+Length: 194647 (190K) [application/octet-stream]
+Saving to: `12306_ticket_helper.user.js'
 
-     0K .......... .......... .......... .......... .......... 26% 51.3K 3s
-    50K .......... .......... .......... .......... .......... 52%  275K 1s
-   100K .......... .......... .......... .......... .......... 78%  130K 0s
-   150K .......... .......... .......... ..........           100%  156K=1.8s
+     0K .......... .......... .......... .......... .......... 26% 34.5K 4s
+    50K .......... .......... .......... .......... .......... 52% 90.6K 2s
+   100K .......... .......... .......... .......... .......... 78% 99.9K 1s
+   150K .......... .......... .......... ..........           100% 62.0K=3.1s
 
-2013-06-21 11:09:28 (106 KB/s) - “12306_ticket_helper.user.js” saved [194770/194770]
+2013-06-24 15:45:06 (60.4 KB/s) - `12306_ticket_helper.user.js' saved [194647/194647]
 
---2013-06-21 11:09:28--  http://www.fishlee.net/Service/Download.ashx/44/63/12306_ticket_helper.crx
+--2013-06-24 15:45:06--  http://www.fishlee.net/Service/Download.ashx/44/63/12306_ticket_helper.crx
 Resolving www.fishlee.net... 223.4.96.58
 Connecting to www.fishlee.net|223.4.96.58|:80... connected.
 HTTP request sent, awaiting response... 
@@ -48,14 +48,14 @@ HTTP request sent, awaiting response...
   Content-Type: application/octet-stream
   Server: Microsoft-IIS/7.5
   Content-Disposition: attachment; filename=12306_ticket_helper.crx
-  Date: Fri, 21 Jun 2013 03:09:39 GMT
+  Date: Mon, 24 Jun 2013 07:45:10 GMT
   Connection: close
-  Content-Length: 85045
-Length: 85045 (83K) [application/octet-stream]
-Saving to: “12306_ticket_helper.crx”
+  Content-Length: 85002
+Length: 85002 (83K) [application/octet-stream]
+Saving to: `12306_ticket_helper.crx'
 
-     0K .......... .......... .......... .......... .......... 60% 31.8K 1s
-    50K .......... .......... .......... ...                  100% 34.9K=2.5s
+     0K .......... .......... .......... .......... .......... 60% 27.8K 1s
+    50K .......... .......... .......... ...                  100% 23.6K=3.2s
 
-2013-06-21 11:09:31 (33.0 KB/s) - “12306_ticket_helper.crx” saved [85045/85045]
+2013-06-24 15:45:10 (25.9 KB/s) - `12306_ticket_helper.crx' saved [85002/85002]
 
