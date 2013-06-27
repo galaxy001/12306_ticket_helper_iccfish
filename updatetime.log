@@ -78,3 +78,20 @@ Saving to: `12306_ticket_helper.crx'
 
 2013-06-27 16:15:13 (193 KB/s) - `12306_ticket_helper.crx' saved [85004/85004]
 
+
+  HTTP/1.1 200 OK
+  Cache-Control: private
+  Content-Type: application/octet-stream
+  Server: Microsoft-IIS/7.5
+  Content-Disposition: attachment; filename=12306_ticket_helper.crx
+  Date: Thu, 27 Jun 2013 08:15:09 GMT
+  Connection: close
+  Content-Length: 85004
+Length: 85004 (83K) [application/octet-stream]
+Saving to: `12306_ticket_helper.crx'
+
+     0K .......... .......... .......... .......... .......... 60%  136K 0s
+    50K .......... .......... .......... ...                  100%  425K=0.4s
+
+2013-06-27 16:15:14 (187 KB/s) - `12306_ticket_helper.crx' saved [85004/85004]
+
