@@ -1,10 +1,8 @@
-var version_12306_helper = "5.0.3";
-var version_12306_helper_beta = "5.0.3";
+var version_12306_helper = "5.1.0";
+var version_12306_helper_beta = "5.1.0";
 var version_updater = [
-	"* 修正安全期修改时，低于5秒的修改不起效的BUG", ,
-	"* 修改版本号兼容标记",
-	"* 简化界面，去除保持在线的功能显示（功能依然存在）",
-	"* 其它细微调整"
+	"* 修正改签页面助手不能运行的BUG",
+	"* 界面调整，工作流程优化"
 ];
 var fishlee12306_msgid=17;
 var fishlee12306_msgver="4.6.2";
