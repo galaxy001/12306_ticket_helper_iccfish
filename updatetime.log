@@ -1,4 +1,4 @@
---2013-07-02 18:30:01--  http://www.fishlee.net/service/update/44/version.js
+--2013-07-09 18:45:01--  http://www.fishlee.net/service/update/44/version.js
 Resolving www.fishlee.net... 223.4.96.58
 Connecting to www.fishlee.net|223.4.96.58|:80... connected.
 HTTP request sent, awaiting response... 
@@ -7,17 +7,17 @@ HTTP request sent, awaiting response...
   Content-Type: application/octet-stream
   Server: Microsoft-IIS/7.5
   Content-Disposition: attachment; filename=version.js
-  Date: Tue, 02 Jul 2013 10:29:57 GMT
+  Date: Tue, 09 Jul 2013 10:45:00 GMT
   Connection: close
-  Content-Length: 750
-Length: 750 [application/octet-stream]
+  Content-Length: 370
+Length: 370 [application/octet-stream]
 Saving to: `version.js'
 
-     0K                                                       100% 73.9M=0s
+     0K                                                       100% 33.4M=0s
 
-2013-07-02 18:30:02 (73.9 MB/s) - `version.js' saved [750/750]
+2013-07-09 18:45:02 (33.4 MB/s) - `version.js' saved [370/370]
 
---2013-07-02 18:30:02--  http://www.fishlee.net/Service/Download.ashx/44/47/12306_ticket_helper.user.js
+--2013-07-09 18:45:02--  http://www.fishlee.net/Service/Download.ashx/44/47/12306_ticket_helper.user.js
 Resolving www.fishlee.net... 223.4.96.58
 Connecting to www.fishlee.net|223.4.96.58|:80... connected.
 HTTP request sent, awaiting response... 
@@ -26,19 +26,19 @@ HTTP request sent, awaiting response...
   Content-Type: application/octet-stream
   Server: Microsoft-IIS/7.5
   Content-Disposition: attachment; filename=12306_ticket_helper.user.js
-  Date: Tue, 02 Jul 2013 10:29:57 GMT
+  Date: Tue, 09 Jul 2013 10:45:00 GMT
   Connection: close
-  Content-Length: 136195
-Length: 136195 (133K) [application/octet-stream]
+  Content-Length: 137425
+Length: 137425 (134K) [application/octet-stream]
 Saving to: `12306_ticket_helper.user.js'
 
-     0K .......... .......... .......... .......... .......... 37%  168K 0s
-    50K .......... .......... .......... .......... .......... 75%  469K 0s
-   100K .......... .......... .......... ...                  100%  291K=0.5s
+     0K .......... .......... .......... .......... .......... 37%  167K 1s
+    50K .......... .......... .......... .......... .......... 74%  787K 0s
+   100K .......... .......... .......... ....                 100%  674K=0.4s
 
-2013-07-02 18:30:02 (257 KB/s) - `12306_ticket_helper.user.js' saved [136195/136195]
+2013-07-09 18:45:03 (324 KB/s) - `12306_ticket_helper.user.js' saved [137425/137425]
 
---2013-07-02 18:30:02--  http://www.fishlee.net/Service/Download.ashx/44/63/12306_ticket_helper.crx
+--2013-07-09 18:45:03--  http://www.fishlee.net/Service/Download.ashx/44/63/12306_ticket_helper.crx
 Resolving www.fishlee.net... 223.4.96.58
 Connecting to www.fishlee.net|223.4.96.58|:80... connected.
 HTTP request sent, awaiting response... 
@@ -47,14 +47,14 @@ HTTP request sent, awaiting response...
   Content-Type: application/octet-stream
   Server: Microsoft-IIS/7.5
   Content-Disposition: attachment; filename=12306_ticket_helper.crx
-  Date: Tue, 02 Jul 2013 10:29:58 GMT
+  Date: Tue, 09 Jul 2013 10:45:01 GMT
   Connection: close
   Content-Length: 71762
 Length: 71762 (70K) [application/octet-stream]
 Saving to: `12306_ticket_helper.crx'
 
-     0K .......... .......... .......... .......... .......... 71%  141K 0s
-    50K .......... ..........                                 100%  286K=0.4s
+     0K .......... .......... .......... .......... .......... 71%  143K 0s
+    50K .......... ..........                                 100%  299K=0.4s
 
-2013-07-02 18:30:03 (165 KB/s) - `12306_ticket_helper.crx' saved [71762/71762]
+2013-07-09 18:45:03 (168 KB/s) - `12306_ticket_helper.crx' saved [71762/71762]
 
