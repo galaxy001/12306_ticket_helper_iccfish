@@ -1,0 +1,263 @@
+﻿
+
+.navbar-inner {
+	min-height: 0;
+}
+
+.usernamelabel {
+	line-height: 40px;
+	color: white;
+}
+
+.loading {
+	background-image: url('data:image/gif;base64,R0lGODlhEAAQALMPAHp6evf394qKiry8vJOTk83NzYKCgubm5t7e3qysrMXFxe7u7pubm7S0tKOjo////yH/C05FVFNDQVBFMi4wAwEAAAAh+QQJCAAPACwAAAAAEAAQAAAETPDJSau9NRDAgWxDYGmdZADCkQnlU7CCOA3oNgXsQG2FRhUAAoWDIU6MGeSDR0m4ghRa7JjIUXCogqQzpRxYhi2HILsOGuJxGcNuTyIAIfkECQgADwAsAAAAABAAEAAABGLwSXmMmjhLAQjSWDAYQHmAz8GVQPIESxZwggIYS0AIATYAvAdh8OIQJwRAQbJkdjAlUCA6KfU0VEmyGWgWnpNfcEAoAo6SmWtBUtCuk9gjwQKeQAeWYQAHIZICKBoKBncTEQAh+QQJCAAPACwAAAAAEAAQAAAEWvDJORejGCtQsgwDAQAGGWSHMK7jgAWq0CGj0VEDIJxPnvAU0a13eAQKrsnI81gqAZ6AUzIonA7JRwFAyAQSgCQsjCmUAIhjDEhlrQTFV+lMGLApWwUzw1jsIwAh+QQJCAAPACwAAAAAEAAQAAAETvDJSau9L4QaBgEAMWgEQh0CqALCZ0pBKhRSkYLvM7Ab/OGThoE2+QExyAdiuexhVglKwdCgqKKTGGBgBc00Np7VcVsJDpVo5ydyJt/wCAAh+QQJCAAPACwAAAAAEAAQAAAEWvDJSau9OAwCABnBtQhdCQjHlQhFWJBCOKWPLAXk8KQIkCwWBcAgMDw4Q5CkgOwohCVCYTIwdAgPolVhWSQAiN1jcLLVQrQbrBV4EcySA8l0Alo0yA8cw+9TIgAh+QQFCAAPACwAAAAAEAAQAAAEWvDJSau9WA4AyAhWMChPwXHCQRUGYARgKQBCzJxAQgXzIC2KFkc1MREoHMTAhwQ0Y5oBgkMhAAqUw8mgWGho0EcCx5DwaAUQrGXATg6zE7bwCQ2sAGZmz7dEAAA7') /*16px_loading_3.gif*/;
+	background-position: left top;
+	background-repeat: no-repeat;
+}
+
+.table td {
+	vertical-align: middle;
+}
+
+.inlineLabel {
+	display: inline-block;
+}
+
+#randcode {
+	margin-right: 10px;
+	width: 60px;
+	text-align: center;
+	ime-mode: disabled;
+	text-transform: uppercase;
+}
+
+#randcodeimg {
+	cursor: pointer;
+}
+
+.form-actions {
+}
+
+/*对话框*/
+.dialog {
+	display: none;
+	background-color: #fff;
+	box-shadow: 0 0 4px rgba(0,0,0,0.4);
+}
+
+	.dialog .controlBar {
+		text-align: right;
+		padding: 5px;
+		margin: 0px;
+	}
+
+/*加载对话框*/
+.loadingDialog {
+	border: 5px solid #C1D5EC;
+	width: 250px;
+}
+
+	.loadingDialog div {
+		background: #EFF4FA url(icons/16px_loading_1.gif) no-repeat 20px center;
+		border: 1px solid #7598D9;
+		padding: 10px;
+		padding-left: 40px;
+	}
+
+.loadicon_2 .innerDialog {
+	background-image: url(icons/16px_loading_2.gif);
+}
+
+.loadicon_3 .innerDialog {
+	background-image: url(icons/16px_loading_3.gif);
+}
+
+.loadicon_4 .innerDialog {
+	background-image: url(icons/16px_loading_4.gif);
+}
+
+.loadicon_clear .innerDialog {
+	background-image: none;
+}
+
+.loadicon_ok {
+	border: 5px solid #B6EAB0;
+}
+
+	.loadicon_ok .innerDialog {
+		background-image: url(icons/loadicon_ok.png);
+		border-color: #43C234;
+		background-color: #E0F6DD;
+	}
+
+.loadicon_error {
+	border: 5px solid #F6D8DD;
+}
+
+	.loadicon_error .innerDialog {
+		background-image: url(icons/loadicon_error.png);
+		border-color: #E593A2;
+		background-color: #FAE9EC;
+	}
+
+.loadicon_block {
+	border: 5px solid #F6D8DD;
+}
+
+	.loadicon_block .innerDialog {
+		background-image: url(icons/loadicon_block.png);
+		border-color: #E593A2;
+		background-color: #FAE9EC;
+	}
+
+.loadicon_tip {
+	border: 5px solid #E1EDB1;
+}
+
+	.loadicon_tip .innerDialog {
+		background-image: url(icons/loadicon_tip.png)!important;
+		border-color: #B4BB00;
+		background-color: #FEFFE3;
+	}
+/*对话框*/
+
+.fishDialog {
+	border-radius: 10px;
+	box-shadow: #7E9BCB 5px 5px 10px;
+	width: 500px;
+	display: none;
+}
+
+.fishDialogTitle {
+	font-size: 130%;
+	line-height: 40px;
+	text-align: center;
+	font-weight: bold;
+	color: #fff;
+	background: -webkit-linear-gradient(#7292C6, #40649F);
+	background: -moz-linear-gradient(#7292C6, #40649F);
+	background: -o-linear-gradient(#7292C6, #40649F);
+	background: linear-gradient(#7292C6, #40649F);
+	border-radius: 10px 10px 0 0;
+}
+
+.fishDialogContent {
+	background-color: #fff;
+	padding: 15px;
+}
+
+.fishDialogControls {
+	padding: 5px;
+	background-color: #f0f0f0;
+	text-align: right;
+	border-radius: 0 0 10px 10px;
+}
+
+	.fishDialogControls button {
+		margin-right: 5px;
+	}
+
+.fishDialogMask {
+	position: fixed;
+	left: 0px;
+	top: 0px;
+	background-color: #4E7896;
+	opacity: 0.5;
+	z-index: 9999;
+	width: 100%;
+	height: 500px;
+	display: block;
+	-moz-background-size: 40px 40px;
+	-o-background-size: 40px 40px;
+	-webkit-background-size: 40px 40px;
+	background-size: 40px 40px;
+	background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, 0.1) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.1) 50%, rgba(255, 255, 255, 0.1) 75%, transparent 75%, transparent);
+	background-image: -moz-linear-gradient(45deg, rgba(255, 255, 255, 0.1) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.1) 50%, rgba(255, 255, 255, 0.1) 75%, transparent 75%, transparent);
+	background-image: -o-linear-gradient(45deg, rgba(255, 255, 255, 0.1) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.1) 50%, rgba(255, 255, 255, 0.1) 75%, transparent 75%, transparent);
+	background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.1) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.1) 50%, rgba(255, 255, 255, 0.1) 75%, transparent 75%, transparent);
+}
+
+/*悬浮窗*/
+
+.floatDialog {
+	box-shadow: 5px 5px 15px #999;
+}
+
+.table th {
+	background: -webkit-linear-gradient(top, #dddddd 0%, #e5e5e5 100%);
+}
+
+.toolbar {
+	width: 100%;
+	margin: auto;
+}
+
+	.toolbar .toolbarItem {
+		margin-right: 3px;
+		display: inline-block;
+	}
+
+		.toolbar .toolbarItem:last-child {
+			margin-right: 0;
+		}
+
+.toolbar_5 .toolbarItem {
+	width: 18%;
+}
+
+
+/*兼容性设置，针对BootStrap以及PC、移动、分辨率相关的布局*/
+@media (max-width: 979px) {
+	.navbar-fixed-bottom {
+		position: fixed;
+		margin-left: 0;
+		margin-right: 0;
+	}
+
+	.navbar-fixed-top {
+		position: fixed;
+		margin-left: 0;
+		margin-right: 0;
+	}
+
+	body {
+		padding: 60px 0 30px 0;
+	}
+
+	.container {
+		margin-left: 10px;
+		margin-right: 10px;
+	}
+}
+
+@media (min-width: 980px) {
+	body {
+		padding-top: 60px;
+		padding-bottom: 60px;
+	}
+}
+
+@media (max-width:350px) {
+	body {
+		font-size: 12px;
+	}
+
+	.btn {
+		font-size: 100%;
+		padding: 3px;
+	}
+
+	.navbar .brand {
+		padding: 5px 10px 5px 5px;
+		font-size: 16px;
+		line-height: 18px;
+	}
+
+	.navbar .nav > li > a {
+		padding: 5px 10px 5px 5px;
+	}
+
+	.usernamelabel {
+		line-height: 30px;
+	}
+}
