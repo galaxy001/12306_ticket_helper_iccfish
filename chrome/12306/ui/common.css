@@ -221,7 +221,15 @@
 	}
 
 	body {
-		padding: 60px 0 30px 0;
+		padding: 0;
+	}
+	
+	body.hasHeader {
+		padding-top: 60px;
+	}
+	
+	body.hasFooter {
+		padding-bottom: 30px;
 	}
 
 	.container {
@@ -232,7 +240,14 @@
 
 @media (min-width: 980px) {
 	body {
+		padding: 0;
+	}
+	
+	body.hasHeader {
 		padding-top: 60px;
+	}
+	
+	body.hasFooter {
 		padding-bottom: 60px;
 	}
 }
