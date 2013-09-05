@@ -1,66 +1,64 @@
---2013-09-04 15:15:01--  http://www.fishlee.net/service/update/44/version.js
+--2013-09-05 14:00:01--  http://www.fishlee.net/service/update/44/version.js
 Resolving www.fishlee.net... 202.102.85.253
 Connecting to www.fishlee.net|202.102.85.253|:80... connected.
 HTTP request sent, awaiting response... 
   HTTP/1.1 200 OK
   Server: ASERVER/1.2.9-3
-  Date: Wed, 04 Sep 2013 07:15:18 GMT
-  Content-Type: application/octet-stream
-  Content-Length: 1111
+  Date: Thu, 05 Sep 2013 06:00:18 GMT
+  Content-Length: 0
   Connection: keep-alive
   Cache-Control: private
-  Content-Disposition: attachment; filename=version.js
   X-Powered-By-Anquanbao: MISS from chn-nj-dl-sb3
-Length: 1111 (1.1K) [application/octet-stream]
+Length: 0
 Saving to: `version.js'
 
-     0K .                                                     100% 99.3M=0s
+     0K                                                        0.00 =0s
 
-2013-09-04 15:15:02 (99.3 MB/s) - `version.js' saved [1111/1111]
+2013-09-05 14:00:02 (0.00 B/s) - `version.js' saved [0/0]
 
---2013-09-04 15:15:02--  http://www.fishlee.net/Service/Download.ashx/44/47/12306_ticket_helper.user.js
+--2013-09-05 14:00:02--  http://www.fishlee.net/Service/Download.ashx/44/47/12306_ticket_helper.user.js
 Resolving www.fishlee.net... 202.102.85.253
 Connecting to www.fishlee.net|202.102.85.253|:80... connected.
 HTTP request sent, awaiting response... 
   HTTP/1.1 200 OK
   Server: ASERVER/1.2.9-3
-  Date: Wed, 04 Sep 2013 07:15:18 GMT
+  Date: Thu, 05 Sep 2013 06:00:19 GMT
   Content-Type: application/octet-stream
-  Content-Length: 142843
+  Content-Length: 143309
   Connection: keep-alive
   Cache-Control: private
   Content-Disposition: attachment; filename=12306_ticket_helper.user.js
   X-Powered-By-Anquanbao: MISS from chn-nj-dl-sb3
-Length: 142843 (139K) [application/octet-stream]
+Length: 143309 (140K) [application/octet-stream]
 Saving to: `12306_ticket_helper.user.js'
 
-     0K .......... .......... .......... .......... .......... 35%  242K 0s
-    50K .......... .......... .......... .......... .......... 71%  645K 0s
-   100K .......... .......... .......... .........            100%  213M=0.3s
+     0K .......... .......... .......... .......... .......... 35%  110K 1s
+    50K .......... .......... .......... .......... .......... 71%  240K 0s
+   100K .......... .......... .......... .........            100%  305K=0.8s
 
-2013-09-04 15:15:03 (491 KB/s) - `12306_ticket_helper.user.js' saved [142843/142843]
+2013-09-05 14:00:03 (176 KB/s) - `12306_ticket_helper.user.js' saved [143309/143309]
 
---2013-09-04 15:15:03--  http://www.fishlee.net/Service/Download.ashx/44/63/12306_ticket_helper.crx
+--2013-09-05 14:00:03--  http://www.fishlee.net/Service/Download.ashx/44/63/12306_ticket_helper.crx
 Resolving www.fishlee.net... 202.102.85.253
 Connecting to www.fishlee.net|202.102.85.253|:80... connected.
 HTTP request sent, awaiting response... 
   HTTP/1.1 200 OK
   Server: ASERVER/1.2.9-3
-  Date: Wed, 04 Sep 2013 07:15:19 GMT
+  Date: Thu, 05 Sep 2013 06:00:21 GMT
   Content-Type: application/octet-stream
-  Content-Length: 217611
+  Content-Length: 217777
   Connection: keep-alive
   Cache-Control: private
   Content-Disposition: attachment; filename=12306_ticket_helper.crx
   X-Powered-By-Anquanbao: MISS from chn-nj-dl-sb3
-Length: 217611 (213K) [application/octet-stream]
+Length: 217777 (213K) [application/octet-stream]
 Saving to: `12306_ticket_helper.crx'
 
-     0K .......... .......... .......... .......... .......... 23%  219K 1s
-    50K .......... .......... .......... .......... .......... 47% 1022K 0s
-   100K .......... .......... .......... .......... .......... 70%  631K 0s
-   150K .......... .......... .......... .......... .......... 94%  386K 0s
-   200K .......... ..                                         100% 23862G=0.5s
+     0K .......... .......... .......... .......... .......... 23% 68.4K 2s
+    50K .......... .......... .......... .......... .......... 47%  190K 1s
+   100K .......... .......... .......... .......... .......... 70%  375K 0s
+   150K .......... .......... .......... .......... .......... 94%  385K 0s
+   200K .......... ..                                         100% 20.6K=1.9s
 
-2013-09-04 15:15:04 (438 KB/s) - `12306_ticket_helper.crx' saved [217611/217611]
+2013-09-05 14:00:07 (114 KB/s) - `12306_ticket_helper.crx' saved [217777/217777]
 
