@@ -63,3 +63,53 @@ Saving to: `12306_ticket_helper.crx'
 
 2013-09-08 18:30:06 (595 KB/s) - `12306_ticket_helper.crx' saved [226878/226878]
 
+                                        9% 2.32M=0.007s
+
+2013-09-08 18:33:31 (2.32 MB/s) - Read error at byte 16000/160681 (Connection timed out). Retrying.
+
+--2013-09-08 18:33:34--  (try: 4)  http://www.fishlee.net/Service/Download.ashx/44/47/12306_ticket_helper.user.js
+Connecting to www.fishlee.net|220.181.135.229|:80... connected.
+HTTP request sent, awaiting response... 
+  HTTP/1.1 200 OK
+  Server: ASERVER/1.2.9-3
+  Date: Sun, 08 Sep 2013 10:34:05 GMT
+  Content-Type: application/octet-stream
+  Content-Length: 160681
+  Connection: keep-alive
+  Cache-Control: private
+  Content-Disposition: attachment; filename=12306_ticket_helper.user.js
+  X-Powered-By-Anquanbao: MISS from dds-bj-yq-ib3
+Length: 160681 (157K) [application/octet-stream]
+Saving to: `12306_ticket_helper.user.js'
+
+     0K .......... .......... .......... .......... .......... 31%  255K 0s
+    50K .......... .......... .......... .......... .......... 63% 1.84M 0s
+   100K .......... .......... .......... .......... .......... 95%  617K 0s
+   150K ......                                                100% 1.48M=0.3s
+
+2013-09-08 18:33:49 (509 KB/s) - `12306_ticket_helper.user.js' saved [160681/160681]
+
+--2013-09-08 18:33:49--  http://www.fishlee.net/Service/Download.ashx/44/63/12306_ticket_helper.crx
+Resolving www.fishlee.net... 112.64.18.137
+Connecting to www.fishlee.net|112.64.18.137|:80... connected.
+HTTP request sent, awaiting response... 
+  HTTP/1.1 200 OK
+  Server: ASERVER/1.2.9-3
+  Date: Sun, 08 Sep 2013 10:34:07 GMT
+  Content-Type: application/octet-stream
+  Content-Length: 226878
+  Connection: keep-alive
+  Cache-Control: private
+  Content-Disposition: attachment; filename=12306_ticket_helper.crx
+  X-Powered-By-Anquanbao: MISS from uni-sh-gw-sb4
+Length: 226878 (222K) [application/octet-stream]
+Saving to: `12306_ticket_helper.crx'
+
+     0K .......... .......... .......... .......... .......... 22%  196K 1s
+    50K .......... .......... .......... .......... .......... 45%  769K 0s
+   100K .......... .......... .......... .......... .......... 67%  784K 0s
+   150K .......... .......... .......... .......... .......... 90%  866K 0s
+   200K .......... .......... .                               100% 2.90M=0.4s
+
+2013-09-08 18:33:50 (493 KB/s) - `12306_ticket_helper.crx' saved [226878/226878]
+
