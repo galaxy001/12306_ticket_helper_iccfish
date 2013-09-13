@@ -19,10 +19,12 @@ wget -S http://www.fishlee.net/service/update/44/version.js -o updatetime.log
 wget -S http://www.fishlee.net/Service/Download.ashx/44/47/12306_ticket_helper.user.js -a updatetime.log
 wget -S http://www.fishlee.net/Service/Download.ashx/44/63/12306_ticket_helper.crx -a updatetime.log
 
-THEVER=`perl -MPOSIX -MFile::stat -lane 'if (/\bvar\s+version\b/) {@v=split /=/; $s=@v[-1]; $s=~s/[\s";]//g;$b=stat($ARGV)->[9];print "$s @ ",strftime("%Y-%m-%d %T %Z",localtime($b));exit;}' 12306_ticket_helper.user.js`
+THEVER=`sha1sum 12306_ticket_helper.user.js`
 # 4.5.0 @ 2013-01-26 18:15:56 CST
 #echo $THEVER|awk '{print $1}' > now.ver.user
-JUSTVER=`echo $THEVER|awk '{gsub(/\./,"");print $1}'`
+DATETIME=`date +%F-%H%M%S`
+THEVER=${DATETIME}_${THEVER}
+JUSTVER=`echo ${THEVER}|awk '{gsub(/\./,"");print $1}'`
 
 cmp 12306_ticket_helper.user.js 12306_ticket_helper.user.js.old
 if [ $? -ne 0 ]; then
