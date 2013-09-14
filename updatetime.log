@@ -1,62 +1,9 @@
---2013-09-14 20:00:01--  http://www.fishlee.net/service/update/44/version.js
-Resolving www.fishlee.net... 114.112.93.181
-Connecting to www.fishlee.net|114.112.93.181|:80... connected.
-HTTP request sent, awaiting response... 
-  HTTP/1.1 200 OK
-  Cache-Control: private
-  Server: Microsoft-IIS/7.5
-  Date: Sat, 14 Sep 2013 12:00:40 GMT
-  Connection: close
-  Content-Length: 0
-Length: 0
-Saving to: `version.js'
-
-     0K                                                        0.00 =0s
-
-2013-09-14 20:00:01 (0.00 B/s) - `version.js' saved [0/0]
-
---2013-09-14 20:00:02--  http://www.fishlee.net/Service/Download.ashx/44/47/12306_ticket_helper.user.js
-Resolving www.fishlee.net... 114.112.93.181
-Connecting to www.fishlee.net|114.112.93.181|:80... connected.
-HTTP request sent, awaiting response... 
-  HTTP/1.1 200 OK
-  Cache-Control: private
-  Content-Type: application/octet-stream
-  Server: Microsoft-IIS/7.5
-  Content-Disposition: attachment; filename=12306_ticket_helper.user.js
-  Date: Sat, 14 Sep 2013 12:00:41 GMT
-  Connection: close
-  Content-Length: 161728
-Length: 161728 (158K) [application/octet-stream]
-Saving to: `12306_ticket_helper.user.js'
-
-     0K .......... .......... .......... .......... .......... 31% 47.6K 2s
-    50K .......... .......... .......... .......... .......... 63% 41.6K 1s
-   100K .......... .......... .......... .......... .......... 94% 35.4K 0s
-   150K .......                                               100% 53.4K=3.8s
-
-2013-09-14 20:00:06 (41.4 KB/s) - `12306_ticket_helper.user.js' saved [161728/161728]
-
---2013-09-14 20:00:06--  http://www.fishlee.net/Service/Download.ashx/44/63/12306_ticket_helper.crx
-Resolving www.fishlee.net... 114.112.93.181
-Connecting to www.fishlee.net|114.112.93.181|:80... connected.
-HTTP request sent, awaiting response... 
-  HTTP/1.1 200 OK
-  Cache-Control: private
-  Content-Type: application/octet-stream
-  Server: Microsoft-IIS/7.5
-  Content-Disposition: attachment; filename=12306_ticket_helper.crx
-  Date: Sat, 14 Sep 2013 12:00:46 GMT
-  Connection: close
-  Content-Length: 227997
-Length: 227997 (223K) [application/octet-stream]
-Saving to: `12306_ticket_helper.crx'
-
-     0K .......... .......... .......... .......... .......... 22% 72.5K 2s
-    50K .......... .......... .......... .......... .......... 44%  179K 1s
-   100K .......... .......... .......... .......... .......... 67% 71.8K 1s
-   150K .......... .......... .......... .......... .......... 89% 60.0K 0s
-   200K .......... .......... ..                              100%  164K=2.6s
-
-2013-09-14 20:00:10 (84.4 KB/s) - `12306_ticket_helper.crx' saved [227997/227997]
-
+--2013-09-14 21:30:01--  http://www.fishlee.net/service/update/44/version.js
+Resolving www.fishlee.net... failed: Name or service not known.
+wget: unable to resolve host address `www.fishlee.net'
+--2013-09-14 21:30:37--  http://www.fishlee.net/Service/Download.ashx/44/47/12306_ticket_helper.user.js
+Resolving www.fishlee.net... failed: Name or service not known.
+wget: unable to resolve host address `www.fishlee.net'
+--2013-09-14 21:31:13--  http://www.fishlee.net/Service/Download.ashx/44/63/12306_ticket_helper.crx
+Resolving www.fishlee.net... failed: Name or service not known.
+wget: unable to resolve host address `www.fishlee.net'
