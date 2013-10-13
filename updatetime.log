@@ -1,11 +1,11 @@
---2013-10-04 22:30:01--  http://www.fishlee.net/service/update/44/version.js
+--2013-10-13 13:30:01--  http://www.fishlee.net/service/update/44/version.js
 Resolving www.fishlee.net... 114.112.93.181
 Connecting to www.fishlee.net|114.112.93.181|:80... connected.
 HTTP request sent, awaiting response... 
   HTTP/1.1 200 OK
   Cache-Control: private
   Server: Microsoft-IIS/7.5
-  Date: Fri, 04 Oct 2013 14:30:15 GMT
+  Date: Sun, 13 Oct 2013 05:30:19 GMT
   Connection: close
   Content-Length: 0
 Length: 0
@@ -13,12 +13,12 @@ Saving to: `version.js'
 
      0K                                                        0.00 =0s
 
-2013-10-04 22:30:02 (0.00 B/s) - `version.js' saved [0/0]
+2013-10-13 13:30:02 (0.00 B/s) - `version.js' saved [0/0]
 
---2013-10-04 22:30:02--  http://www.fishlee.net/Service/Download.ashx/44/47/12306_ticket_helper.user.js
+--2013-10-13 13:30:02--  http://www.fishlee.net/Service/Download.ashx/44/47/12306_ticket_helper.user.js
 Resolving www.fishlee.net... failed: Name or service not known.
 wget: unable to resolve host address `www.fishlee.net'
---2013-10-04 22:30:03--  http://www.fishlee.net/Service/Download.ashx/44/63/12306_ticket_helper.crx
+--2013-10-13 13:30:04--  http://www.fishlee.net/Service/Download.ashx/44/63/12306_ticket_helper.crx
 Resolving www.fishlee.net... 114.112.93.181
 Connecting to www.fishlee.net|114.112.93.181|:80... connected.
 HTTP request sent, awaiting response... 
@@ -27,17 +27,17 @@ HTTP request sent, awaiting response...
   Content-Type: application/octet-stream
   Server: Microsoft-IIS/7.5
   Content-Disposition: attachment; filename=12306_ticket_helper.crx
-  Date: Fri, 04 Oct 2013 14:30:17 GMT
+  Date: Sun, 13 Oct 2013 05:30:25 GMT
   Connection: close
   Content-Length: 228897
 Length: 228897 (224K) [application/octet-stream]
 Saving to: `12306_ticket_helper.crx'
 
-     0K .......... .......... .......... .......... .......... 22% 88.8K 2s
-    50K .......... .......... .......... .......... .......... 44%  332K 1s
-   100K .......... .......... .......... .......... .......... 67% 10.6M 0s
-   150K .......... .......... .......... .......... .......... 89%  337K 0s
-   200K .......... .......... ...                             100% 12.0M=0.9s
+     0K .......... .......... .......... .......... .......... 22% 89.8K 2s
+    50K .......... .......... .......... .......... .......... 44%  356K 1s
+   100K .......... .......... .......... .......... .......... 67%  179K 0s
+   150K .......... .......... .......... .......... .......... 89%  358K 0s
+   200K .......... .......... ...                             100%  170K=1.3s
 
-2013-10-04 22:30:05 (257 KB/s) - `12306_ticket_helper.crx' saved [228897/228897]
+2013-10-13 13:30:10 (178 KB/s) - `12306_ticket_helper.crx' saved [228897/228897]
 
