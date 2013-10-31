@@ -1,27 +1,29 @@
---2013-10-31 08:30:01--  http://www.fishlee.net/service/update/44/version.js
-Resolving www.fishlee.net... 222.216.190.63, 61.155.149.92
-Connecting to www.fishlee.net|222.216.190.63|:80... connected.
+--2013-10-31 17:15:01--  http://www.fishlee.net/service/update/44/version.js
+Resolving www.fishlee.net... 61.155.149.92
+Connecting to www.fishlee.net|61.155.149.92|:80... connected.
 HTTP request sent, awaiting response... 
   HTTP/1.1 200 OK
   Cache-Control: max-age=604800
-  Content-Length: 0
   Accept-Ranges: bytes
-  Date: Thu, 31 Oct 2013 00:30:26 GMT
+  Date: Thu, 31 Oct 2013 09:15:18 GMT
   Connection: keep-alive
-  X-Cache: hit
+  X-Cache: miss
+  Content-Length: 0
 Length: 0
 Saving to: `version.js'
 
      0K                                                        0.00 =0s
 
-2013-10-31 08:30:09 (0.00 B/s) - `version.js' saved [0/0]
+2013-10-31 17:15:02 (0.00 B/s) - `version.js' saved [0/0]
 
---2013-10-31 08:30:09--  http://www.fishlee.net/Service/Download.ashx/44/47/12306_ticket_helper.user.js
-Resolving www.fishlee.net... failed: Name or service not known.
-wget: unable to resolve host address `www.fishlee.net'
---2013-10-31 08:30:22--  http://www.fishlee.net/Service/Download.ashx/44/63/12306_ticket_helper.crx
-Resolving www.fishlee.net... 222.216.190.63, 61.155.149.92
-Connecting to www.fishlee.net|222.216.190.63|:80... connected.
+--2013-10-31 17:15:02--  http://www.fishlee.net/Service/Download.ashx/44/47/12306_ticket_helper.user.js
+Resolving www.fishlee.net... 61.155.149.92
+Connecting to www.fishlee.net|61.155.149.92|:80... connected.
+HTTP request sent, awaiting response... Read error (Connection timed out) in headers.
+Retrying.
+
+--2013-10-31 17:15:06--  (try: 2)  http://www.fishlee.net/Service/Download.ashx/44/63/12306_ticket_helper.crx
+Connecting to www.fishlee.net|61.155.149.92|:80... connected.
 HTTP request sent, awaiting response... 
   HTTP/1.1 200 OK
   Cache-Control: private
@@ -29,18 +31,18 @@ HTTP request sent, awaiting response...
   Content-Disposition: attachment; filename=12306_ticket_helper.crx
   Content-Length: 228897
   Accept-Ranges: bytes
-  Date: Thu, 31 Oct 2013 00:30:44 GMT
+  Date: Thu, 31 Oct 2013 09:15:23 GMT
   Connection: keep-alive
   X-Cache: miss
   Content-Length: 228897
 Length: 228897 (224K) [application/octet-stream]
 Saving to: `12306_ticket_helper.crx'
 
-     0K .......... .......... .......... .......... .......... 22%  252K 1s
-    50K .......... .......... .......... .......... .......... 44%  975K 0s
-   100K .......... .......... .......... .......... .......... 67%  997K 0s
-   150K .......... .......... .......... .......... .......... 89% 1012K 0s
-   200K .......... .......... ...                             100% 11.0M=0.4s
+     0K .......... .......... .......... .......... .......... 22%  377K 0s
+    50K .......... .......... .......... .......... .......... 44%  479K 0s
+   100K .......... .......... .......... .......... .......... 67%  483K 0s
+   150K .......... .......... .......... .......... .......... 89%  396K 0s
+   200K .......... .......... ...                             100%  503K=0.5s
 
-2013-10-31 08:30:27 (637 KB/s) - `12306_ticket_helper.crx' saved [228897/228897]
+2013-10-31 17:15:06 (435 KB/s) - `12306_ticket_helper.crx' saved [228897/228897]
 
