@@ -1,9 +1,9 @@
---2013-11-25 01:30:01--  http://www.fishlee.net/service/update/44/version.js
+--2013-11-25 01:45:01--  http://www.fishlee.net/service/update/44/version.js
 Resolving www.fishlee.net... failed: Name or service not known.
 wget: unable to resolve host address `www.fishlee.net'
---2013-11-25 01:30:37--  http://www.fishlee.net/Service/Download.ashx/44/47/12306_ticket_helper.user.js
+--2013-11-25 01:45:37--  http://www.fishlee.net/Service/Download.ashx/44/47/12306_ticket_helper.user.js
 Resolving www.fishlee.net... failed: Name or service not known.
 wget: unable to resolve host address `www.fishlee.net'
---2013-11-25 01:31:13--  http://www.fishlee.net/Service/Download.ashx/44/63/12306_ticket_helper.crx
+--2013-11-25 01:46:13--  http://www.fishlee.net/Service/Download.ashx/44/63/12306_ticket_helper.crx
 Resolving www.fishlee.net... failed: Name or service not known.
 wget: unable to resolve host address `www.fishlee.net'
