@@ -1,9 +1,356 @@
---2013-11-30 12:15:01--  http://www.fishlee.net/service/update/44/version.js
-Resolving www.fishlee.net... failed: Name or service not known.
-wget: unable to resolve host address `www.fishlee.net'
---2013-11-30 12:15:37--  http://www.fishlee.net/Service/Download.ashx/44/47/12306_ticket_helper.user.js
-Resolving www.fishlee.net... failed: Name or service not known.
-wget: unable to resolve host address `www.fishlee.net'
---2013-11-30 12:16:13--  http://www.fishlee.net/Service/Download.ashx/44/63/12306_ticket_helper.crx
-Resolving www.fishlee.net... failed: Name or service not known.
-wget: unable to resolve host address `www.fishlee.net'
+--2013-11-30 14:45:01--  http://www.fishlee.net/service/update/44/version.js
+Resolving www.fishlee.net... 222.216.190.61, 61.155.149.92
+Connecting to www.fishlee.net|222.216.190.61|:80... connected.
+HTTP request sent, awaiting response... 
+  HTTP/1.1 200 OK
+  Cache-Control: max-age=604800
+  Content-Length: 0
+  Accept-Ranges: bytes
+  Date: Sat, 30 Nov 2013 06:45:06 GMT
+  Connection: keep-alive
+  X-Cache: hit
+Length: 0
+Saving to: `version.js'
+
+     0K                                                        0.00 =0s
+
+2013-11-30 14:45:02 (0.00 B/s) - `version.js' saved [0/0]
+
+--2013-11-30 14:45:02--  http://www.fishlee.net/Service/Download.ashx/44/47/12306_ticket_helper.user.js
+Resolving www.fishlee.net... 61.155.149.92, 61.155.149.86
+Connecting to www.fishlee.net|61.155.149.92|:80... connected.
+HTTP request sent, awaiting response... 
+  HTTP/1.1 200 OK
+  Content-Type: application/octet-stream
+  Content-Disposition: attachment; filename=12306_ticket_helper.user.js
+  Cache-Control: max-age=604800
+  Content-Length: 162047
+  Accept-Ranges: bytes
+  Date: Sat, 30 Nov 2013 06:45:09 GMT
+  Connection: keep-alive
+  X-Cache: hit
+Length: 162047 (158K) [application/octet-stream]
+Saving to: `12306_ticket_helper.user.js'
+
+     0K .......... .....                                        9% 4.00K=3.8s
+
+2013-11-30 14:45:21 (4.00 KB/s) - Connection closed at byte 15662. Retrying.
+
+--2013-11-30 14:45:22--  (try: 2)  http://www.fishlee.net/Service/Download.ashx/44/47/12306_ticket_helper.user.js
+Connecting to www.fishlee.net|61.155.149.92|:80... connected.
+HTTP request sent, awaiting response... Read error (Connection reset by peer) in headers.
+Retrying.
+
+--2013-11-30 14:45:24--  (try: 3)  http://www.fishlee.net/Service/Download.ashx/44/47/12306_ticket_helper.user.js
+Connecting to www.fishlee.net|61.155.149.92|:80... connected.
+HTTP request sent, awaiting response... 
+  HTTP/1.1 200 OK
+  Content-Type: application/octet-stream
+  Content-Disposition: attachment; filename=12306_ticket_helper.user.js
+  Cache-Control: max-age=604800
+  Content-Length: 162047
+  Accept-Ranges: bytes
+  Date: Sat, 30 Nov 2013 06:45:28 GMT
+  Connection: keep-alive
+  X-Cache: hit
+Length: 162047 (158K) [application/octet-stream]
+12306_ticket_helper.user.js has sprung into existence.
+Retrying.
+
+--2013-11-30 14:45:27--  (try: 4)  http://www.fishlee.net/Service/Download.ashx/44/47/12306_ticket_helper.user.js
+Connecting to www.fishlee.net|61.155.149.92|:80... connected.
+HTTP request sent, awaiting response... 
+  HTTP/1.1 200 OK
+  Content-Type: application/octet-stream
+  Content-Disposition: attachment; filename=12306_ticket_helper.user.js
+  Cache-Control: max-age=604800
+  Content-Length: 162047
+  Accept-Ranges: bytes
+  Date: Sat, 30 Nov 2013 06:45:31 GMT
+  Connection: keep-alive
+  X-Cache: hit
+Length: 162047 (158K) [application/octet-stream]
+12306_ticket_helper.user.js has sprung into existence.
+Retrying.
+
+--2013-11-30 14:45:31--  (try: 5)  http://www.fishlee.net/Service/Download.ashx/44/47/12306_ticket_helper.user.js
+Connecting to www.fishlee.net|61.155.149.92|:80... connected.
+HTTP request sent, awaiting response... 
+  HTTP/1.1 200 OK
+  Content-Type: application/octet-stream
+  Content-Disposition: attachment; filename=12306_ticket_helper.user.js
+  Cache-Control: max-age=604800
+  Content-Length: 162047
+  Accept-Ranges: bytes
+  Date: Sat, 30 Nov 2013 06:45:36 GMT
+  Connection: keep-alive
+  X-Cache: hit
+Length: 162047 (158K) [application/octet-stream]
+12306_ticket_helper.user.js has sprung into existence.
+Retrying.
+
+--2013-11-30 14:45:36--  (try: 6)  http://www.fishlee.net/Service/Download.ashx/44/47/12306_ticket_helper.user.js
+Connecting to www.fishlee.net|61.155.149.92|:80... connected.
+HTTP request sent, awaiting response... 
+  HTTP/1.1 200 OK
+  Content-Type: application/octet-stream
+  Content-Disposition: attachment; filename=12306_ticket_helper.user.js
+  Cache-Control: max-age=604800
+  Accept-Ranges: bytes
+  Date: Sat, 30 Nov 2013 06:45:41 GMT
+  Connection: keep-alive
+  X-Cache: miss
+  Content-Length: 162047
+Length: 162047 (158K) [application/octet-stream]
+12306_ticket_helper.user.js has sprung into existence.
+Retrying.
+
+--2013-11-30 14:45:42--  (try: 7)  http://www.fishlee.net/Service/Download.ashx/44/47/12306_ticket_helper.user.js
+Connecting to www.fishlee.net|61.155.149.92|:80... connected.
+HTTP request sent, awaiting response... 
+  HTTP/1.1 200 OK
+  Content-Type: application/octet-stream
+  Content-Disposition: attachment; filename=12306_ticket_helper.user.js
+  Cache-Control: max-age=604800
+  Accept-Ranges: bytes
+  Date: Sat, 30 Nov 2013 06:45:47 GMT
+  Connection: keep-alive
+  X-Cache: miss
+  Content-Length: 162047
+Length: 162047 (158K) [application/octet-stream]
+12306_ticket_helper.user.js has sprung into existence.
+Retrying.
+
+--2013-11-30 14:45:49--  (try: 8)  http://www.fishlee.net/Service/Download.ashx/44/47/12306_ticket_helper.user.js
+Connecting to www.fishlee.net|61.155.149.92|:80... connected.
+HTTP request sent, awaiting response... 
+  HTTP/1.1 200 OK
+  Content-Type: application/octet-stream
+  Content-Disposition: attachment; filename=12306_ticket_helper.user.js
+  Cache-Control: max-age=604800
+  Content-Length: 162047
+  Accept-Ranges: bytes
+  Date: Sat, 30 Nov 2013 06:45:54 GMT
+  Connection: keep-alive
+  X-Cache: hit
+Length: 162047 (158K) [application/octet-stream]
+12306_ticket_helper.user.js has sprung into existence.
+Retrying.
+
+--2013-11-30 14:45:57--  (try: 9)  http://www.fishlee.net/Service/Download.ashx/44/47/12306_ticket_helper.user.js
+Connecting to www.fishlee.net|61.155.149.92|:80... connected.
+HTTP request sent, awaiting response... 
+  HTTP/1.1 200 OK
+  Content-Type: application/octet-stream
+  Content-Disposition: attachment; filename=12306_ticket_helper.user.js
+  Cache-Control: max-age=604800
+  Content-Length: 162047
+  Accept-Ranges: bytes
+  Date: Sat, 30 Nov 2013 06:46:02 GMT
+  Connection: keep-alive
+  X-Cache: hit
+Length: 162047 (158K) [application/octet-stream]
+12306_ticket_helper.user.js has sprung into existence.
+Retrying.
+
+--2013-11-30 14:46:07--  (try:10)  http://www.fishlee.net/Service/Download.ashx/44/47/12306_ticket_helper.user.js
+Connecting to www.fishlee.net|61.155.149.92|:80... connected.
+HTTP request sent, awaiting response... 
+  HTTP/1.1 200 OK
+  Content-Type: application/octet-stream
+  Content-Disposition: attachment; filename=12306_ticket_helper.user.js
+  Cache-Control: max-age=604800
+  Content-Length: 162047
+  Accept-Ranges: bytes
+  Date: Sat, 30 Nov 2013 06:46:11 GMT
+  Connection: keep-alive
+  X-Cache: hit
+Length: 162047 (158K) [application/octet-stream]
+12306_ticket_helper.user.js has sprung into existence.
+Retrying.
+
+--2013-11-30 14:46:17--  (try:11)  http://www.fishlee.net/Service/Download.ashx/44/47/12306_ticket_helper.user.js
+Connecting to www.fishlee.net|61.155.149.92|:80... connected.
+HTTP request sent, awaiting response... 
+  HTTP/1.1 200 OK
+  Content-Type: application/octet-stream
+  Content-Disposition: attachment; filename=12306_ticket_helper.user.js
+  Cache-Control: max-age=604800
+  Content-Length: 162047
+  Accept-Ranges: bytes
+  Date: Sat, 30 Nov 2013 06:46:23 GMT
+  Connection: keep-alive
+  X-Cache: hit
+Length: 162047 (158K) [application/octet-stream]
+12306_ticket_helper.user.js has sprung into existence.
+Retrying.
+
+--2013-11-30 14:46:28--  (try:12)  http://www.fishlee.net/Service/Download.ashx/44/47/12306_ticket_helper.user.js
+Connecting to www.fishlee.net|61.155.149.92|:80... connected.
+HTTP request sent, awaiting response... 
+  HTTP/1.1 200 OK
+  Content-Type: application/octet-stream
+  Content-Disposition: attachment; filename=12306_ticket_helper.user.js
+  Cache-Control: max-age=604800
+  Content-Length: 162047
+  Accept-Ranges: bytes
+  Date: Sat, 30 Nov 2013 06:46:33 GMT
+  Connection: keep-alive
+  X-Cache: hit
+Length: 162047 (158K) [application/octet-stream]
+12306_ticket_helper.user.js has sprung into existence.
+Retrying.
+
+--2013-11-30 14:46:38--  (try:13)  http://www.fishlee.net/Service/Download.ashx/44/47/12306_ticket_helper.user.js
+Connecting to www.fishlee.net|61.155.149.92|:80... connected.
+HTTP request sent, awaiting response... 
+  HTTP/1.1 200 OK
+  Content-Type: application/octet-stream
+  Content-Disposition: attachment; filename=12306_ticket_helper.user.js
+  Cache-Control: max-age=604800
+  Content-Length: 162047
+  Accept-Ranges: bytes
+  Date: Sat, 30 Nov 2013 06:46:43 GMT
+  Connection: keep-alive
+  X-Cache: hit
+Length: 162047 (158K) [application/octet-stream]
+12306_ticket_helper.user.js has sprung into existence.
+Retrying.
+
+--2013-11-30 14:46:48--  (try:14)  http://www.fishlee.net/Service/Download.ashx/44/47/12306_ticket_helper.user.js
+Connecting to www.fishlee.net|61.155.149.92|:80... connected.
+HTTP request sent, awaiting response... 
+  HTTP/1.1 200 OK
+  Content-Type: application/octet-stream
+  Content-Disposition: attachment; filename=12306_ticket_helper.user.js
+  Cache-Control: max-age=604800
+  Content-Length: 162047
+  Accept-Ranges: bytes
+  Date: Sat, 30 Nov 2013 06:46:53 GMT
+  Connection: keep-alive
+  X-Cache: hit
+Length: 162047 (158K) [application/octet-stream]
+12306_ticket_helper.user.js has sprung into existence.
+Retrying.
+
+--2013-11-30 14:46:59--  (try:15)  http://www.fishlee.net/Service/Download.ashx/44/47/12306_ticket_helper.user.js
+Connecting to www.fishlee.net|61.155.149.92|:80... connected.
+HTTP request sent, awaiting response... 
+  HTTP/1.1 200 OK
+  Content-Type: application/octet-stream
+  Content-Disposition: attachment; filename=12306_ticket_helper.user.js
+  Cache-Control: max-age=604800
+  Content-Length: 162047
+  Accept-Ranges: bytes
+  Date: Sat, 30 Nov 2013 06:47:03 GMT
+  Connection: keep-alive
+  X-Cache: hit
+Length: 162047 (158K) [application/octet-stream]
+12306_ticket_helper.user.js has sprung into existence.
+Retrying.
+
+--2013-11-30 14:47:09--  (try:16)  http://www.fishlee.net/Service/Download.ashx/44/47/12306_ticket_helper.user.js
+Connecting to www.fishlee.net|61.155.149.92|:80... connected.
+HTTP request sent, awaiting response... 
+  HTTP/1.1 200 OK
+  Content-Type: application/octet-stream
+  Content-Disposition: attachment; filename=12306_ticket_helper.user.js
+  Cache-Control: max-age=604800
+  Content-Length: 162047
+  Accept-Ranges: bytes
+  Date: Sat, 30 Nov 2013 06:47:13 GMT
+  Connection: keep-alive
+  X-Cache: hit
+Length: 162047 (158K) [application/octet-stream]
+12306_ticket_helper.user.js has sprung into existence.
+Retrying.
+
+--2013-11-30 14:47:19--  (try:17)  http://www.fishlee.net/Service/Download.ashx/44/47/12306_ticket_helper.user.js
+Connecting to www.fishlee.net|61.155.149.92|:80... connected.
+HTTP request sent, awaiting response... 
+  HTTP/1.1 200 OK
+  Content-Type: application/octet-stream
+  Content-Disposition: attachment; filename=12306_ticket_helper.user.js
+  Cache-Control: max-age=604800
+  Content-Length: 162047
+  Accept-Ranges: bytes
+  Date: Sat, 30 Nov 2013 06:47:23 GMT
+  Connection: keep-alive
+  X-Cache: hit
+Length: 162047 (158K) [application/octet-stream]
+12306_ticket_helper.user.js has sprung into existence.
+Retrying.
+
+--2013-11-30 14:47:29--  (try:18)  http://www.fishlee.net/Service/Download.ashx/44/47/12306_ticket_helper.user.js
+Connecting to www.fishlee.net|61.155.149.92|:80... connected.
+HTTP request sent, awaiting response... 
+  HTTP/1.1 200 OK
+  Content-Type: application/octet-stream
+  Content-Disposition: attachment; filename=12306_ticket_helper.user.js
+  Cache-Control: max-age=604800
+  Accept-Ranges: bytes
+  Date: Sat, 30 Nov 2013 06:47:33 GMT
+  Connection: keep-alive
+  X-Cache: miss
+  Content-Length: 162047
+Length: 162047 (158K) [application/octet-stream]
+12306_ticket_helper.user.js has sprung into existence.
+Retrying.
+
+--2013-11-30 14:47:39--  (try:19)  http://www.fishlee.net/Service/Download.ashx/44/47/12306_ticket_helper.user.js
+Connecting to www.fishlee.net|61.155.149.92|:80... connected.
+HTTP request sent, awaiting response... 
+  HTTP/1.1 200 OK
+  Content-Type: application/octet-stream
+  Content-Disposition: attachment; filename=12306_ticket_helper.user.js
+  Cache-Control: max-age=604800
+  Content-Length: 162047
+  Accept-Ranges: bytes
+  Date: Sat, 30 Nov 2013 06:47:43 GMT
+  Connection: keep-alive
+  X-Cache: hit
+Length: 162047 (158K) [application/octet-stream]
+12306_ticket_helper.user.js has sprung into existence.
+Retrying.
+
+--2013-11-30 14:47:49--  (try:20)  http://www.fishlee.net/Service/Download.ashx/44/47/12306_ticket_helper.user.js
+Connecting to www.fishlee.net|61.155.149.92|:80... connected.
+HTTP request sent, awaiting response... 
+  HTTP/1.1 200 OK
+  Content-Type: application/octet-stream
+  Content-Disposition: attachment; filename=12306_ticket_helper.user.js
+  Cache-Control: max-age=604800
+  Content-Length: 162047
+  Accept-Ranges: bytes
+  Date: Sat, 30 Nov 2013 06:47:54 GMT
+  Connection: keep-alive
+  X-Cache: hit
+Length: 162047 (158K) [application/octet-stream]
+12306_ticket_helper.user.js has sprung into existence.
+Giving up.
+
+--2013-11-30 14:47:49--  http://www.fishlee.net/Service/Download.ashx/44/63/12306_ticket_helper.crx
+Resolving www.fishlee.net... 222.216.190.61, 61.155.149.92
+Connecting to www.fishlee.net|222.216.190.61|:80... connected.
+HTTP request sent, awaiting response... 
+  HTTP/1.1 200 OK
+  Cache-Control: private
+  Content-Type: application/octet-stream
+  Content-Disposition: attachment; filename=12306_ticket_helper.crx
+  Content-Length: 228897
+  Accept-Ranges: bytes
+  Date: Sat, 30 Nov 2013 06:47:54 GMT
+  Connection: keep-alive
+  X-Cache: miss
+  Content-Length: 228897
+Length: 228897 (224K) [application/octet-stream]
+Saving to: `12306_ticket_helper.crx'
+
+     0K .......... .......... .......... .......... .......... 22%  298K 1s
+    50K .......... .......... .......... .......... .......... 44%  389K 0s
+   100K .......... .......... .......... .......... .......... 67%  251K 0s
+   150K .......... .......... .......... .......... .......... 89%  475K 0s
+   200K .......... .......... ...                             100%  440K=0.7s
+
+2013-11-30 14:47:51 (342 KB/s) - `12306_ticket_helper.crx' saved [228897/228897]
+
