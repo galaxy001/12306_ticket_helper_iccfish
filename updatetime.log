@@ -1,9 +1,74 @@
---2013-12-05 01:00:01--  http://www.fishlee.net/service/update/44/version.js
-Resolving www.fishlee.net... failed: Name or service not known.
-wget: unable to resolve host address “www.fishlee.net”
---2013-12-05 01:00:37--  http://www.fishlee.net/Service/Download.ashx/44/47/12306_ticket_helper.user.js
-Resolving www.fishlee.net... failed: Name or service not known.
-wget: unable to resolve host address “www.fishlee.net”
---2013-12-05 01:01:13--  http://www.fishlee.net/Service/Download.ashx/44/63/12306_ticket_helper.crx
-Resolving www.fishlee.net... failed: Name or service not known.
-wget: unable to resolve host address “www.fishlee.net”
+--2013-12-05 12:15:01--  http://www.fishlee.net/service/update/44/version.js
+Resolving www.fishlee.net... 222.216.190.61, 61.155.149.86
+Connecting to www.fishlee.net|222.216.190.61|:80... connected.
+HTTP request sent, awaiting response... 
+  HTTP/1.1 200 OK
+  Cache-Control: max-age=604800
+  Content-Length: 0
+  Accept-Ranges: bytes
+  Date: Thu, 05 Dec 2013 04:15:03 GMT
+  Connection: keep-alive
+  X-Cache: hit
+Length: 0
+Saving to: “version.js”
+
+     0K                                                        0.00 =0s
+
+2013-12-05 12:15:02 (0.00 B/s) - “version.js” saved [0/0]
+
+--2013-12-05 12:15:02--  http://www.fishlee.net/Service/Download.ashx/44/47/12306_ticket_helper.user.js
+Resolving www.fishlee.net... 61.155.149.86
+Connecting to www.fishlee.net|61.155.149.86|:80... connected.
+HTTP request sent, awaiting response... 
+  HTTP/1.1 302 Found
+  Content-Type: text/html; charset=utf-8
+  Location: /soft/44/
+  Cache-Control: max-age=604800
+  Date: Thu, 05 Dec 2013 04:15:04 GMT
+  Connection: close
+  X-Cache: hit
+Location: /soft/44/ [following]
+--2013-12-05 12:15:03--  http://www.fishlee.net/soft/44/
+Connecting to www.fishlee.net|61.155.149.86|:80... connected.
+HTTP request sent, awaiting response... 
+  HTTP/1.1 200 OK
+  Content-Type: text/html
+  Last-Modified: Tue, 08 Oct 2013 15:37:08 GMT
+  Accept-Ranges: bytes
+  ETag: "4be4643f3cc4ce1:0"
+  Date: Thu, 05 Dec 2013 04:15:04 GMT
+  Connection: close
+  X-Cache: miss
+  Content-Length: 12600
+Length: 12600 (12K) [text/html]
+Saving to: “index.html”
+
+     0K .......... ..                                         100% 18.7M=0.001s
+
+2013-12-05 12:15:03 (18.7 MB/s) - “index.html” saved [12600/12600]
+
+--2013-12-05 12:15:03--  http://www.fishlee.net/Service/Download.ashx/44/63/12306_ticket_helper.crx
+Resolving www.fishlee.net... 222.216.190.63, 61.155.149.86
+Connecting to www.fishlee.net|222.216.190.63|:80... connected.
+HTTP request sent, awaiting response... 
+  HTTP/1.1 200 OK
+  Cache-Control: private
+  Content-Type: application/octet-stream
+  Content-Disposition: attachment; filename=12306_ticket_helper.crx
+  Content-Length: 228897
+  Accept-Ranges: bytes
+  Date: Thu, 05 Dec 2013 04:15:05 GMT
+  Connection: keep-alive
+  X-Cache: miss
+  Content-Length: 228897
+Length: 228897 (224K) [application/octet-stream]
+Saving to: “12306_ticket_helper.crx”
+
+     0K .......... .......... .......... .......... .......... 22%  355K 0s
+    50K .......... .......... .......... .......... .......... 44% 1.00M 0s
+   100K .......... .......... .......... .......... .......... 67%  387K 0s
+   150K .......... .......... .......... .......... .......... 89%  231M 0s
+   200K .......... .......... ...                             100%  496K=0.4s
+
+2013-12-05 12:15:04 (610 KB/s) - “12306_ticket_helper.crx” saved [228897/228897]
+
