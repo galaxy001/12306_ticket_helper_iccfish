@@ -64,3 +64,21 @@ Saving to: “12306_ticket_helper.crx”
 
 2013-12-07 07:00:06 (480 KB/s) - “12306_ticket_helper.crx” saved [228897/228897]
 
+                                        6% 1011 =15s
+
+2013-12-07 07:00:20 (1011 B/s) - Read error at byte 15607/228897 (Connection timed out). Retrying.
+
+--2013-12-07 07:00:21--  (try: 2)  http://www.fishlee.net/Service/Download.ashx/44/63/12306_ticket_helper.crx
+Connecting to www.fishlee.net|222.216.190.61|:80... connected.
+HTTP request sent, awaiting response... 
+  HTTP/1.1 200 OK
+  Cache-Control: private
+  Content-Length: 0
+  Accept-Ranges: bytes
+  Date: Fri, 06 Dec 2013 23:00:22 GMT
+  Connection: keep-alive
+  X-Cache: miss
+  Content-Length: 0
+
+    The file is already fully retrieved; nothing to do.
+
