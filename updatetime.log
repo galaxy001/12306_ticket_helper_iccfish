@@ -1,47 +1,12 @@
---2013-12-07 14:45:01--  http://www.fishlee.net/service/update/44/version.js
-Resolving www.fishlee.net... 61.155.149.86, 61.155.149.92
-Connecting to www.fishlee.net|61.155.149.86|:80... connected.
-HTTP request sent, awaiting response... 
-  HTTP/1.1 200 OK
-  Cache-Control: max-age=604800
-  Content-Length: 0
-  Accept-Ranges: bytes
-  Date: Sat, 07 Dec 2013 06:45:03 GMT
-  Connection: keep-alive
-  X-Cache: hit
-Length: 0
-Saving to: “version.js”
-
-     0K                                                        0.00 =0s
-
-2013-12-07 14:45:02 (0.00 B/s) - “version.js” saved [0/0]
-
---2013-12-07 14:45:02--  http://www.fishlee.net/Service/Download.ashx/44/47/12306_ticket_helper.user.js
-Resolving www.fishlee.net... 61.155.149.92, 61.155.149.86
-Connecting to www.fishlee.net|61.155.149.92|:80... connected.
-HTTP request sent, awaiting response... 
-  HTTP/1.1 200 OK
-  Content-Type: application/octet-stream
-  Content-Disposition: attachment; filename=12306_ticket_helper.user.js
-  Cache-Control: max-age=604800
-  Content-Length: 162047
-  Accept-Ranges: bytes
-  Date: Sat, 07 Dec 2013 06:45:04 GMT
-  Connection: keep-alive
-  X-Cache: hit
-Length: 162047 (158K) [application/octet-stream]
-Saving to: “12306_ticket_helper.user.js”
-
-     0K .......... .......... .......... .......... .......... 31%  196K 1s
-    50K .......... .......... .......... .......... .......... 63%  139K 0s
-   100K .......... .......... .......... .......... .......... 94%  261K 0s
-   150K ........                                              100% 15734G=0.8s
-
-2013-12-07 14:45:03 (196 KB/s) - “12306_ticket_helper.user.js” saved [162047/162047]
-
---2013-12-07 14:45:03--  http://www.fishlee.net/Service/Download.ashx/44/63/12306_ticket_helper.crx
-Resolving www.fishlee.net... 61.155.149.92, 222.216.190.63
-Connecting to www.fishlee.net|61.155.149.92|:80... connected.
+--2013-12-07 21:45:01--  http://www.fishlee.net/service/update/44/version.js
+Resolving www.fishlee.net... failed: Name or service not known.
+wget: unable to resolve host address “www.fishlee.net”
+--2013-12-07 21:45:31--  http://www.fishlee.net/Service/Download.ashx/44/47/12306_ticket_helper.user.js
+Resolving www.fishlee.net... failed: Name or service not known.
+wget: unable to resolve host address “www.fishlee.net”
+--2013-12-07 21:46:07--  http://www.fishlee.net/Service/Download.ashx/44/63/12306_ticket_helper.crx
+Resolving www.fishlee.net... 222.216.190.63, 61.155.149.92
+Connecting to www.fishlee.net|222.216.190.63|:80... connected.
 HTTP request sent, awaiting response... 
   HTTP/1.1 200 OK
   Cache-Control: private
@@ -49,18 +14,18 @@ HTTP request sent, awaiting response...
   Content-Disposition: attachment; filename=12306_ticket_helper.crx
   Content-Length: 228897
   Accept-Ranges: bytes
-  Date: Sat, 07 Dec 2013 06:45:06 GMT
+  Date: Sat, 07 Dec 2013 13:46:14 GMT
   Connection: keep-alive
   X-Cache: miss
   Content-Length: 228897
 Length: 228897 (224K) [application/octet-stream]
 Saving to: “12306_ticket_helper.crx”
 
-     0K .......... .......... .......... .......... .......... 22%  391K 0s
-    50K .......... .......... .......... .......... .......... 44%  511K 0s
-   100K .......... .......... .......... .......... .......... 67%  519K 0s
-   150K .......... .......... .......... .......... .......... 89%  766K 0s
-   200K .......... .......... ...                             100%  368K=0.5s
+     0K .......... .......... .......... .......... .......... 22%  212K 1s
+    50K .......... .......... .......... .......... .......... 44%  498K 0s
+   100K .......... .......... .......... .......... .......... 67%  339K 0s
+   150K .......... .......... .......... .......... .......... 89%  252K 0s
+   200K .......... .......... ...                             100%  487K=0.7s
 
-2013-12-07 14:45:04 (495 KB/s) - “12306_ticket_helper.crx” saved [228897/228897]
+2013-12-07 21:46:13 (306 KB/s) - “12306_ticket_helper.crx” saved [228897/228897]
 
