@@ -74,3 +74,21 @@ HTTP request sent, awaiting response...
 
     The file is already fully retrieved; nothing to do.
 
+.                                          6%  131 =1m48s
+
+2013-12-09 04:02:35 (131 B/s) - Read error at byte 14191/228897 (Connection timed out). Retrying.
+
+--2013-12-09 04:02:36--  (try: 2)  http://www.fishlee.net/Service/Download.ashx/44/63/12306_ticket_helper.crx
+Connecting to www.fishlee.net|222.216.190.61|:80... connected.
+HTTP request sent, awaiting response... 
+  HTTP/1.1 200 OK
+  Cache-Control: private
+  Content-Length: 0
+  Accept-Ranges: bytes
+  Date: Sun, 08 Dec 2013 20:02:38 GMT
+  Connection: keep-alive
+  X-Cache: miss
+  Content-Length: 0
+
+    The file is already fully retrieved; nothing to do.
+
