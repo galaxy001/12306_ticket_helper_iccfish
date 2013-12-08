@@ -1,65 +1,62 @@
---2013-12-08 20:45:01--  http://www.fishlee.net/service/update/44/version.js
+--2013-12-09 00:45:01--  http://www.fishlee.net/service/update/44/version.js
 Resolving www.fishlee.net... 222.216.190.63
 Connecting to www.fishlee.net|222.216.190.63|:80... connected.
-HTTP request sent, awaiting response... Read error (Connection timed out) in headers.
-Retrying.
-
---2013-12-08 20:45:30--  (try: 4)  http://www.fishlee.net/Service/Download.ashx/44/47/12306_ticket_helper.user.js
-Connecting to www.fishlee.net|61.155.149.86|:80... connected.
-HTTP request sent, awaiting response... Read error (Connection timed out) in headers.
-Retrying.
-
---2013-12-08 20:45:51--  (try: 2)  http://www.fishlee.net/Service/Download.ashx/44/63/12306_ticket_helper.crx
-Connecting to www.fishlee.net|61.155.149.86|:80... connected.
 HTTP request sent, awaiting response... 
   HTTP/1.1 200 OK
-  Cache-Control: private
-  Content-Type: application/octet-stream
-  Content-Disposition: attachment; filename=12306_ticket_helper.crx
-  Content-Length: 228897
+  Cache-Control: max-age=604800
   Accept-Ranges: bytes
-  Date: Sun, 08 Dec 2013 12:45:53 GMT
+  Date: Sun, 08 Dec 2013 16:45:09 GMT
   Connection: keep-alive
   X-Cache: miss
-  Content-Length: 228897
-Length: 228897 (224K) [application/octet-stream]
-Saving to: “12306_ticket_helper.crx”
+  Content-Length: 0
+Length: 0
+Saving to: “version.js”
 
-     0K .......... .......... .......... .......... .......... 22% 31.4K 6s
-    50K .......... .......... .......... .......... .......... 44%  204K 2s
-   100K .......... .......... .......... .......... .......... 67%  207K 1s
-   150K .......... .......... .......... .......... .......... 89%  232K 0s
-   200K .......... .......... ...                             100%  192K=2.4s
+     0K                                                        0.00 =0s
 
-2013-12-08 20:45:53 (92.5 KB/s) - “12306_ticket_helper.crx” saved [228897/228897]
+2013-12-09 00:45:07 (0.00 B/s) - “version.js” saved [0/0]
 
-Read error (Connection timed out) in headers.
-Retrying.
-
---2013-12-08 20:47:23--  (try: 3)  http://www.fishlee.net/Service/Download.ashx/44/47/12306_ticket_helper.user.js
-Connecting to www.fishlee.net|222.216.190.63|:80... connected.
+--2013-12-09 00:45:07--  http://www.fishlee.net/Service/Download.ashx/44/47/12306_ticket_helper.user.js
+Resolving www.fishlee.net... 178.79.131.110
+Connecting to www.fishlee.net|178.79.131.110|:80... connected.
+HTTP request sent, awaiting response... 
+  HTTP/1.1 307 Temporary Redirect
+  Server: nginx/0.7.65
+  Date: Sun, 08 Dec 2013 16:45:21 GMT
+  Content-Type: text/html
+  Connection: keep-alive
+  X-Powered-By: PHP/5.3.2-1ubuntu4.5
+  Expires: Sat, 07 Dec 2013 16:45:21 GMT
+  Cache-Control: no-cache
+  Location: http://dns.v2ex.com/d3d3LmZpc2hsZWUubmV0
+  Vary: Accept-Encoding
+  Content-Length: 0
+Location: http://dns.v2ex.com/d3d3LmZpc2hsZWUubmV0 [following]
+--2013-12-09 00:45:19--  http://dns.v2ex.com/d3d3LmZpc2hsZWUubmV0
+Resolving dns.v2ex.com... 178.79.131.110
+Reusing existing connection to www.fishlee.net:80.
 HTTP request sent, awaiting response... 
   HTTP/1.1 200 OK
-  Content-Type: application/octet-stream
-  Content-Disposition: attachment; filename=12306_ticket_helper.user.js
-  Cache-Control: max-age=604800
-  Content-Length: 162047
-  Accept-Ranges: bytes
-  Date: Sun, 08 Dec 2013 12:47:26 GMT
+  Server: nginx/0.7.65
+  Date: Sun, 08 Dec 2013 16:45:22 GMT
+  Content-Type: text/html
   Connection: keep-alive
-  X-Cache: hit
-Length: 162047 (158K) [application/octet-stream]
-Saving to: “12306_ticket_helper.user.js.26”
+  X-Powered-By: PHP/5.3.2-1ubuntu4.5
+  Set-Cookie: PHPSESSID=pdj39ume7fudl5t0ttut094cr0; path=/
+  Expires: Thu, 19 Nov 1981 08:52:00 GMT
+  Cache-Control: no-store, no-cache, must-revalidate, post-check=0, pre-check=0
+  Pragma: no-cache
+  Vary: Accept-Encoding
+  Content-Length: 7188
+Length: 7188 (7.0K) [text/html]
+Saving to: “d3d3LmZpc2hsZWUubmV0.8”
 
-     0K .......... .......... .......... .......... .......... 31%  561K 0s
-    50K .......... .......... .......... .......... .......... 63%  573K 0s
-   100K .......... .......... .......... .......... .......... 94% 66.8K 0s
-   150K ........                                              100% 15734G=0.9s
+     0K .......                                               100%  452M=0s
 
-2013-12-08 20:47:24 (171 KB/s) - “12306_ticket_helper.user.js.26” saved [162047/162047]
+2013-12-09 00:45:20 (452 MB/s) - “d3d3LmZpc2hsZWUubmV0.8” saved [7188/7188]
 
---2013-12-08 20:47:24--  http://www.fishlee.net/Service/Download.ashx/44/63/12306_ticket_helper.crx
-Resolving www.fishlee.net... 61.155.149.92, 222.216.190.63
+--2013-12-09 00:45:20--  http://www.fishlee.net/Service/Download.ashx/44/63/12306_ticket_helper.crx
+Resolving www.fishlee.net... 61.155.149.92, 61.155.149.86
 Connecting to www.fishlee.net|61.155.149.92|:80... connected.
 HTTP request sent, awaiting response... 
   HTTP/1.1 200 OK
@@ -68,18 +65,18 @@ HTTP request sent, awaiting response...
   Content-Disposition: attachment; filename=12306_ticket_helper.crx
   Content-Length: 228897
   Accept-Ranges: bytes
-  Date: Sun, 08 Dec 2013 12:47:30 GMT
+  Date: Sun, 08 Dec 2013 16:45:23 GMT
   Connection: keep-alive
   X-Cache: miss
   Content-Length: 228897
 Length: 228897 (224K) [application/octet-stream]
 Saving to: “12306_ticket_helper.crx”
 
-     0K .......... .......... .......... .......... .......... 22%  407K 0s
-    50K .......... .......... .......... .......... .......... 44%  541K 0s
-   100K .......... .......... .......... .......... .......... 67%  396K 0s
-   150K .......... .......... .......... .......... .......... 89% 1.54M 0s
-   200K .......... .......... ...                             100%  267K=0.5s
+     0K .......... .......... .......... .......... .......... 22%  403K 0s
+    50K .......... .......... .......... .......... .......... 44%  410K 0s
+   100K .......... .......... .......... .......... .......... 67%  528K 0s
+   150K .......... .......... .......... .......... .......... 89%  401K 0s
+   200K .......... .......... ...                             100%  736K=0.5s
 
-2013-12-08 20:47:28 (485 KB/s) - “12306_ticket_helper.crx” saved [228897/228897]
+2013-12-09 00:45:21 (449 KB/s) - “12306_ticket_helper.crx” saved [228897/228897]
 
