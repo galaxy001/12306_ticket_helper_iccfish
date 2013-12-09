@@ -1,84 +1,81 @@
---2013-12-09 14:15:01--  http://www.fishlee.net/service/update/44/version.js
-Resolving www.fishlee.net... 222.216.190.63, 61.155.149.92
-Connecting to www.fishlee.net|222.216.190.63|:80... connected.
+--2013-12-09 18:15:01--  http://www.fishlee.net/service/update/44/version.js
+Resolving www.fishlee.net... failed: Name or service not known.
+wget: unable to resolve host address “www.fishlee.net”
+--2013-12-09 18:15:26--  http://www.fishlee.net/Service/Download.ashx/44/47/12306_ticket_helper.user.js
+Resolving www.fishlee.net... 178.79.131.110
+Connecting to www.fishlee.net|178.79.131.110|:80... connected.
 HTTP request sent, awaiting response... 
-  HTTP/1.1 200 OK
-  Cache-Control: max-age=604800
-  Accept-Ranges: bytes
-  Date: Mon, 09 Dec 2013 06:15:04 GMT
+  HTTP/1.1 307 Temporary Redirect
+  Server: nginx/0.7.65
+  Date: Mon, 09 Dec 2013 10:15:35 GMT
+  Content-Type: text/html
   Connection: keep-alive
-  X-Cache: miss
+  X-Powered-By: PHP/5.3.2-1ubuntu4.5
+  Expires: Sun, 08 Dec 2013 10:15:35 GMT
+  Cache-Control: no-cache
+  Location: http://dns.v2ex.com/d3d3LmZpc2hsZWUubmV0
+  Vary: Accept-Encoding
   Content-Length: 0
-Length: 0
-Saving to: “version.js”
-
-     0K                                                        0.00 =0s
-
-2013-12-09 14:15:01 (0.00 B/s) - “version.js” saved [0/0]
-
---2013-12-09 14:15:01--  http://www.fishlee.net/Service/Download.ashx/44/47/12306_ticket_helper.user.js
-Resolving www.fishlee.net... 222.216.190.61, 61.155.149.92
-Connecting to www.fishlee.net|222.216.190.61|:80... connected.
+Location: http://dns.v2ex.com/d3d3LmZpc2hsZWUubmV0 [following]
+--2013-12-09 18:15:33--  http://dns.v2ex.com/d3d3LmZpc2hsZWUubmV0
+Resolving dns.v2ex.com... 178.79.131.110
+Reusing existing connection to www.fishlee.net:80.
 HTTP request sent, awaiting response... 
   HTTP/1.1 200 OK
-  Content-Type: application/octet-stream
-  Content-Disposition: attachment; filename=12306_ticket_helper.user.js
-  Cache-Control: max-age=604800
-  Accept-Ranges: bytes
-  Date: Mon, 09 Dec 2013 06:15:05 GMT
+  Server: nginx/0.7.65
+  Date: Mon, 09 Dec 2013 10:15:36 GMT
+  Content-Type: text/html
   Connection: keep-alive
-  X-Cache: miss
-  Content-Length: 162047
-Length: 162047 (158K) [application/octet-stream]
-Saving to: “12306_ticket_helper.user.js”
+  X-Powered-By: PHP/5.3.2-1ubuntu4.5
+  Set-Cookie: PHPSESSID=j5unq52afhj6d0c0qaegl77pt7; path=/
+  Expires: Thu, 19 Nov 1981 08:52:00 GMT
+  Cache-Control: no-store, no-cache, must-revalidate, post-check=0, pre-check=0
+  Pragma: no-cache
+  Vary: Accept-Encoding
+  Content-Length: 7188
+Length: 7188 (7.0K) [text/html]
+Saving to: “d3d3LmZpc2hsZWUubmV0.9”
 
-     0K .......... .......... .......... .......... .......... 31%  227K 0s
-    50K .......... .......... .......... .......... .......... 63%  376K 0s
-   100K .......... .......... .......... .......... .......... 94%  381K 0s
-   150K ........                                              100% 10.7M=0.5s
+     0K .......                                               100% 17.0M=0s
 
-2013-12-09 14:15:03 (326 KB/s) - “12306_ticket_helper.user.js” saved [162047/162047]
+2013-12-09 18:15:34 (17.0 MB/s) - “d3d3LmZpc2hsZWUubmV0.9” saved [7188/7188]
 
---2013-12-09 14:15:03--  http://www.fishlee.net/Service/Download.ashx/44/63/12306_ticket_helper.crx
-Resolving www.fishlee.net... 222.216.190.63, 61.155.149.92
-Connecting to www.fishlee.net|222.216.190.63|:80... connected.
+--2013-12-09 18:15:34--  http://www.fishlee.net/Service/Download.ashx/44/63/12306_ticket_helper.crx
+Resolving www.fishlee.net... 178.79.131.110
+Connecting to www.fishlee.net|178.79.131.110|:80... connected.
 HTTP request sent, awaiting response... 
-  HTTP/1.1 200 OK
-  Cache-Control: private
-  Content-Type: application/octet-stream
-  Content-Disposition: attachment; filename=12306_ticket_helper.crx
-  Content-Length: 228897
-  Accept-Ranges: bytes
-  Date: Mon, 09 Dec 2013 06:15:06 GMT
+  HTTP/1.1 307 Temporary Redirect
+  Server: nginx/0.7.65
+  Date: Mon, 09 Dec 2013 10:15:40 GMT
+  Content-Type: text/html
   Connection: keep-alive
-  X-Cache: miss
-  Content-Length: 228897
-Length: 228897 (224K) [application/octet-stream]
-Saving to: “12306_ticket_helper.crx”
-
-     0K .......... .......... .......... .......... .......... 22%  287K 1s
-    50K .......... .......... .......... .......... .......... 44%  380K 0s
-   100K .......... .......... .......... .......... .......... 67%  562K 0s
-   150K .......... .......... .......... .......... .......... 89%  284K 0s
-   200K .......... .......... ...                             100% 36.2M=0.6s
-
-2013-12-09 14:15:04 (391 KB/s) - “12306_ticket_helper.crx” saved [228897/228897]
-
-                   14%  280 =2m3s
-
-2013-12-09 14:17:32 (280 B/s) - Read error at byte 34319/228897 (Connection timed out). Retrying.
-
---2013-12-09 14:17:33--  (try: 2)  http://www.fishlee.net/Service/Download.ashx/44/63/12306_ticket_helper.crx
-Connecting to www.fishlee.net|222.216.190.63|:80... connected.
-HTTP request sent, awaiting response... 
-  HTTP/1.1 200 OK
-  Cache-Control: private
+  X-Powered-By: PHP/5.3.2-1ubuntu4.5
+  Expires: Sun, 08 Dec 2013 10:15:40 GMT
+  Cache-Control: no-cache
+  Location: http://dns.v2ex.com/d3d3LmZpc2hsZWUubmV0
+  Vary: Accept-Encoding
   Content-Length: 0
-  Accept-Ranges: bytes
-  Date: Mon, 09 Dec 2013 06:17:35 GMT
+Location: http://dns.v2ex.com/d3d3LmZpc2hsZWUubmV0 [following]
+--2013-12-09 18:15:38--  http://dns.v2ex.com/d3d3LmZpc2hsZWUubmV0
+Resolving dns.v2ex.com... 178.79.131.110
+Reusing existing connection to www.fishlee.net:80.
+HTTP request sent, awaiting response... 
+  HTTP/1.1 200 OK
+  Server: nginx/0.7.65
+  Date: Mon, 09 Dec 2013 10:15:41 GMT
+  Content-Type: text/html
   Connection: keep-alive
-  X-Cache: miss
-  Content-Length: 0
+  X-Powered-By: PHP/5.3.2-1ubuntu4.5
+  Set-Cookie: PHPSESSID=htfk0loc6n6bj89l3lcsi1s3a5; path=/
+  Expires: Thu, 19 Nov 1981 08:52:00 GMT
+  Cache-Control: no-store, no-cache, must-revalidate, post-check=0, pre-check=0
+  Pragma: no-cache
+  Vary: Accept-Encoding
+  Content-Length: 7188
+Length: 7188 (7.0K) [text/html]
+Saving to: “d3d3LmZpc2hsZWUubmV0.10”
 
-    The file is already fully retrieved; nothing to do.
+     0K .......                                               100% 19.4M=0s
+
+2013-12-09 18:15:38 (19.4 MB/s) - “d3d3LmZpc2hsZWUubmV0.10” saved [7188/7188]
 
