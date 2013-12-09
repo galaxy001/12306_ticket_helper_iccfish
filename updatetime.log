@@ -64,3 +64,55 @@ Saving to: “12306_ticket_helper.crx”
 
 2013-12-09 19:00:15 (851 KB/s) - “12306_ticket_helper.crx” saved [228897/228897]
 
+                                      10%  275 =62s
+
+2013-12-09 19:01:22 (275 B/s) - Read error at byte 17035/162047 (Connection timed out). Retrying.
+
+--2013-12-09 19:01:24--  (try: 3)  http://www.fishlee.net/Service/Download.ashx/44/47/12306_ticket_helper.user.js
+Connecting to www.fishlee.net|222.216.190.63|:80... connected.
+HTTP request sent, awaiting response... 
+  HTTP/1.1 206 Partial Content
+  Content-Type: application/octet-stream
+  Content-Disposition: attachment; filename=12306_ticket_helper.user.js
+  Cache-Control: max-age=604800
+  Accept-Ranges: bytes
+  Date: Mon, 09 Dec 2013 11:01:26 GMT
+  Connection: keep-alive
+  X-Cache: hit
+  Content-Range: bytes 17035-162046/162047
+  Content-Length: 145012
+Length: 162047 (158K), 145012 (142K) remaining [application/octet-stream]
+Saving to: “12306_ticket_helper.user.js”
+
+     0K ,,,,,,,,,, ,,,,,,.... .......... .......... .......... 31%  562K 0s
+    50K .......... .......... .......... .......... .......... 63%  371K 0s
+   100K .......... .......... .......... .......... .......... 94%  376K 0s
+   150K ........                                              100% 14.4M=0.4s
+
+2013-12-09 19:01:24 (396 KB/s) - “12306_ticket_helper.user.js” saved [162047/162047]
+
+--2013-12-09 19:01:24--  http://www.fishlee.net/Service/Download.ashx/44/63/12306_ticket_helper.crx
+Resolving www.fishlee.net... 222.216.190.63, 222.216.190.61
+Connecting to www.fishlee.net|222.216.190.63|:80... connected.
+HTTP request sent, awaiting response... 
+  HTTP/1.1 200 OK
+  Cache-Control: private
+  Content-Type: application/octet-stream
+  Content-Disposition: attachment; filename=12306_ticket_helper.crx
+  Content-Length: 228897
+  Accept-Ranges: bytes
+  Date: Mon, 09 Dec 2013 11:01:35 GMT
+  Connection: keep-alive
+  X-Cache: miss
+  Content-Length: 228897
+Length: 228897 (224K) [application/octet-stream]
+Saving to: “12306_ticket_helper.crx”
+
+     0K .......... .......... .......... .......... .......... 22%  189K 1s
+    50K .......... .......... .......... .......... .......... 44%  231K 1s
+   100K .......... .......... .......... .......... .......... 67%  285K 0s
+   150K .......... .......... .......... .......... .......... 89%  273K 0s
+   200K .......... .......... ...                             100%  531K=0.9s
+
+2013-12-09 19:01:33 (253 KB/s) - “12306_ticket_helper.crx” saved [228897/228897]
+
