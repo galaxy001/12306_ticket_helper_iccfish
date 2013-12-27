@@ -1,0 +1,115 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+	<title>404 Not Found - 鱼の后花园</title>
+	<script type="text/javascript">
+		var _static_resource_root = 'http://static.fishlee.net';
+		var _dynamic_resource_root = 'http://dynamic.fishlee.net';
+		var _softCounterApi = '/service/softcounter';
+		var _downCounterApi = '/service/downloadcounter';
+		var _donationApi = '/service/getdonationlist';
+		var _cursoftid = "0";
+	</script>
+	<link rel="stylesheet" type="text/css" href="http://static.fishlee.net/resources/cache/front.css?20131223013455" />
+<link rel="stylesheet" type="text/css" href="http://static.fishlee.net/content/style/page_default.css?20131223013453" />
+<script type="text/javascript" src="http://static.fishlee.net/resources/cache/front.js?20131223013545"></script>
+<script type="text/javascript" src="http://static.fishlee.net/content/scripts/common.js?20131210025634"></script>
+<script type="text/javascript" src="http://static.fishlee.net/content/scripts/frontpage.js?20131223013527"></script>
+
+	
+	<link rel="alternate" type="application/rss+xml" title="订阅 鱼的后花园 的发布更新" href="/service/rss" />
+		<link rel='shortcut icon' href='http://static.fishlee.net/favicon.ico' />
+	<link rel='bookmark icon' href='http://static.fishlee.net/favicon.ico' />
+</head>
+<body>
+	<!--div id="header">
+		<div>
+			
+			<p>
+				
+			</p>
+		</div>
+	</div-->
+	<div id="navigation">
+		<h1>
+			
+			404 Not Found
+		</h1>
+		<ul class="pull-right navigationMini">
+			<li><a rel="alternate" type="application/rss+xml" title="订阅 鱼的后花园 的发布更新" href="/service/rss" class="rss">本站</a></li>
+						<li><a href="/user" class="usersys">用户后台</a></li>
+			<li><a href="/about/">关于</a></li>
+		</ul>
+		<ul class="mainNavigation">
+			<li class=''><a href="/">后花园首页</a></li>
+				<li><a href="javascript:;">我的博客</a> </li>
+				<li><a href="http://git.fishlee.net/" target="_blank">开源仓库</a></li>
+				<li><a href="http://bbs.fishlee.net/" target="_blank">花园论坛</a></li>
+				<li><a href="/soft/category_all.html">作品分类</a>
+					<ul>
+							<li><a href="/soft/category_desktop.html">桌面美化</a></li>
+							<li><a href="/soft/category_developer.html">开发工具</a></li>
+							<li><a href="/soft/category_network.html">网络工具</a></li>
+							<li><a href="/soft/category_app.html">应用软件</a></li>
+							<li><a href="/soft/category_appmod.html">软件修改、汉化</a></li>
+							<li><a href="/soft/category_library.html">开发人员组件</a></li>
+							<li><a href="/soft/category_media.html">多媒体工具</a></li>
+							<li><a href="/soft/category_system.html">系统工具</a></li>
+							<li><a href="/soft/category_firefoxaddons.html">Firefox扩展</a></li>
+							<li><a href="/soft/category_chromeext.html">Chrome扩展</a></li>
+							<li><a href="/soft/category_officetemplates.html">Office模板</a></li>
+							<li><a href="/soft/category_all.html">所有类别</a></li>
+
+					</ul>
+				</li>
+				<li class=''><a href="/about/service.html">网站服务</a></li>
+				<li class=''><a href="/about/schedule.html">项目列表</a></li>
+				<li class=''><a href="/about/faq.html">常见问题</a></li>
+				<li class=''><a href="/honor/index.html">捐助花园</a></li>
+				<li class=''><a href="/about/job.html">职业规划</a></li>
+
+		</ul>
+	</div>
+	<div id="main">
+		<!-- header image -->
+		
+
+
+	<div class="contentblock"><style type='text/css'>
+.info{background-image:none!important;}
+</style>
+<script charset="utf-8" type="text/javascript" src="http://www.qq.com/404/search_children.js"></script>
+</div>
+
+
+	</div>
+	
+	<div id="copyright" class="nofootlink">
+		&copy;Copyright 2007-2013, 鱼の后花园 [<a href="mailto:iFish@FishLee.net">iFish@FishLee.net</a>], All rights reserved.
+		<br />
+		[页面更新时间：2013/12/23 3:19:35，构建时间：0.047秒]
+	</div>
+	<div style="display:none;">
+	<!--加个统计应该没人有意见吧……-->
+	<script type="text/javascript">
+
+	  var _gaq = _gaq || [];
+	  _gaq.push(['_setAccount', 'UA-15030717-2']);
+	  _gaq.push(['_setDomainName', 'fishlee.net']);
+	  _gaq.push(['_trackPageview']);
+
+	  (function() {
+		var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+		ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	  })();
+
+	var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+	document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3Fd7809eb4e8f2d1969bc286ea54c0de4e' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript" src="http://tajs.qq.com/stats?sId=22570759" charset="UTF-8"></script> 
+</div>
+
+</body>
+</html>
