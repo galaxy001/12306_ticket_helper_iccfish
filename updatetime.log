@@ -54,3 +54,43 @@ Saving to: “12306_ticket_helper.crx”
 
 2014-01-04 20:45:03 (337 MB/s) - “12306_ticket_helper.crx” saved [5045/5045]
 
+61.155.149.89, 61.155.149.89
+Connecting to www.fishlee.net|61.155.149.89|:80... connected.
+HTTP request sent, awaiting response... 
+  HTTP/1.1 200 OK
+  Content-Type: text/html
+  Last-Modified: Thu, 02 Jan 2014 17:45:01 GMT
+  ETag: "804c535ce27cf1:0"
+  Vary: Accept-Encoding
+  Cache-Control: max-age=604800
+  Date: Sat, 04 Jan 2014 12:45:20 GMT
+  Connection: close
+  X-Cache: miss
+  Content-Length: 2028
+Length: 2028 (2.0K) [text/html]
+Saving to: “12306_ticket_helper.user.js.32”
+
+     0K .                                                     100%  300M=0s
+
+2014-01-04 20:45:07 (300 MB/s) - “12306_ticket_helper.user.js.32” saved [2028/2028]
+
+--2014-01-04 20:45:07--  http://www.fishlee.net/Service/Download.ashx/44/63/12306_ticket_helper.crx
+Resolving www.fishlee.net... 61.155.149.88, 61.155.149.89
+Connecting to www.fishlee.net|61.155.149.88|:80... connected.
+HTTP request sent, awaiting response... 
+  HTTP/1.1 200 OK
+  Content-Type: text/html
+  Last-Modified: Thu, 02 Jan 2014 17:45:01 GMT
+  Accept-Ranges: bytes
+  ETag: "e388725ce27cf1:0"
+  Date: Sat, 04 Jan 2014 12:45:20 GMT
+  Connection: close
+  X-Cache: miss
+  Content-Length: 5045
+Length: 5045 (4.9K) [text/html]
+Saving to: “12306_ticket_helper.crx”
+
+     0K ....                                                  100%  385M=0s
+
+2014-01-04 20:45:08 (385 MB/s) - “12306_ticket_helper.crx” saved [5045/5045]
+
