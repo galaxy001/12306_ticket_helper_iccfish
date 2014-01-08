@@ -1,4 +1,4 @@
---2014-01-08 08:45:01--  http://www.fishlee.net/service/update/44/version.js
+--2014-01-08 12:15:01--  http://www.fishlee.net/service/update/44/version.js
 Resolving www.fishlee.net... 114.112.93.181
 Connecting to www.fishlee.net|114.112.93.181|:80... connected.
 HTTP request sent, awaiting response... 
@@ -6,32 +6,24 @@ HTTP request sent, awaiting response...
   Cache-Control: private
   Content-Type: text/html; charset=utf-8
   Server: Microsoft-IIS/7.5
-  Date: Wed, 08 Jan 2014 00:45:21 GMT
+  Date: Wed, 08 Jan 2014 04:15:50 GMT
   Connection: close
   Content-Length: 8291
-2014-01-08 08:45:05 ERROR 500: Internal Server Error.
+2014-01-08 12:15:34 ERROR 500: Internal Server Error.
 
---2014-01-08 08:45:05--  http://www.fishlee.net/Service/Download.ashx/44/47/12306_ticket_helper.user.js
+--2014-01-08 12:15:34--  http://www.fishlee.net/Service/Download.ashx/44/47/12306_ticket_helper.user.js
 Resolving www.fishlee.net... 114.112.93.181
 Connecting to www.fishlee.net|114.112.93.181|:80... connected.
 HTTP request sent, awaiting response... 
-  HTTP/1.1 200 OK
+  HTTP/1.1 503 Service Unavailable
   Content-Type: text/html
-  Last-Modified: Thu, 02 Jan 2014 17:45:01 GMT
-  Accept-Ranges: bytes
-  ETag: "e388725ce27cf1:0"
   Server: Microsoft-IIS/7.5
-  Date: Wed, 08 Jan 2014 00:45:22 GMT
+  Date: Wed, 08 Jan 2014 04:16:02 GMT
   Connection: close
-  Content-Length: 5045
-Length: 5045 (4.9K) [text/html]
-Saving to: “12306_ticket_helper.user.js”
+  Content-Length: 18
+2014-01-08 12:15:46 ERROR 503: Service Unavailable.
 
-     0K ....                                                  100% 71.1K=0.07s
-
-2014-01-08 08:45:07 (71.1 KB/s) - “12306_ticket_helper.user.js” saved [5045/5045]
-
---2014-01-08 08:45:07--  http://www.fishlee.net/Service/Download.ashx/44/63/12306_ticket_helper.crx
+--2014-01-08 12:15:46--  http://www.fishlee.net/Service/Download.ashx/44/63/12306_ticket_helper.crx
 Resolving www.fishlee.net... 114.112.93.181
 Connecting to www.fishlee.net|114.112.93.181|:80... connected.
 HTTP request sent, awaiting response... 
@@ -41,13 +33,13 @@ HTTP request sent, awaiting response...
   Accept-Ranges: bytes
   ETag: "e388725ce27cf1:0"
   Server: Microsoft-IIS/7.5
-  Date: Wed, 08 Jan 2014 00:45:23 GMT
+  Date: Wed, 08 Jan 2014 04:16:12 GMT
   Connection: close
   Content-Length: 5045
 Length: 5045 (4.9K) [text/html]
 Saving to: “12306_ticket_helper.crx”
 
-     0K ....                                                  100% 62.1K=0.08s
+     0K ....                                                  100% 35.3K=0.1s
 
-2014-01-08 08:45:07 (62.1 KB/s) - “12306_ticket_helper.crx” saved [5045/5045]
+2014-01-08 12:15:56 (35.3 KB/s) - “12306_ticket_helper.crx” saved [5045/5045]
 
