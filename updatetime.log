@@ -1,117 +1,53 @@
---2014-02-04 09:45:01--  http://www.fishlee.net/service/update/44/version.js
-Resolving www.fishlee.net... 178.79.131.110
-Connecting to www.fishlee.net|178.79.131.110|:80... connected.
+--2014-02-04 10:00:01--  http://www.fishlee.net/service/update/44/version.js
+Resolving www.fishlee.net... 61.155.149.89, 222.216.190.64
+Connecting to www.fishlee.net|61.155.149.89|:80... connected.
 HTTP request sent, awaiting response... 
-  HTTP/1.1 307 Temporary Redirect
-  Server: nginx/0.7.65
-  Date: Tue, 04 Feb 2014 01:45:38 GMT
-  Content-Type: text/html
-  Connection: keep-alive
-  X-Powered-By: PHP/5.3.2-1ubuntu4.5
-  Expires: Mon, 03 Feb 2014 01:45:38 GMT
-  Cache-Control: no-cache
-  Location: http://dns.v2ex.com/d3d3LmZpc2hsZWUubmV0
-  Vary: Accept-Encoding
-  Content-Length: 0
-Location: http://dns.v2ex.com/d3d3LmZpc2hsZWUubmV0 [following]
---2014-02-04 09:45:15--  http://dns.v2ex.com/d3d3LmZpc2hsZWUubmV0
-Resolving dns.v2ex.com... 178.79.131.110
-Reusing existing connection to www.fishlee.net:80.
+  HTTP/1.1 500 Internal Server Error
+  Cache-Control: private
+  Content-Type: text/html; charset=utf-8
+  Date: Tue, 04 Feb 2014 02:00:30 GMT
+  Connection: close
+  X-Cache: miss
+  Content-Length: 8273
+2014-02-04 10:00:10 ERROR 500: Internal Server Error.
+
+--2014-02-04 10:00:10--  http://www.fishlee.net/Service/Download.ashx/44/47/12306_ticket_helper.user.js
+Resolving www.fishlee.net... 61.155.149.89, 222.216.190.64
+Connecting to www.fishlee.net|61.155.149.89|:80... connected.
 HTTP request sent, awaiting response... 
   HTTP/1.1 200 OK
-  Server: nginx/0.7.65
-  Date: Tue, 04 Feb 2014 01:45:39 GMT
   Content-Type: text/html
-  Connection: keep-alive
-  X-Powered-By: PHP/5.3.2-1ubuntu4.5
-  Set-Cookie: PHPSESSID=h4f4adlkp6ugketsl2l1r3tek2; path=/
-  Expires: Thu, 19 Nov 1981 08:52:00 GMT
-  Cache-Control: no-store, no-cache, must-revalidate, post-check=0, pre-check=0
-  Pragma: no-cache
+  Last-Modified: Thu, 02 Jan 2014 17:45:01 GMT
+  ETag: "e388725ce27cf1:0"
   Vary: Accept-Encoding
-  Content-Length: 7188
-Length: 7188 (7.0K) [text/html]
-Saving to: “d3d3LmZpc2hsZWUubmV0.90”
+  Cache-Control: max-age=604800
+  Date: Tue, 04 Feb 2014 02:00:40 GMT
+  Connection: close
+  X-Cache: hit
+Length: unspecified [text/html]
+Saving to: “12306_ticket_helper.user.js”
 
-     0K .......                                               100% 20.1M=0s
+     0K ....                                                    145M=0s
 
-2014-02-04 09:45:16 (20.1 MB/s) - “d3d3LmZpc2hsZWUubmV0.90” saved [7188/7188]
+2014-02-04 10:00:17 (145 MB/s) - “12306_ticket_helper.user.js” saved [5045]
 
---2014-02-04 09:45:16--  http://www.fishlee.net/Service/Download.ashx/44/47/12306_ticket_helper.user.js
-Resolving www.fishlee.net... 178.79.131.110
-Connecting to www.fishlee.net|178.79.131.110|:80... connected.
-HTTP request sent, awaiting response... 
-  HTTP/1.1 307 Temporary Redirect
-  Server: nginx/0.7.65
-  Date: Tue, 04 Feb 2014 01:45:43 GMT
-  Content-Type: text/html
-  Connection: keep-alive
-  X-Powered-By: PHP/5.3.2-1ubuntu4.5
-  Expires: Mon, 03 Feb 2014 01:45:43 GMT
-  Cache-Control: no-cache
-  Location: http://dns.v2ex.com/d3d3LmZpc2hsZWUubmV0
-  Vary: Accept-Encoding
-  Content-Length: 0
-Location: http://dns.v2ex.com/d3d3LmZpc2hsZWUubmV0 [following]
---2014-02-04 09:45:20--  http://dns.v2ex.com/d3d3LmZpc2hsZWUubmV0
-Resolving dns.v2ex.com... 178.79.131.110
-Reusing existing connection to www.fishlee.net:80.
+--2014-02-04 10:00:17--  http://www.fishlee.net/Service/Download.ashx/44/63/12306_ticket_helper.crx
+Resolving www.fishlee.net... 61.155.149.89, 222.216.190.64
+Connecting to www.fishlee.net|61.155.149.89|:80... connected.
 HTTP request sent, awaiting response... 
   HTTP/1.1 200 OK
-  Server: nginx/0.7.65
-  Date: Tue, 04 Feb 2014 01:45:44 GMT
   Content-Type: text/html
-  Connection: keep-alive
-  X-Powered-By: PHP/5.3.2-1ubuntu4.5
-  Set-Cookie: PHPSESSID=oc4pb1h2s60f181g4i513docs7; path=/
-  Expires: Thu, 19 Nov 1981 08:52:00 GMT
-  Cache-Control: no-store, no-cache, must-revalidate, post-check=0, pre-check=0
-  Pragma: no-cache
-  Vary: Accept-Encoding
-  Content-Length: 7188
-Length: 7188 (7.0K) [text/html]
-Saving to: “d3d3LmZpc2hsZWUubmV0.91”
+  Last-Modified: Thu, 02 Jan 2014 17:45:01 GMT
+  Accept-Ranges: bytes
+  ETag: "e388725ce27cf1:0"
+  Date: Tue, 04 Feb 2014 02:00:44 GMT
+  Connection: close
+  X-Cache: miss
+  Content-Length: 5045
+Length: 5045 (4.9K) [text/html]
+Saving to: “12306_ticket_helper.crx”
 
-     0K .......                                               100% 17.4M=0s
+     0K ....                                                  100%  163M=0s
 
-2014-02-04 09:45:20 (17.4 MB/s) - “d3d3LmZpc2hsZWUubmV0.91” saved [7188/7188]
-
---2014-02-04 09:45:20--  http://www.fishlee.net/Service/Download.ashx/44/63/12306_ticket_helper.crx
-Resolving www.fishlee.net... 178.79.131.110
-Connecting to www.fishlee.net|178.79.131.110|:80... connected.
-HTTP request sent, awaiting response... 
-  HTTP/1.1 307 Temporary Redirect
-  Server: nginx/0.7.65
-  Date: Tue, 04 Feb 2014 01:45:50 GMT
-  Content-Type: text/html
-  Connection: keep-alive
-  X-Powered-By: PHP/5.3.2-1ubuntu4.5
-  Expires: Mon, 03 Feb 2014 01:45:50 GMT
-  Cache-Control: no-cache
-  Location: http://dns.v2ex.com/d3d3LmZpc2hsZWUubmV0
-  Vary: Accept-Encoding
-  Content-Length: 0
-Location: http://dns.v2ex.com/d3d3LmZpc2hsZWUubmV0 [following]
---2014-02-04 09:45:26--  http://dns.v2ex.com/d3d3LmZpc2hsZWUubmV0
-Resolving dns.v2ex.com... 178.79.131.110
-Reusing existing connection to www.fishlee.net:80.
-HTTP request sent, awaiting response... 
-  HTTP/1.1 200 OK
-  Server: nginx/0.7.65
-  Date: Tue, 04 Feb 2014 01:45:50 GMT
-  Content-Type: text/html
-  Connection: keep-alive
-  X-Powered-By: PHP/5.3.2-1ubuntu4.5
-  Set-Cookie: PHPSESSID=1iro7qt8m1026o7geg11lnd5b3; path=/
-  Expires: Thu, 19 Nov 1981 08:52:00 GMT
-  Cache-Control: no-store, no-cache, must-revalidate, post-check=0, pre-check=0
-  Pragma: no-cache
-  Vary: Accept-Encoding
-  Content-Length: 7188
-Length: 7188 (7.0K) [text/html]
-Saving to: “d3d3LmZpc2hsZWUubmV0.92”
-
-     0K .......                                               100%  474M=0s
-
-2014-02-04 09:45:27 (474 MB/s) - “d3d3LmZpc2hsZWUubmV0.92” saved [7188/7188]
+2014-02-04 10:00:20 (163 MB/s) - “12306_ticket_helper.crx” saved [5045/5045]
 
