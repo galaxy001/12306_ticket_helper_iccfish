@@ -76,3 +76,22 @@ Saving to: “12306_ticket_helper.crx”
 
 2014-03-13 12:15:04 (129 MB/s) - “12306_ticket_helper.crx” saved [5045/5045]
 
+222.216.190.60, 222.216.190.69
+Connecting to www.fishlee.net|222.216.190.60|:80... connected.
+HTTP request sent, awaiting response... 
+  HTTP/1.1 200 OK
+  Content-Type: text/html
+  Last-Modified: Thu, 02 Jan 2014 17:45:01 GMT
+  Accept-Ranges: bytes
+  ETag: "e388725ce27cf1:0"
+  Date: Thu, 13 Mar 2014 04:15:17 GMT
+  Connection: close
+  X-Cache: miss
+  Content-Length: 5045
+Length: 5045 (4.9K) [text/html]
+Saving to: “12306_ticket_helper.crx”
+
+     0K ....                                                  100%  335M=0s
+
+2014-03-13 12:15:05 (335 MB/s) - “12306_ticket_helper.crx” saved [5045/5045]
+
