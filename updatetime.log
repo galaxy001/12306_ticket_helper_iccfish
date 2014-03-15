@@ -1,17 +1,17 @@
---2014-03-15 14:45:01--  http://www.fishlee.net/service/update/44/version.js
-Resolving www.fishlee.net... 222.216.190.60, 222.216.190.69
-Connecting to www.fishlee.net|222.216.190.60|:80... connected.
+--2014-03-15 15:15:01--  http://www.fishlee.net/service/update/44/version.js
+Resolving www.fishlee.net... 222.216.190.69, 222.216.190.60
+Connecting to www.fishlee.net|222.216.190.69|:80... connected.
 HTTP request sent, awaiting response... 
   HTTP/1.1 500 Internal Server Error
   Cache-Control: private
   Content-Type: text/html; charset=utf-8
-  Date: Sat, 15 Mar 2014 06:45:15 GMT
+  Date: Sat, 15 Mar 2014 07:15:15 GMT
   Connection: close
   X-Cache: miss
   Content-Length: 8273
-2014-03-15 14:45:02 ERROR 500: Internal Server Error.
+2014-03-15 15:15:02 ERROR 500: Internal Server Error.
 
---2014-03-15 14:45:02--  http://www.fishlee.net/Service/Download.ashx/44/47/12306_ticket_helper.user.js
+--2014-03-15 15:15:02--  http://www.fishlee.net/Service/Download.ashx/44/47/12306_ticket_helper.user.js
 Resolving www.fishlee.net... 222.216.190.69, 222.216.190.60
 Connecting to www.fishlee.net|222.216.190.69|:80... connected.
 HTTP request sent, awaiting response... 
@@ -21,34 +21,33 @@ HTTP request sent, awaiting response...
   ETag: "e388725ce27cf1:0"
   Vary: Accept-Encoding
   Cache-Control: max-age=604800
-  Date: Sat, 15 Mar 2014 06:45:16 GMT
+  Date: Sat, 15 Mar 2014 07:15:21 GMT
   Connection: close
-  X-Cache: miss
-  Content-Length: 2461
-Length: 2461 (2.4K) [text/html]
+  X-Cache: hit
+Length: unspecified [text/html]
 Saving to: “12306_ticket_helper.user.js”
 
-     0K ..                                                    100%  323M=0s
+     0K ....                                                   10.0M=0s
 
-2014-03-15 14:45:04 (323 MB/s) - “12306_ticket_helper.user.js” saved [2461/2461]
+2014-03-15 15:15:09 (10.0 MB/s) - “12306_ticket_helper.user.js” saved [5045]
 
---2014-03-15 14:45:04--  http://www.fishlee.net/Service/Download.ashx/44/63/12306_ticket_helper.crx
-Resolving www.fishlee.net... 222.216.190.69, 222.216.190.60
-Connecting to www.fishlee.net|222.216.190.69|:80... connected.
+--2014-03-15 15:15:09--  http://www.fishlee.net/Service/Download.ashx/44/63/12306_ticket_helper.crx
+Resolving www.fishlee.net... 222.216.190.60, 222.216.190.69
+Connecting to www.fishlee.net|222.216.190.60|:80... connected.
 HTTP request sent, awaiting response... 
   HTTP/1.1 200 OK
   Content-Type: text/html
   Last-Modified: Thu, 02 Jan 2014 17:45:01 GMT
   Accept-Ranges: bytes
   ETag: "e388725ce27cf1:0"
-  Date: Sat, 15 Mar 2014 06:45:17 GMT
+  Date: Sat, 15 Mar 2014 07:15:25 GMT
   Connection: close
   X-Cache: miss
   Content-Length: 5045
 Length: 5045 (4.9K) [text/html]
 Saving to: “12306_ticket_helper.crx”
 
-     0K ....                                                  100% 5.62M=0.001s
+     0K ....                                                  100% 1.41M=0.003s
 
-2014-03-15 14:45:04 (5.62 MB/s) - “12306_ticket_helper.crx” saved [5045/5045]
+2014-03-15 15:15:12 (1.41 MB/s) - “12306_ticket_helper.crx” saved [5045/5045]
 
