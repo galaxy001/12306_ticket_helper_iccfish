@@ -1,25 +1,54 @@
---2014-03-22 09:30:01--  http://www.fishlee.net/service/update/44/version.js
+--2014-03-22 11:45:01--  http://www.fishlee.net/service/update/44/version.js
 Resolving www.fishlee.net... 222.216.190.69, 222.216.190.60
 Connecting to www.fishlee.net|222.216.190.69|:80... connected.
-HTTP request sent, awaiting response... Read error (Connection timed out) in headers.
-Retrying.
+HTTP request sent, awaiting response... 
+  HTTP/1.1 500 Internal Server Error
+  Cache-Control: private
+  Content-Type: text/html; charset=utf-8
+  Date: Sat, 22 Mar 2014 03:45:17 GMT
+  Connection: close
+  X-Cache: miss
+  Content-Length: 8273
+2014-03-22 11:45:02 ERROR 500: Internal Server Error.
 
---2014-03-22 09:30:04--  (try: 2)  http://www.fishlee.net/Service/Download.ashx/44/63/12306_ticket_helper.crx
-Connecting to www.fishlee.net|222.216.190.60|:80... connected.
+--2014-03-22 11:45:02--  http://www.fishlee.net/Service/Download.ashx/44/47/12306_ticket_helper.user.js
+Resolving www.fishlee.net... 222.216.190.69, 113.105.148.23
+Connecting to www.fishlee.net|222.216.190.69|:80... connected.
+HTTP request sent, awaiting response... 
+  HTTP/1.1 200 OK
+  Content-Type: text/html
+  Last-Modified: Thu, 02 Jan 2014 17:45:01 GMT
+  ETag: "e388725ce27cf1:0"
+  Vary: Accept-Encoding
+  Cache-Control: max-age=604800
+  Date: Sat, 22 Mar 2014 03:45:18 GMT
+  Connection: close
+  X-Cache: miss
+  Content-Length: 2461
+Length: 2461 (2.4K) [text/html]
+Saving to: “12306_ticket_helper.user.js”
+
+     0K ..                                                    100%  264M=0s
+
+2014-03-22 11:45:02 (264 MB/s) - “12306_ticket_helper.user.js” saved [2461/2461]
+
+--2014-03-22 11:45:02--  http://www.fishlee.net/Service/Download.ashx/44/63/12306_ticket_helper.crx
+Resolving www.fishlee.net... 222.216.190.69, 222.216.190.60
+Connecting to www.fishlee.net|222.216.190.69|:80... connected.
 HTTP request sent, awaiting response... 
   HTTP/1.1 200 OK
   Content-Type: text/html
   Last-Modified: Thu, 02 Jan 2014 17:45:01 GMT
   Accept-Ranges: bytes
   ETag: "e388725ce27cf1:0"
-  Date: Sat, 22 Mar 2014 01:30:20 GMT
+  Date: Sat, 22 Mar 2014 03:45:19 GMT
   Connection: close
   X-Cache: miss
   Content-Length: 5045
 Length: 5045 (4.9K) [text/html]
 Saving to: “12306_ticket_helper.crx”
 
-     0K ....                                                  100%  280M=0s
+     0K ....                                                  100%  273M=0s
 
-2014-03-22 09:30:04 (280 MB/s) - “12306_ticket_helper.crx” saved [5045/5045]
+2014-03-22 11:45:03 (273 MB/s) - “12306_ticket_helper.crx” saved [5045/5045]
 
