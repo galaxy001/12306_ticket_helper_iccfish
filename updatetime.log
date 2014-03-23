@@ -51,3 +51,25 @@ Saving to: “12306_ticket_helper.crx”
 
 2014-03-24 00:00:03 (256 MB/s) - “12306_ticket_helper.crx” saved [5045/5045]
 
+Read error (Connection timed out) in headers.
+Retrying.
+
+--2014-03-24 00:00:12--  (try: 2)  http://www.fishlee.net/Service/Download.ashx/44/63/12306_ticket_helper.crx
+Connecting to www.fishlee.net|222.216.190.69|:80... connected.
+HTTP request sent, awaiting response... 
+  HTTP/1.1 200 OK
+  Content-Type: text/html
+  Last-Modified: Thu, 02 Jan 2014 17:45:01 GMT
+  Accept-Ranges: bytes
+  ETag: "e388725ce27cf1:0"
+  Date: Sun, 23 Mar 2014 16:00:28 GMT
+  Connection: close
+  X-Cache: miss
+  Content-Length: 5045
+Length: 5045 (4.9K) [text/html]
+Saving to: “12306_ticket_helper.crx”
+
+     0K ....                                                  100% 3.00K=1.6s
+
+2014-03-24 00:00:14 (3.00 KB/s) - “12306_ticket_helper.crx” saved [5045/5045]
+
