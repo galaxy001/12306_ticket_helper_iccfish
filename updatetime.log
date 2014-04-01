@@ -1,25 +1,15 @@
---2014-04-01 15:45:01--  http://www.fishlee.net/service/update/44/version.js
-Resolving www.fishlee.net... 222.216.190.69, 222.216.190.60
-Connecting to www.fishlee.net|222.216.190.69|:80... connected.
-HTTP request sent, awaiting response... 
-  HTTP/1.1 500 Internal Server Error
-  Date: Tue, 01 Apr 2014 07:45:24 GMT
-  Content-Type: text/html; charset=utf-8
-  Content-Length: 8273
-  Connection: keep-alive
-  Cache-Control: private
-  X-Cache: miss
-2014-04-01 15:45:03 ERROR 500: Internal Server Error.
-
---2014-04-01 15:45:03--  http://www.fishlee.net/Service/Download.ashx/44/47/12306_ticket_helper.user.js
+--2014-04-01 17:00:01--  http://www.fishlee.net/service/update/44/version.js
 Resolving www.fishlee.net... failed: Name or service not known.
 wget: unable to resolve host address “www.fishlee.net”
---2014-04-01 15:45:04--  http://www.fishlee.net/Service/Download.ashx/44/63/12306_ticket_helper.crx
-Resolving www.fishlee.net... 222.216.190.69, 113.105.148.23
-Connecting to www.fishlee.net|222.216.190.69|:80... connected.
+--2014-04-01 17:00:02--  http://www.fishlee.net/Service/Download.ashx/44/47/12306_ticket_helper.user.js
+Resolving www.fishlee.net... failed: Name or service not known.
+wget: unable to resolve host address “www.fishlee.net”
+--2014-04-01 17:00:03--  http://www.fishlee.net/Service/Download.ashx/44/63/12306_ticket_helper.crx
+Resolving www.fishlee.net... 222.216.190.60, 222.216.190.69
+Connecting to www.fishlee.net|222.216.190.60|:80... connected.
 HTTP request sent, awaiting response... 
   HTTP/1.1 200 OK
-  Date: Tue, 01 Apr 2014 07:45:26 GMT
+  Date: Tue, 01 Apr 2014 09:00:24 GMT
   Content-Type: text/html
   Content-Length: 5045
   Connection: keep-alive
@@ -30,7 +20,7 @@ HTTP request sent, awaiting response...
 Length: 5045 (4.9K) [text/html]
 Saving to: “12306_ticket_helper.crx”
 
-     0K ....                                                  100% 28.2M=0s
+     0K ....                                                  100% 7.18M=0.001s
 
-2014-04-01 15:45:06 (28.2 MB/s) - “12306_ticket_helper.crx” saved [5045/5045]
+2014-04-01 17:00:04 (7.18 MB/s) - “12306_ticket_helper.crx” saved [5045/5045]
 
