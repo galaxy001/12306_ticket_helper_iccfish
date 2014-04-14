@@ -1,44 +1,25 @@
---2014-04-14 01:00:01--  http://www.fishlee.net/service/update/44/version.js
+--2014-04-14 17:45:01--  http://www.fishlee.net/service/update/44/version.js
 Resolving www.fishlee.net... 222.216.190.60, 222.216.190.69
 Connecting to www.fishlee.net|222.216.190.60|:80... connected.
 HTTP request sent, awaiting response... 
   HTTP/1.1 500 Internal Server Error
-  Date: Sun, 13 Apr 2014 17:00:06 GMT
+  Date: Mon, 14 Apr 2014 09:45:18 GMT
   Content-Type: text/html; charset=utf-8
   Content-Length: 8273
   Connection: keep-alive
   Cache-Control: private
   X-Cache: miss
-2014-04-14 01:00:06 ERROR 500: Internal Server Error.
+2014-04-14 17:45:17 ERROR 500: Internal Server Error.
 
---2014-04-14 01:00:06--  http://www.fishlee.net/Service/Download.ashx/44/47/12306_ticket_helper.user.js
+--2014-04-14 17:45:17--  http://www.fishlee.net/Service/Download.ashx/44/47/12306_ticket_helper.user.js
+Resolving www.fishlee.net... failed: Name or service not known.
+wget: unable to resolve host address “www.fishlee.net”
+--2014-04-14 17:45:18--  http://www.fishlee.net/Service/Download.ashx/44/63/12306_ticket_helper.crx
 Resolving www.fishlee.net... 222.216.190.60, 222.216.190.69
 Connecting to www.fishlee.net|222.216.190.60|:80... connected.
 HTTP request sent, awaiting response... 
   HTTP/1.1 200 OK
-  Date: Sun, 13 Apr 2014 17:00:09 GMT
-  Content-Type: text/html
-  Content-Length: 5045
-  Connection: keep-alive
-  Last-Modified: Thu, 02 Jan 2014 17:45:01 GMT
-  Accept-Ranges: bytes
-  ETag: "e388725ce27cf1:0"
-  X-Cache: miss
-  Expires: Sun, 13 Apr 2014 18:00:09 GMT
-  Cache-Control: max-age=3600
-Length: 5045 (4.9K) [text/html]
-Saving to: “12306_ticket_helper.user.js”
-
-     0K ....                                                  100%  210M=0s
-
-2014-04-14 01:00:09 (210 MB/s) - “12306_ticket_helper.user.js” saved [5045/5045]
-
---2014-04-14 01:00:09--  http://www.fishlee.net/Service/Download.ashx/44/63/12306_ticket_helper.crx
-Resolving www.fishlee.net... 222.216.190.69, 222.216.190.60
-Connecting to www.fishlee.net|222.216.190.69|:80... connected.
-HTTP request sent, awaiting response... 
-  HTTP/1.1 200 OK
-  Date: Sun, 13 Apr 2014 17:00:10 GMT
+  Date: Mon, 14 Apr 2014 09:45:19 GMT
   Content-Type: text/html
   Content-Length: 5045
   Connection: keep-alive
@@ -49,7 +30,7 @@ HTTP request sent, awaiting response...
 Length: 5045 (4.9K) [text/html]
 Saving to: “12306_ticket_helper.crx”
 
-     0K ....                                                  100%  221M=0s
+     0K ....                                                  100% 22.6M=0s
 
-2014-04-14 01:00:10 (221 MB/s) - “12306_ticket_helper.crx” saved [5045/5045]
+2014-04-14 17:45:19 (22.6 MB/s) - “12306_ticket_helper.crx” saved [5045/5045]
 
