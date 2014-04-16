@@ -1,25 +1,43 @@
---2014-04-16 15:30:01--  http://www.fishlee.net/service/update/44/version.js
+--2014-04-16 23:00:01--  http://www.fishlee.net/service/update/44/version.js
 Resolving www.fishlee.net... 222.216.190.60, 222.216.190.69
 Connecting to www.fishlee.net|222.216.190.60|:80... connected.
 HTTP request sent, awaiting response... 
   HTTP/1.1 500 Internal Server Error
-  Date: Wed, 16 Apr 2014 07:30:03 GMT
+  Date: Wed, 16 Apr 2014 15:00:12 GMT
   Content-Type: text/html; charset=utf-8
   Content-Length: 8273
   Connection: keep-alive
   Cache-Control: private
   X-Cache: miss
-2014-04-16 15:30:02 ERROR 500: Internal Server Error.
+2014-04-16 23:00:11 ERROR 500: Internal Server Error.
 
---2014-04-16 15:30:02--  http://www.fishlee.net/Service/Download.ashx/44/47/12306_ticket_helper.user.js
-Resolving www.fishlee.net... failed: Name or service not known.
-wget: unable to resolve host address “www.fishlee.net”
---2014-04-16 15:30:02--  http://www.fishlee.net/Service/Download.ashx/44/63/12306_ticket_helper.crx
+--2014-04-16 23:00:11--  http://www.fishlee.net/Service/Download.ashx/44/47/12306_ticket_helper.user.js
 Resolving www.fishlee.net... 222.216.190.60, 222.216.190.69
 Connecting to www.fishlee.net|222.216.190.60|:80... connected.
 HTTP request sent, awaiting response... 
   HTTP/1.1 200 OK
-  Date: Wed, 16 Apr 2014 07:30:04 GMT
+  Date: Wed, 16 Apr 2014 15:00:14 GMT
+  Content-Type: text/html
+  Content-Length: 5045
+  Connection: keep-alive
+  Cache-Control: max-age=10800
+  Last-Modified: Thu, 02 Jan 2014 17:45:01 GMT
+  Accept-Ranges: bytes
+  ETag: "e388725ce27cf1:0"
+  X-Cache: hit
+Length: 5045 (4.9K) [text/html]
+Saving to: “12306_ticket_helper.user.js”
+
+     0K ....                                                  100% 13.8M=0s
+
+2014-04-16 23:00:13 (13.8 MB/s) - “12306_ticket_helper.user.js” saved [5045/5045]
+
+--2014-04-16 23:00:13--  http://www.fishlee.net/Service/Download.ashx/44/63/12306_ticket_helper.crx
+Resolving www.fishlee.net... 222.216.190.60, 222.216.190.69
+Connecting to www.fishlee.net|222.216.190.60|:80... connected.
+HTTP request sent, awaiting response... 
+  HTTP/1.1 200 OK
+  Date: Wed, 16 Apr 2014 15:00:18 GMT
   Content-Type: text/html
   Content-Length: 5045
   Connection: keep-alive
@@ -30,7 +48,43 @@ HTTP request sent, awaiting response...
 Length: 5045 (4.9K) [text/html]
 Saving to: “12306_ticket_helper.crx”
 
-     0K ....                                                  100%  163M=0s
+     0K ....                                                  100% 23.1M=0s
 
-2014-04-16 15:30:03 (163 MB/s) - “12306_ticket_helper.crx” saved [5045/5045]
+2014-04-16 23:00:17 (23.1 MB/s) - “12306_ticket_helper.crx” saved [5045/5045]
+
+                                                      189M=0s
+
+2014-04-16 23:00:13 (189 MB/s) - Read error at byte 2667 (Connection timed out).Retrying.
+
+--2014-04-16 23:00:14--  (try: 2)  http://www.fishlee.net/Service/Download.ashx/44/47/12306_ticket_helper.user.js
+Connecting to www.fishlee.net|222.216.190.60|:80... connected.
+HTTP request sent, awaiting response... 
+  HTTP/1.1 416 Requested Range Not Satisfiable
+  Date: Wed, 16 Apr 2014 15:00:20 GMT
+  Content-Type: application/x-javascript
+  Content-Length: 0
+  Connection: keep-alive
+  X-Cache: hit
+
+    The file is already fully retrieved; nothing to do.
+
+--2014-04-16 23:00:19--  http://www.fishlee.net/Service/Download.ashx/44/63/12306_ticket_helper.crx
+Resolving www.fishlee.net... 222.216.190.69, 222.216.190.60
+Connecting to www.fishlee.net|222.216.190.69|:80... connected.
+HTTP request sent, awaiting response... 
+  HTTP/1.1 200 OK
+  Date: Wed, 16 Apr 2014 15:00:20 GMT
+  Content-Type: text/html
+  Content-Length: 5045
+  Connection: keep-alive
+  Last-Modified: Thu, 02 Jan 2014 17:45:01 GMT
+  Accept-Ranges: bytes
+  ETag: "e388725ce27cf1:0"
+  X-Cache: pass
+Length: 5045 (4.9K) [text/html]
+Saving to: “12306_ticket_helper.crx”
+
+     0K ....                                                  100%  217M=0s
+
+2014-04-16 23:00:19 (217 MB/s) - “12306_ticket_helper.crx” saved [5045/5045]
 
