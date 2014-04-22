@@ -1,25 +1,25 @@
---2014-04-21 16:45:01--  http://www.fishlee.net/service/update/44/version.js
+--2014-04-22 09:45:01--  http://www.fishlee.net/service/update/44/version.js
 Resolving www.fishlee.net... 222.216.190.60, 222.216.190.69
 Connecting to www.fishlee.net|222.216.190.60|:80... connected.
 HTTP request sent, awaiting response... 
   HTTP/1.1 500 Internal Server Error
-  Date: Mon, 21 Apr 2014 08:45:08 GMT
+  Date: Tue, 22 Apr 2014 01:45:10 GMT
   Content-Type: text/html; charset=utf-8
   Content-Length: 8273
   Connection: keep-alive
   Cache-Control: private
   X-Cache: miss
-2014-04-21 16:45:05 ERROR 500: Internal Server Error.
+2014-04-22 09:45:11 ERROR 500: Internal Server Error.
 
---2014-04-21 16:45:05--  http://www.fishlee.net/Service/Download.ashx/44/47/12306_ticket_helper.user.js
+--2014-04-22 09:45:11--  http://www.fishlee.net/Service/Download.ashx/44/47/12306_ticket_helper.user.js
 Resolving www.fishlee.net... failed: Name or service not known.
 wget: unable to resolve host address “www.fishlee.net”
---2014-04-21 16:45:47--  http://www.fishlee.net/Service/Download.ashx/44/63/12306_ticket_helper.crx
+--2014-04-22 09:45:53--  http://www.fishlee.net/Service/Download.ashx/44/63/12306_ticket_helper.crx
 Resolving www.fishlee.net... 222.216.190.60, 222.216.190.69
 Connecting to www.fishlee.net|222.216.190.60|:80... connected.
 HTTP request sent, awaiting response... 
   HTTP/1.1 200 OK
-  Date: Mon, 21 Apr 2014 08:45:54 GMT
+  Date: Tue, 22 Apr 2014 01:46:16 GMT
   Content-Type: text/html
   Content-Length: 5045
   Connection: keep-alive
@@ -30,7 +30,7 @@ HTTP request sent, awaiting response...
 Length: 5045 (4.9K) [text/html]
 Saving to: “12306_ticket_helper.crx”
 
-     0K ....                                                  100%  198M=0s
+     0K ....                                                  100%  229M=0s
 
-2014-04-21 16:45:51 (198 MB/s) - “12306_ticket_helper.crx” saved [5045/5045]
+2014-04-22 09:46:16 (229 MB/s) - “12306_ticket_helper.crx” saved [5045/5045]
 
