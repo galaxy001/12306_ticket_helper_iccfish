@@ -1,30 +1,30 @@
---2014-05-21 13:15:02--  http://www.fishlee.net/service/update/44/version.js
+--2014-05-21 13:30:01--  http://www.fishlee.net/service/update/44/version.js
 Resolving www.fishlee.net... 178.79.131.110
 Connecting to www.fishlee.net|178.79.131.110|:80... connected.
 HTTP request sent, awaiting response... 
   HTTP/1.1 307 Temporary Redirect
   Server: nginx/0.7.65
-  Date: Wed, 21 May 2014 05:15:27 GMT
+  Date: Wed, 21 May 2014 05:30:27 GMT
   Content-Type: text/html
   Connection: keep-alive
   X-Powered-By: PHP/5.3.2-1ubuntu4.5
-  Expires: Tue, 20 May 2014 05:15:27 GMT
+  Expires: Tue, 20 May 2014 05:30:27 GMT
   Cache-Control: no-cache
   Location: http://dns.v2ex.com/d3d3LmZpc2hsZWUubmV0
   Vary: Accept-Encoding
   Content-Length: 0
 Location: http://dns.v2ex.com/d3d3LmZpc2hsZWUubmV0 [following]
---2014-05-21 13:15:14--  http://dns.v2ex.com/d3d3LmZpc2hsZWUubmV0
+--2014-05-21 13:30:14--  http://dns.v2ex.com/d3d3LmZpc2hsZWUubmV0
 Resolving dns.v2ex.com... 178.79.131.110
 Reusing existing connection to www.fishlee.net:80.
 HTTP request sent, awaiting response... 
   HTTP/1.1 200 OK
   Server: nginx/0.7.65
-  Date: Wed, 21 May 2014 05:15:28 GMT
+  Date: Wed, 21 May 2014 05:30:34 GMT
   Content-Type: text/html
   Connection: keep-alive
   X-Powered-By: PHP/5.3.2-1ubuntu4.5
-  Set-Cookie: PHPSESSID=lt5bfpop6rih4dei8o7p294qg4; path=/
+  Set-Cookie: PHPSESSID=svpah8s4gdjrs2jj7t0jkt9a42; path=/
   Expires: Thu, 19 Nov 1981 08:52:00 GMT
   Cache-Control: no-store, no-cache, must-revalidate, post-check=0, pre-check=0
   Pragma: no-cache
@@ -33,37 +33,37 @@ HTTP request sent, awaiting response...
 Length: 7188 (7.0K) [text/html]
 Saving to: “version.js”
 
-     0K .......                                               100%  293M=0s
+     0K .......                                               100% 24.0M=0s
 
-2014-05-21 13:15:15 (293 MB/s) - “version.js” saved [7188/7188]
+2014-05-21 13:30:20 (24.0 MB/s) - “version.js” saved [7188/7188]
 
---2014-05-21 13:15:15--  http://www.fishlee.net/Service/Download.ashx/44/47/12306_ticket_helper.user.js
+--2014-05-21 13:30:20--  http://www.fishlee.net/Service/Download.ashx/44/47/12306_ticket_helper.user.js
 Resolving www.fishlee.net... 178.79.131.110
 Connecting to www.fishlee.net|178.79.131.110|:80... connected.
 HTTP request sent, awaiting response... 
   HTTP/1.1 307 Temporary Redirect
   Server: nginx/0.7.65
-  Date: Wed, 21 May 2014 05:15:41 GMT
+  Date: Wed, 21 May 2014 05:30:47 GMT
   Content-Type: text/html
   Connection: keep-alive
   X-Powered-By: PHP/5.3.2-1ubuntu4.5
-  Expires: Tue, 20 May 2014 05:15:41 GMT
+  Expires: Tue, 20 May 2014 05:30:47 GMT
   Cache-Control: no-cache
   Location: http://dns.v2ex.com/d3d3LmZpc2hsZWUubmV0
   Vary: Accept-Encoding
   Content-Length: 0
 Location: http://dns.v2ex.com/d3d3LmZpc2hsZWUubmV0 [following]
---2014-05-21 13:15:28--  http://dns.v2ex.com/d3d3LmZpc2hsZWUubmV0
+--2014-05-21 13:30:33--  http://dns.v2ex.com/d3d3LmZpc2hsZWUubmV0
 Resolving dns.v2ex.com... 178.79.131.110
 Reusing existing connection to www.fishlee.net:80.
 HTTP request sent, awaiting response... 
   HTTP/1.1 200 OK
   Server: nginx/0.7.65
-  Date: Wed, 21 May 2014 05:15:45 GMT
+  Date: Wed, 21 May 2014 05:30:47 GMT
   Content-Type: text/html
   Connection: keep-alive
   X-Powered-By: PHP/5.3.2-1ubuntu4.5
-  Set-Cookie: PHPSESSID=knlcov9uef8a4b3isfla92h3g4; path=/
+  Set-Cookie: PHPSESSID=rofq8bs82pimhdfph9l3smqhs4; path=/
   Expires: Thu, 19 Nov 1981 08:52:00 GMT
   Cache-Control: no-store, no-cache, must-revalidate, post-check=0, pre-check=0
   Pragma: no-cache
@@ -72,37 +72,37 @@ HTTP request sent, awaiting response...
 Length: 7188 (7.0K) [text/html]
 Saving to: “12306_ticket_helper.user.js”
 
-     0K .......                                               100%  371M=0s
+     0K .......                                               100%  358M=0s
 
-2014-05-21 13:15:32 (371 MB/s) - “12306_ticket_helper.user.js” saved [7188/7188]
+2014-05-21 13:30:34 (358 MB/s) - “12306_ticket_helper.user.js” saved [7188/7188]
 
---2014-05-21 13:15:32--  http://www.fishlee.net/Service/Download.ashx/44/63/12306_ticket_helper.crx
+--2014-05-21 13:30:34--  http://www.fishlee.net/Service/Download.ashx/44/63/12306_ticket_helper.crx
 Resolving www.fishlee.net... 178.79.131.110
 Connecting to www.fishlee.net|178.79.131.110|:80... connected.
 HTTP request sent, awaiting response... 
   HTTP/1.1 307 Temporary Redirect
   Server: nginx/0.7.65
-  Date: Wed, 21 May 2014 05:15:58 GMT
+  Date: Wed, 21 May 2014 05:31:09 GMT
   Content-Type: text/html
   Connection: keep-alive
   X-Powered-By: PHP/5.3.2-1ubuntu4.5
-  Expires: Tue, 20 May 2014 05:15:58 GMT
+  Expires: Tue, 20 May 2014 05:31:09 GMT
   Cache-Control: no-cache
   Location: http://dns.v2ex.com/d3d3LmZpc2hsZWUubmV0
   Vary: Accept-Encoding
   Content-Length: 0
 Location: http://dns.v2ex.com/d3d3LmZpc2hsZWUubmV0 [following]
---2014-05-21 13:15:45--  http://dns.v2ex.com/d3d3LmZpc2hsZWUubmV0
+--2014-05-21 13:30:56--  http://dns.v2ex.com/d3d3LmZpc2hsZWUubmV0
 Resolving dns.v2ex.com... 178.79.131.110
 Reusing existing connection to www.fishlee.net:80.
 HTTP request sent, awaiting response... 
   HTTP/1.1 200 OK
   Server: nginx/0.7.65
-  Date: Wed, 21 May 2014 05:15:59 GMT
+  Date: Wed, 21 May 2014 05:31:10 GMT
   Content-Type: text/html
   Connection: keep-alive
   X-Powered-By: PHP/5.3.2-1ubuntu4.5
-  Set-Cookie: PHPSESSID=7vmgh63rnqr4kmgfpl87cqvo62; path=/
+  Set-Cookie: PHPSESSID=197jk8jr8c3uoep70gq1mau8g4; path=/
   Expires: Thu, 19 Nov 1981 08:52:00 GMT
   Cache-Control: no-store, no-cache, must-revalidate, post-check=0, pre-check=0
   Pragma: no-cache
@@ -111,7 +111,7 @@ HTTP request sent, awaiting response...
 Length: 7188 (7.0K) [text/html]
 Saving to: “12306_ticket_helper.crx”
 
-     0K .......                                               100%  324M=0s
+     0K .......                                               100%  398M=0s
 
-2014-05-21 13:15:45 (324 MB/s) - “12306_ticket_helper.crx” saved [7188/7188]
+2014-05-21 13:30:56 (398 MB/s) - “12306_ticket_helper.crx” saved [7188/7188]
 
