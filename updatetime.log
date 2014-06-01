@@ -1,25 +1,25 @@
---2014-06-01 15:30:01--  http://www.fishlee.net/service/update/44/version.js
+--2014-06-02 05:45:02--  http://www.fishlee.net/service/update/44/version.js
 Resolving www.fishlee.net... 123.151.182.46, 125.39.251.63
 Connecting to www.fishlee.net|123.151.182.46|:80... connected.
 HTTP request sent, awaiting response... 
   HTTP/1.1 500 Internal Server Error
-  Date: Sun, 01 Jun 2014 07:30:24 GMT
+  Date: Sun, 01 Jun 2014 21:45:26 GMT
   Content-Type: text/html; charset=utf-8
   Content-Length: 8273
   Connection: keep-alive
   Cache-Control: private
   X-Cache: miss
-2014-06-01 15:30:06 ERROR 500: Internal Server Error.
+2014-06-02 05:45:07 ERROR 500: Internal Server Error.
 
---2014-06-01 15:30:06--  http://www.fishlee.net/Service/Download.ashx/44/47/12306_ticket_helper.user.js
+--2014-06-02 05:45:07--  http://www.fishlee.net/Service/Download.ashx/44/47/12306_ticket_helper.user.js
 Resolving www.fishlee.net... failed: Name or service not known.
 wget: unable to resolve host address “www.fishlee.net”
---2014-06-01 15:30:07--  http://www.fishlee.net/Service/Download.ashx/44/63/12306_ticket_helper.crx
-Resolving www.fishlee.net... 123.151.182.30, 125.39.251.63
-Connecting to www.fishlee.net|123.151.182.30|:80... connected.
+--2014-06-02 05:45:26--  http://www.fishlee.net/Service/Download.ashx/44/63/12306_ticket_helper.crx
+Resolving www.fishlee.net... 125.39.251.63, 123.151.182.46
+Connecting to www.fishlee.net|125.39.251.63|:80... connected.
 HTTP request sent, awaiting response... 
   HTTP/1.1 200 OK
-  Date: Sun, 01 Jun 2014 07:30:27 GMT
+  Date: Sun, 01 Jun 2014 21:45:47 GMT
   Content-Type: text/html
   Content-Length: 5045
   Connection: keep-alive
@@ -31,7 +31,7 @@ HTTP request sent, awaiting response...
 Length: 5045 (4.9K) [text/html]
 Saving to: “12306_ticket_helper.crx”
 
-     0K ....                                                  100%  248M=0s
+     0K ....                                                  100%  255M=0s
 
-2014-06-01 15:30:08 (248 MB/s) - “12306_ticket_helper.crx” saved [5045/5045]
+2014-06-02 05:45:28 (255 MB/s) - “12306_ticket_helper.crx” saved [5045/5045]
 
