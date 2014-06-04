@@ -1,37 +1,9 @@
---2014-06-03 04:30:01--  http://www.fishlee.net/service/update/44/version.js
-Resolving www.fishlee.net... 125.39.251.63, 123.151.182.30
-Connecting to www.fishlee.net|125.39.251.63|:80... connected.
-HTTP request sent, awaiting response... 
-  HTTP/1.1 500 Internal Server Error
-  Date: Mon, 02 Jun 2014 20:30:26 GMT
-  Content-Type: text/html; charset=utf-8
-  Content-Length: 8273
-  Connection: keep-alive
-  Cache-Control: private
-  X-Cache: miss
-2014-06-03 04:30:07 ERROR 500: Internal Server Error.
-
---2014-06-03 04:30:07--  http://www.fishlee.net/Service/Download.ashx/44/47/12306_ticket_helper.user.js
+--2014-06-04 08:30:01--  http://www.fishlee.net/service/update/44/version.js
 Resolving www.fishlee.net... failed: Name or service not known.
 wget: unable to resolve host address “www.fishlee.net”
---2014-06-03 04:30:07--  http://www.fishlee.net/Service/Download.ashx/44/63/12306_ticket_helper.crx
-Resolving www.fishlee.net... 125.39.251.63, 123.151.182.46
-Connecting to www.fishlee.net|125.39.251.63|:80... connected.
-HTTP request sent, awaiting response... 
-  HTTP/1.1 200 OK
-  Date: Mon, 02 Jun 2014 20:30:30 GMT
-  Content-Type: text/html
-  Content-Length: 5045
-  Connection: keep-alive
-  Vary: Accept-Encoding
-  Last-Modified: Thu, 02 Jan 2014 17:45:01 GMT
-  Accept-Ranges: bytes
-  ETag: "e388725ce27cf1:0"
-  X-Cache: pass
-Length: 5045 (4.9K) [text/html]
-Saving to: “12306_ticket_helper.crx”
-
-     0K ....                                                  100%  258M=0s
-
-2014-06-03 04:30:11 (258 MB/s) - “12306_ticket_helper.crx” saved [5045/5045]
-
+--2014-06-04 08:30:37--  http://www.fishlee.net/Service/Download.ashx/44/47/12306_ticket_helper.user.js
+Resolving www.fishlee.net... failed: Name or service not known.
+wget: unable to resolve host address “www.fishlee.net”
+--2014-06-04 08:31:14--  http://www.fishlee.net/Service/Download.ashx/44/63/12306_ticket_helper.crx
+Resolving www.fishlee.net... failed: Name or service not known.
+wget: unable to resolve host address “www.fishlee.net”
