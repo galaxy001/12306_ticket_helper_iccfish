@@ -1,19 +1,19 @@
---2014-06-20 02:45:01--  http://www.fishlee.net/service/update/44/version.js
+--2014-06-20 03:00:02--  http://www.fishlee.net/service/update/44/version.js
 Resolving www.fishlee.net... failed: Name or service not known.
 wget: unable to resolve host address “www.fishlee.net”
---2014-06-20 02:45:40--  http://www.fishlee.net/Service/Download.ashx/44/47/12306_ticket_helper.user.js
-Resolving www.fishlee.net... 125.39.251.63, 123.151.182.30
-Connecting to www.fishlee.net|125.39.251.63|:80... connected.
+--2014-06-20 03:00:38--  http://www.fishlee.net/Service/Download.ashx/44/47/12306_ticket_helper.user.js
+Resolving www.fishlee.net... 123.151.182.46, 182.118.46.44
+Connecting to www.fishlee.net|123.151.182.46|:80... connected.
 HTTP request sent, awaiting response... 
   HTTP/1.1 404 Not Found
-  Date: Thu, 19 Jun 2014 18:46:08 GMT
+  Date: Thu, 19 Jun 2014 19:01:33 GMT
   Content-Type: text/html
   Connection: keep-alive
   Vary: Accept-Encoding
   content-length: 11747
   X-Cache: miss
-2014-06-20 02:45:42 ERROR 404: Not Found.
+2014-06-20 03:01:07 ERROR 404: Not Found.
 
---2014-06-20 02:45:42--  http://www.fishlee.net/Service/Download.ashx/44/63/12306_ticket_helper.crx
+--2014-06-20 03:01:07--  http://www.fishlee.net/Service/Download.ashx/44/63/12306_ticket_helper.crx
 Resolving www.fishlee.net... failed: Name or service not known.
 wget: unable to resolve host address “www.fishlee.net”
