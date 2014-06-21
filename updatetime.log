@@ -1,39 +1,39 @@
---2014-06-21 18:00:01--  http://www.fishlee.net/service/update/44/version.js
-Resolving www.fishlee.net... 123.151.182.61, 123.151.182.72
-Connecting to www.fishlee.net|123.151.182.61|:80... connected.
-HTTP request sent, awaiting response... 
-  HTTP/1.1 404 Not Found
-  Date: Sat, 21 Jun 2014 10:00:29 GMT
-  Content-Type: text/html
-  Connection: keep-alive
-  Vary: Accept-Encoding
-  content-length: 11747
-  X-Cache: miss
-2014-06-21 18:00:01 ERROR 404: Not Found.
-
---2014-06-21 18:00:01--  http://www.fishlee.net/Service/Download.ashx/44/47/12306_ticket_helper.user.js
-Resolving www.fishlee.net... 123.151.182.61, 123.151.182.72
-Connecting to www.fishlee.net|123.151.182.61|:80... connected.
-HTTP request sent, awaiting response... 
-  HTTP/1.1 404 Not Found
-  Date: Sat, 21 Jun 2014 10:00:29 GMT
-  Content-Type: text/html
-  Connection: keep-alive
-  Vary: Accept-Encoding
-  content-length: 11747
-  X-Cache: miss
-2014-06-21 18:00:02 ERROR 404: Not Found.
-
---2014-06-21 18:00:02--  http://www.fishlee.net/Service/Download.ashx/44/63/12306_ticket_helper.crx
+--2014-06-21 18:15:01--  http://www.fishlee.net/service/update/44/version.js
 Resolving www.fishlee.net... 123.151.182.72, 125.39.251.63
 Connecting to www.fishlee.net|123.151.182.72|:80... connected.
 HTTP request sent, awaiting response... 
   HTTP/1.1 404 Not Found
-  Date: Sat, 21 Jun 2014 10:00:31 GMT
+  Date: Sat, 21 Jun 2014 10:15:29 GMT
+  Content-Type: text/html
+  Connection: keep-alive
+  Vary: Accept-Encoding
+  content-length: 11747
+  X-Cache: miss
+2014-06-21 18:15:01 ERROR 404: Not Found.
+
+--2014-06-21 18:15:01--  http://www.fishlee.net/Service/Download.ashx/44/47/12306_ticket_helper.user.js
+Resolving www.fishlee.net... 123.151.182.72, 125.39.251.63
+Connecting to www.fishlee.net|123.151.182.72|:80... connected.
+HTTP request sent, awaiting response... 
+  HTTP/1.1 404 Not Found
+  Date: Sat, 21 Jun 2014 10:15:29 GMT
+  Content-Type: text/html
+  Connection: keep-alive
+  Vary: Accept-Encoding
+  content-length: 11747
+  X-Cache: miss
+2014-06-21 18:15:02 ERROR 404: Not Found.
+
+--2014-06-21 18:15:02--  http://www.fishlee.net/Service/Download.ashx/44/63/12306_ticket_helper.crx
+Resolving www.fishlee.net... 123.151.182.61, 123.151.182.72
+Connecting to www.fishlee.net|123.151.182.61|:80... connected.
+HTTP request sent, awaiting response... 
+  HTTP/1.1 404 Not Found
+  Date: Sat, 21 Jun 2014 10:15:30 GMT
   Content-Type: text/html
   Connection: keep-alive
   Vary: Accept-Encoding
   content-length: 11747
   X-Cache: error
-2014-06-21 18:00:04 ERROR 404: Not Found.
+2014-06-21 18:15:03 ERROR 404: Not Found.
 
