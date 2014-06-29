@@ -1,39 +1,39 @@
---2014-06-30 05:45:01--  http://www.fishlee.net/service/update/44/version.js
-Resolving www.fishlee.net... 125.39.251.63, 123.151.182.61
+--2014-06-30 06:00:01--  http://www.fishlee.net/service/update/44/version.js
+Resolving www.fishlee.net... 125.39.251.63, 182.118.46.44
 Connecting to www.fishlee.net|125.39.251.63|:80... connected.
 HTTP request sent, awaiting response... 
   HTTP/1.1 404 Not Found
-  Date: Sun, 29 Jun 2014 21:45:34 GMT
+  Date: Sun, 29 Jun 2014 22:00:33 GMT
   Content-Type: text/html
   Connection: keep-alive
   Vary: Accept-Encoding
   content-length: 11747
   X-Cache: miss
-2014-06-30 05:45:02 ERROR 404: Not Found.
+2014-06-30 06:00:02 ERROR 404: Not Found.
 
---2014-06-30 05:45:02--  http://www.fishlee.net/Service/Download.ashx/44/47/12306_ticket_helper.user.js
+--2014-06-30 06:00:02--  http://www.fishlee.net/Service/Download.ashx/44/47/12306_ticket_helper.user.js
 Resolving www.fishlee.net... 125.39.251.63, 123.151.182.61
 Connecting to www.fishlee.net|125.39.251.63|:80... connected.
 HTTP request sent, awaiting response... 
   HTTP/1.1 404 Not Found
-  Date: Sun, 29 Jun 2014 21:45:34 GMT
+  Date: Sun, 29 Jun 2014 22:00:34 GMT
   Content-Type: text/html
   Connection: keep-alive
   Vary: Accept-Encoding
   content-length: 11747
   X-Cache: miss
-2014-06-30 05:45:03 ERROR 404: Not Found.
+2014-06-30 06:00:02 ERROR 404: Not Found.
 
---2014-06-30 05:45:03--  http://www.fishlee.net/Service/Download.ashx/44/63/12306_ticket_helper.crx
-Resolving www.fishlee.net... 125.39.251.63, 123.151.182.61
-Connecting to www.fishlee.net|125.39.251.63|:80... connected.
+--2014-06-30 06:00:02--  http://www.fishlee.net/Service/Download.ashx/44/63/12306_ticket_helper.crx
+Resolving www.fishlee.net... 123.151.182.61, 125.39.251.63
+Connecting to www.fishlee.net|123.151.182.61|:80... connected.
 HTTP request sent, awaiting response... 
   HTTP/1.1 404 Not Found
-  Date: Sun, 29 Jun 2014 21:45:35 GMT
+  Date: Sun, 29 Jun 2014 22:00:34 GMT
   Content-Type: text/html
   Connection: keep-alive
   Vary: Accept-Encoding
   content-length: 11747
   X-Cache: error
-2014-06-30 05:45:03 ERROR 404: Not Found.
+2014-06-30 06:00:03 ERROR 404: Not Found.
 
