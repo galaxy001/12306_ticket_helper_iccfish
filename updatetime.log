@@ -1,39 +1,39 @@
---2014-06-29 11:30:01--  http://www.fishlee.net/service/update/44/version.js
-Resolving www.fishlee.net... 123.151.182.61, 125.39.251.63
-Connecting to www.fishlee.net|123.151.182.61|:80... connected.
+--2014-06-29 11:45:01--  http://www.fishlee.net/service/update/44/version.js
+Resolving www.fishlee.net... 182.118.46.44, 123.151.182.61
+Connecting to www.fishlee.net|182.118.46.44|:80... connected.
 HTTP request sent, awaiting response... 
   HTTP/1.1 404 Not Found
-  Date: Sun, 29 Jun 2014 03:30:33 GMT
+  Date: Sun, 29 Jun 2014 03:45:34 GMT
   Content-Type: text/html
   Connection: keep-alive
   Vary: Accept-Encoding
   content-length: 11747
   X-Cache: miss
-2014-06-29 11:30:02 ERROR 404: Not Found.
+2014-06-29 11:45:03 ERROR 404: Not Found.
 
---2014-06-29 11:30:02--  http://www.fishlee.net/Service/Download.ashx/44/47/12306_ticket_helper.user.js
-Resolving www.fishlee.net... 123.151.182.61, 125.39.251.63
-Connecting to www.fishlee.net|123.151.182.61|:80... connected.
+--2014-06-29 11:45:03--  http://www.fishlee.net/Service/Download.ashx/44/47/12306_ticket_helper.user.js
+Resolving www.fishlee.net... 125.39.251.63, 123.151.182.61
+Connecting to www.fishlee.net|125.39.251.63|:80... connected.
 HTTP request sent, awaiting response... 
   HTTP/1.1 404 Not Found
-  Date: Sun, 29 Jun 2014 03:30:34 GMT
+  Date: Sun, 29 Jun 2014 03:45:35 GMT
   Content-Type: text/html
   Connection: keep-alive
   Vary: Accept-Encoding
   content-length: 11747
   X-Cache: miss
-2014-06-29 11:30:03 ERROR 404: Not Found.
+2014-06-29 11:45:04 ERROR 404: Not Found.
 
---2014-06-29 11:30:03--  http://www.fishlee.net/Service/Download.ashx/44/63/12306_ticket_helper.crx
-Resolving www.fishlee.net... 123.151.182.61, 125.39.251.63
-Connecting to www.fishlee.net|123.151.182.61|:80... connected.
+--2014-06-29 11:45:04--  http://www.fishlee.net/Service/Download.ashx/44/63/12306_ticket_helper.crx
+Resolving www.fishlee.net... 125.39.251.63, 182.118.46.44
+Connecting to www.fishlee.net|125.39.251.63|:80... connected.
 HTTP request sent, awaiting response... 
   HTTP/1.1 404 Not Found
-  Date: Sun, 29 Jun 2014 03:30:34 GMT
+  Date: Sun, 29 Jun 2014 03:45:35 GMT
   Content-Type: text/html
   Connection: keep-alive
   Vary: Accept-Encoding
   content-length: 11747
   X-Cache: error
-2014-06-29 11:30:03 ERROR 404: Not Found.
+2014-06-29 11:45:04 ERROR 404: Not Found.
 
