@@ -1,39 +1,39 @@
---2014-06-30 11:00:02--  http://www.fishlee.net/service/update/44/version.js
+--2014-06-30 11:15:03--  http://www.fishlee.net/service/update/44/version.js
 Resolving www.fishlee.net... 125.39.251.63, 123.151.182.61
 Connecting to www.fishlee.net|125.39.251.63|:80... connected.
 HTTP request sent, awaiting response... 
   HTTP/1.1 404 Not Found
-  Date: Mon, 30 Jun 2014 03:00:35 GMT
+  Date: Mon, 30 Jun 2014 03:15:35 GMT
   Content-Type: text/html
   Connection: keep-alive
   Vary: Accept-Encoding
   content-length: 11747
   X-Cache: miss
-2014-06-30 11:00:04 ERROR 404: Not Found.
+2014-06-30 11:15:04 ERROR 404: Not Found.
 
---2014-06-30 11:00:05--  http://www.fishlee.net/Service/Download.ashx/44/47/12306_ticket_helper.user.js
-Resolving www.fishlee.net... 123.151.182.61, 125.39.251.63
-Connecting to www.fishlee.net|123.151.182.61|:80... connected.
+--2014-06-30 11:15:04--  http://www.fishlee.net/Service/Download.ashx/44/47/12306_ticket_helper.user.js
+Resolving www.fishlee.net... 125.39.251.63, 119.188.35.37
+Connecting to www.fishlee.net|125.39.251.63|:80... connected.
 HTTP request sent, awaiting response... 
   HTTP/1.1 404 Not Found
-  Date: Mon, 30 Jun 2014 03:00:37 GMT
+  Date: Mon, 30 Jun 2014 03:15:36 GMT
   Content-Type: text/html
   Connection: keep-alive
   Vary: Accept-Encoding
   content-length: 11747
   X-Cache: miss
-2014-06-30 11:00:06 ERROR 404: Not Found.
+2014-06-30 11:15:04 ERROR 404: Not Found.
 
---2014-06-30 11:00:06--  http://www.fishlee.net/Service/Download.ashx/44/63/12306_ticket_helper.crx
+--2014-06-30 11:15:04--  http://www.fishlee.net/Service/Download.ashx/44/63/12306_ticket_helper.crx
 Resolving www.fishlee.net... 123.151.182.61, 125.39.251.63
 Connecting to www.fishlee.net|123.151.182.61|:80... connected.
 HTTP request sent, awaiting response... 
   HTTP/1.1 404 Not Found
-  Date: Mon, 30 Jun 2014 03:00:38 GMT
+  Date: Mon, 30 Jun 2014 03:15:36 GMT
   Content-Type: text/html
   Connection: keep-alive
   Vary: Accept-Encoding
   content-length: 11747
   X-Cache: error
-2014-06-30 11:00:06 ERROR 404: Not Found.
+2014-06-30 11:15:05 ERROR 404: Not Found.
 
