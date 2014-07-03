@@ -1,41 +1,42 @@
---2014-07-04 03:45:01--  http://www.fishlee.net/service/update/44/version.js
+--2014-07-04 04:00:01--  http://www.fishlee.net/service/update/44/version.js
 Resolving www.fishlee.net... 119.188.35.38, 123.151.182.61
 Connecting to www.fishlee.net|119.188.35.38|:80... connected.
 HTTP request sent, awaiting response... 
   HTTP/1.1 404 Not Found
-  Date: Thu, 03 Jul 2014 19:45:35 GMT
+  Date: Thu, 03 Jul 2014 20:00:35 GMT
   Content-Type: text/html
   Connection: keep-alive
   Vary: Accept-Encoding
-  Set-Cookie: __jsluid=2bb25e8ab64524f14d193706a765628c; path=/
+  Set-Cookie: __jsluid=8965c7355161b1753f89970e501f36e0; path=/
   content-length: 11747
   X-Cache: miss
-2014-07-04 03:45:02 ERROR 404: Not Found.
+2014-07-04 04:00:02 ERROR 404: Not Found.
 
---2014-07-04 03:45:02--  http://www.fishlee.net/Service/Download.ashx/44/47/12306_ticket_helper.user.js
-Resolving www.fishlee.net... 119.188.35.37, 125.39.251.63
-Connecting to www.fishlee.net|119.188.35.37|:80... connected.
+--2014-07-04 04:00:02--  http://www.fishlee.net/Service/Download.ashx/44/47/12306_ticket_helper.user.js
+Resolving www.fishlee.net... 119.188.35.38, 182.118.46.44
+Connecting to www.fishlee.net|119.188.35.38|:80... connected.
 HTTP request sent, awaiting response... 
   HTTP/1.1 404 Not Found
-  Date: Thu, 03 Jul 2014 19:45:35 GMT
+  Date: Thu, 03 Jul 2014 20:00:39 GMT
   Content-Type: text/html
   Connection: keep-alive
   Vary: Accept-Encoding
-  Set-Cookie: __jsluid=13b9193c7353eeae901456392ed17382; path=/
+  Set-Cookie: __jsluid=12f522262a2d167c40eea0fd7528f100; path=/
   content-length: 11747
   X-Cache: miss
-2014-07-04 03:45:02 ERROR 404: Not Found.
+2014-07-04 04:00:06 ERROR 404: Not Found.
 
---2014-07-04 03:45:02--  http://www.fishlee.net/Service/Download.ashx/44/63/12306_ticket_helper.crx
+--2014-07-04 04:00:06--  http://www.fishlee.net/Service/Download.ashx/44/63/12306_ticket_helper.crx
 Resolving www.fishlee.net... 125.39.251.63, 123.151.182.61
 Connecting to www.fishlee.net|125.39.251.63|:80... connected.
 HTTP request sent, awaiting response... 
-  HTTP/1.1 503 Service Temporarily Unavailable
-  Date: Thu, 03 Jul 2014 19:45:55 GMT
+  HTTP/1.1 404 Not Found
+  Date: Thu, 03 Jul 2014 20:00:40 GMT
   Content-Type: text/html
   Connection: keep-alive
-  Set-Cookie: __jsluid=7b518528435b39b1c4932f06a52f7162; path=/
-  content-length: 820
+  Vary: Accept-Encoding
+  Set-Cookie: __jsluid=05a98e5d321c85bfd02871f475c3f9f2; path=/
+  content-length: 11747
   X-Cache: error
-2014-07-04 03:45:22 ERROR 503: Service Temporarily Unavailable.
+2014-07-04 04:00:06 ERROR 404: Not Found.
 
