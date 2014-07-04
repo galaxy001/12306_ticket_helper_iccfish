@@ -1,42 +1,31 @@
---2014-07-04 23:30:01--  http://www.fishlee.net/service/update/44/version.js
+--2014-07-04 23:45:01--  http://www.fishlee.net/service/update/44/version.js
+Resolving www.fishlee.net... failed: Name or service not known.
+wget: unable to resolve host address “www.fishlee.net”
+--2014-07-04 23:45:02--  http://www.fishlee.net/Service/Download.ashx/44/47/12306_ticket_helper.user.js
 Resolving www.fishlee.net... 125.39.251.63, 123.151.182.61
 Connecting to www.fishlee.net|125.39.251.63|:80... connected.
 HTTP request sent, awaiting response... 
   HTTP/1.1 404 Not Found
-  Date: Fri, 04 Jul 2014 15:30:35 GMT
+  Date: Fri, 04 Jul 2014 15:45:36 GMT
   Content-Type: text/html
   Connection: keep-alive
   Vary: Accept-Encoding
-  Set-Cookie: __jsluid=bb2b8ea67e00782360204d88f3223a1c; path=/
+  Set-Cookie: __jsluid=22189d5dd17cf0090c332049b26f563b; path=/
   content-length: 11747
   X-Cache: miss
-2014-07-04 23:30:02 ERROR 404: Not Found.
+2014-07-04 23:45:02 ERROR 404: Not Found.
 
---2014-07-04 23:30:02--  http://www.fishlee.net/Service/Download.ashx/44/47/12306_ticket_helper.user.js
-Resolving www.fishlee.net... 125.39.251.63, 119.188.35.38
-Connecting to www.fishlee.net|125.39.251.63|:80... connected.
+--2014-07-04 23:45:02--  http://www.fishlee.net/Service/Download.ashx/44/63/12306_ticket_helper.crx
+Resolving www.fishlee.net... 123.151.182.61, 119.188.35.38
+Connecting to www.fishlee.net|123.151.182.61|:80... connected.
 HTTP request sent, awaiting response... 
   HTTP/1.1 404 Not Found
-  Date: Fri, 04 Jul 2014 15:30:37 GMT
+  Date: Fri, 04 Jul 2014 15:45:36 GMT
   Content-Type: text/html
   Connection: keep-alive
   Vary: Accept-Encoding
-  Set-Cookie: __jsluid=0500fb8fb9c2fec5ae2341fedf125f8a; path=/
-  content-length: 11747
-  X-Cache: miss
-2014-07-04 23:30:03 ERROR 404: Not Found.
-
---2014-07-04 23:30:03--  http://www.fishlee.net/Service/Download.ashx/44/63/12306_ticket_helper.crx
-Resolving www.fishlee.net... 119.188.35.37, 123.151.182.61
-Connecting to www.fishlee.net|119.188.35.37|:80... connected.
-HTTP request sent, awaiting response... 
-  HTTP/1.1 404 Not Found
-  Date: Fri, 04 Jul 2014 15:30:37 GMT
-  Content-Type: text/html
-  Connection: keep-alive
-  Vary: Accept-Encoding
-  Set-Cookie: __jsluid=5c0a1ab5d4c13eb0e404b7cf7de530d7; path=/
+  Set-Cookie: __jsluid=7c19e570e23ac6ff0fceb25adb0c321d; path=/
   content-length: 11747
   X-Cache: error
-2014-07-04 23:30:04 ERROR 404: Not Found.
+2014-07-04 23:45:03 ERROR 404: Not Found.
 
