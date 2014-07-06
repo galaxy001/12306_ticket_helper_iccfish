@@ -1,42 +1,42 @@
---2014-07-06 20:30:01--  http://www.fishlee.net/service/update/44/version.js
-Resolving www.fishlee.net... 119.188.35.37, 119.188.35.38
-Connecting to www.fishlee.net|119.188.35.37|:80... connected.
+--2014-07-06 20:45:01--  http://www.fishlee.net/service/update/44/version.js
+Resolving www.fishlee.net... 119.188.35.38, 123.151.182.61
+Connecting to www.fishlee.net|119.188.35.38|:80... connected.
 HTTP request sent, awaiting response... 
   HTTP/1.1 404 Not Found
-  Date: Sun, 06 Jul 2014 12:30:37 GMT
+  Date: Sun, 06 Jul 2014 12:45:37 GMT
   Content-Type: text/html
   Connection: keep-alive
   Vary: Accept-Encoding
-  Set-Cookie: __jsluid=60478dfcb1fceeabdb13c759cda093ef; path=/
+  Set-Cookie: __jsluid=1d1ff3edfe23399538f378558a94c059; path=/
   content-length: 11747
   X-Cache: miss
-2014-07-06 20:30:03 ERROR 404: Not Found.
+2014-07-06 20:45:02 ERROR 404: Not Found.
 
---2014-07-06 20:30:03--  http://www.fishlee.net/Service/Download.ashx/44/47/12306_ticket_helper.user.js
+--2014-07-06 20:45:02--  http://www.fishlee.net/Service/Download.ashx/44/47/12306_ticket_helper.user.js
+Resolving www.fishlee.net... 119.188.35.38, 123.151.182.61
+Connecting to www.fishlee.net|119.188.35.38|:80... connected.
+HTTP request sent, awaiting response... 
+  HTTP/1.1 404 Not Found
+  Date: Sun, 06 Jul 2014 12:45:37 GMT
+  Content-Type: text/html
+  Connection: keep-alive
+  Vary: Accept-Encoding
+  Set-Cookie: __jsluid=30db30d01edc10ff2cad7b946d98af6f; path=/
+  content-length: 11747
+  X-Cache: miss
+2014-07-06 20:45:03 ERROR 404: Not Found.
+
+--2014-07-06 20:45:03--  http://www.fishlee.net/Service/Download.ashx/44/63/12306_ticket_helper.crx
 Resolving www.fishlee.net... 123.151.182.61, 119.188.35.38
 Connecting to www.fishlee.net|123.151.182.61|:80... connected.
 HTTP request sent, awaiting response... 
   HTTP/1.1 404 Not Found
-  Date: Sun, 06 Jul 2014 12:30:38 GMT
+  Date: Sun, 06 Jul 2014 12:45:38 GMT
   Content-Type: text/html
   Connection: keep-alive
   Vary: Accept-Encoding
-  Set-Cookie: __jsluid=5d445dd214690189b5338933d3313e04; path=/
-  content-length: 11747
-  X-Cache: miss
-2014-07-06 20:30:04 ERROR 404: Not Found.
-
---2014-07-06 20:30:04--  http://www.fishlee.net/Service/Download.ashx/44/63/12306_ticket_helper.crx
-Resolving www.fishlee.net... 119.188.35.38, 119.188.35.37
-Connecting to www.fishlee.net|119.188.35.38|:80... connected.
-HTTP request sent, awaiting response... 
-  HTTP/1.1 404 Not Found
-  Date: Sun, 06 Jul 2014 12:30:40 GMT
-  Content-Type: text/html
-  Connection: keep-alive
-  Vary: Accept-Encoding
-  Set-Cookie: __jsluid=cf5e049239572a2755d365fc6135c4f4; path=/
+  Set-Cookie: __jsluid=525e8bee3a5653a921266f1eb99c9215; path=/
   content-length: 11747
   X-Cache: error
-2014-07-06 20:30:05 ERROR 404: Not Found.
+2014-07-06 20:45:03 ERROR 404: Not Found.
 
