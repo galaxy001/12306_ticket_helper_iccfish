@@ -1,42 +1,42 @@
---2014-07-07 11:00:01--  http://www.fishlee.net/service/update/44/version.js
+--2014-07-07 11:15:01--  http://www.fishlee.net/service/update/44/version.js
 Resolving www.fishlee.net... 119.188.35.38, 119.188.35.37
 Connecting to www.fishlee.net|119.188.35.38|:80... connected.
 HTTP request sent, awaiting response... 
   HTTP/1.1 404 Not Found
-  Date: Mon, 07 Jul 2014 03:00:43 GMT
+  Date: Mon, 07 Jul 2014 03:15:52 GMT
   Content-Type: text/html
   Connection: keep-alive
   Vary: Accept-Encoding
-  Set-Cookie: __jsluid=7859e0ad74f0fa16adc206fe7d4c80d5; path=/
+  Set-Cookie: __jsluid=9ee3d0f2c0178dede01c43a7a479d8da; path=/
   content-length: 11747
   X-Cache: miss
-2014-07-07 11:00:09 ERROR 404: Not Found.
+2014-07-07 11:15:17 ERROR 404: Not Found.
 
---2014-07-07 11:00:09--  http://www.fishlee.net/Service/Download.ashx/44/47/12306_ticket_helper.user.js
+--2014-07-07 11:15:17--  http://www.fishlee.net/Service/Download.ashx/44/47/12306_ticket_helper.user.js
 Resolving www.fishlee.net... 119.188.35.38, 119.188.35.37
 Connecting to www.fishlee.net|119.188.35.38|:80... connected.
 HTTP request sent, awaiting response... 
   HTTP/1.1 404 Not Found
-  Date: Mon, 07 Jul 2014 03:00:47 GMT
+  Date: Mon, 07 Jul 2014 03:16:01 GMT
   Content-Type: text/html
   Connection: keep-alive
   Vary: Accept-Encoding
-  Set-Cookie: __jsluid=2c339e67cc45d52c19b42badbecbcaef; path=/
+  Set-Cookie: __jsluid=8e4bdd929d00e531c0c7d96bb3bb5fcb; path=/
   content-length: 11747
   X-Cache: miss
-2014-07-07 11:00:12 ERROR 404: Not Found.
+2014-07-07 11:15:27 ERROR 404: Not Found.
 
---2014-07-07 11:00:12--  http://www.fishlee.net/Service/Download.ashx/44/63/12306_ticket_helper.crx
+--2014-07-07 11:15:27--  http://www.fishlee.net/Service/Download.ashx/44/63/12306_ticket_helper.crx
 Resolving www.fishlee.net... 119.188.35.38, 119.188.35.37
 Connecting to www.fishlee.net|119.188.35.38|:80... connected.
 HTTP request sent, awaiting response... 
   HTTP/1.1 404 Not Found
-  Date: Mon, 07 Jul 2014 03:00:50 GMT
+  Date: Mon, 07 Jul 2014 03:16:09 GMT
   Content-Type: text/html
   Connection: keep-alive
   Vary: Accept-Encoding
-  Set-Cookie: __jsluid=528a68568821f53a140f5609a3f2e72a; path=/
+  Set-Cookie: __jsluid=3d785b32d81f4903baef370c03de6ddb; path=/
   content-length: 11747
   X-Cache: error
-2014-07-07 11:00:15 ERROR 404: Not Found.
+2014-07-07 11:15:34 ERROR 404: Not Found.
 
